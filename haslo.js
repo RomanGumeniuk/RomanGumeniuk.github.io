@@ -5,7 +5,7 @@ function myFunction() {
     if (person == "jajko") {
       text = "Udało ci sie! Podejdź do mnie po nagrodę na mojej 18";
       text2 = ""
-    } else if{(person == "trumna")
+    } else if(person == "trumna"){
       text = "Udało ci sie! Podejdź do mnie po nagrodę(Tier 2) na mojej 18";
     }
     else{

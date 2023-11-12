@@ -8,6 +8,7 @@
 <style>
     body{
         background-image: url("background2.jpg");
+        overflow: -moz-hidden-unscrollable;
     }
     button {
       font-size: 2px;
@@ -17,6 +18,9 @@
       border-radius: 50px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+    }
+    section{
+      font-size: 4px;
     }
 </style>
   <link rel="stylesheet" href="main2.css" />
@@ -35,9 +39,11 @@
     Tak czy inaczej, ciekawą rzeczą jest fakt, że notatka ta nie zawiera żadnych fragmentów z samego. Może sprawdź, czy zdołasz odtworzyć treść z tych rozrywanych fragmentów?
     
     Powodzenia! </h5>
+    
   </header>
-  <button onclick="obrocKartke()" id="kartka1">Obróć kartkę</button>
+  <section onclick="obrocKartke()">Obróć</section>
+  <script src="main.js"></script>
   </body>
-  <script src="zagadka.js"></script>
+  
   <!--<a href="https://www.freepik.com/free-photo/blank-torn-photo-frame-with-soft-shadows-scotch-tape-isolated-white-paper-background_8487202.htm#query=torn%20paper&position=40&from_view=keyword&track=ais">Image by lcd2020</a> on Freepik-->
 </html>

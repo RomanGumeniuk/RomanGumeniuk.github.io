@@ -37,3 +37,12 @@ function tick () {
     document.querySelector('.countdown').innerText = time;
   }
 }
+var smileyFace = document.getElementById('hehe');
+smileyFace.addEventListener('click', function() {
+    window.location.href = "znalezionanotatka.html";
+  });
+
+  function obrocKartke() {
+    window.location.href = 'znalezionanotatka2.html';
+  }
+
