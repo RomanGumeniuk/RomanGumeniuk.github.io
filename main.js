@@ -42,7 +42,5 @@ smileyFace.addEventListener('click', function() {
     window.location.href = "znalezionanotatka.html";
   });
 
-  function obrocKartke() {
-    window.location.href = 'znalezionanotatka2.html';
-  }
+  
 
