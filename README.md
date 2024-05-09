@@ -16,7 +16,7 @@ So, here's the scoop: I whipped up this site in a single hour. Yep, you read tha
 
 ### See It Live
 
-Curious yet? Check out the site [right here](https://romangumeniuk.github.io/18th-birthday-invitation/). Good luck cracking those codes!
+Curious yet? Check out the site [right here](https://romangumeniuk.github.io). Good luck cracking those codes!
 
 ## Made With
 
