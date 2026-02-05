@@ -1,0 +1,6432 @@
+Pytanie 1: Zaznacz zdania prawdziwe
+○ Uporządkowany podział zbioru, to podział zbioru na
+podzbiory, taki że elementy w tych podzbiorach są
+uporządkowane rosnąco.
+✓ Jeśli rodzina zbiorów 
+ jest podziałem
+zbioru 
+, to 
+.
+○ Liczba podziałów zbioru 
+ może być zapisana za pomocą
+współczynnika wielomianowego.
+○ Podziałem zbioru nazywamy każdą rodzinę pewnych
+niepustych rozłącznych podzbiorów zbudowanych z pewnych
+elementów tego zbioru.
+○ Wszystkie podziały pewnego zbioru -elementowego
+można wygenerować za pomocą generacji wszystkich liczb
+binarnych z zakresu od  do 
+.
+Pytanie 2: Obiekty kombinatoryczne 
+ i 
+utworzone ze zbioru 
+ i są identyczne (nie
+można ich odróżnić). Podane obiekty mogą być
+przykładem:
+○ podziału zbioru na dwa podzbiory.
+○ 3-elementowej wariacji bez powtórzeń ze zbioru 4-
+elementowego.
+○ 3-elementowej wariacji z powtórzeniami ze zbioru 4-
+elementowego.
+✓ 3-elementowej kombinacji z powtórzeniami ze zbioru 4-
+elementowego.
+○ 3-elementowej permutacji bez powtórzeń ze zbioru 4-
+elementowego.
+{A
+​, A
+​, ..., A
+​}
+1
+2
+k
+S
+S = A
+​ ∪
+1
+A
+​ ∪
+2
+... ∪A
+​k
+S
+n
+0
+2 −
+n
+1
+B, A, C C, A, B
+{A, B, C, D}
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+1/79
+Pytanie 3: Zaznacz zdania prawdziwe:
+○ Każde rozmieszczenie  rozróżnialnych elementów w 
+rozróżnialnych pudełkach odpowiada -wyrazowej wariacji bez
+powtórzeń ze zbioru -elementowego.
+○ -wyrazową wariacją bez powtórzeń z -elementowego
+zbioru nazywamy każdy ciąg elementów pochodzących z tego
+zbioru, a liczba takich wariacji wynosi 
+.
+✓ Każde liniowe uporządkowanie  rozróżnialnych
+elementów ze zbioru -elementowego jest -wyrazową
+wariacją bez powtórzeń z tego zbioru.
+○ -wyrazową wariacją bez powtórzeń ze zbioru -
+elementowego nazywamy każdy -wyrazowy ciąg elementów
+tego zbioru i liczba takich wariacji wynosi 
+, gdzie 
+lub 
+.
+○ -wyrazową wariacją bez powtórzeń z -elementowego
+zbioru nazywamy każdy -wyrazowy ciąg elementów tego
+zbioru.
+Pytanie 4: Każdy sposób wrzucenia 4 identycznych
+elementów do 5 rozróżnialnych pudełek jest przykładem:
+○ 5-elementowej wariacji bez powtórzeń ze zbioru 4-
+elementowego.
+○ 4-elementowej wariacji z powtórzeniami ze zbioru 5-
+elementowego.
+✓ 4-elementowej kombinacji z powtórzeniami ze zbioru 5-
+elementowego.
+○ 5-elementowej kombinacji bez powtórzeń ze zbioru 4-
+elementowego.
+○ 4-elementowej permutacji z powtórzeniami ze zbioru 5-
+elementowego.
+k
+n
+k
+n
+k
+n
+nk
+k
+n
+k
+k
+n
+k
+​
+(n−k)!
+n!
+k < n
+k ≥n
+k
+n
+k
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+2/79
+Pytanie 5: Zaznacz zdanie prawdziwe.
+○ Zasada dobrego uporządkowania stwierdza, że zbiór liczb
+całkowitych zawiera element najmniejszy.
+✓ Dowód poprawności pierwszej zasady indukcji
+matematycznej opiera się o zasadę dobrego uporządkowania i
+wykorzystuje technikę sprowadzania do sprzeczności.
+○ Zbiorem dobrze uporządkowanym jest dowolny podzbiór
+zbioru liczb całkowitych oraz liczb wymiernych, ale nie liczb
+rzeczywistych.
+○ Jeśli dla każdej pary elementów  i  można odpowiedzieć
+na pytanie czy 
+, to zbiór 
+ jest dobrze uporządkowany.
+○ Zbiór liczb całkowitych ujemnych jest dobrze
+uporządkowany.
+a b
+a ≤b
+S
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+3/79
+Pytanie 6: Zaznacz zdanie prawdziwe.
+○ Dowód kroku indukcyjnego w drugiej zasadzie indukcji
+wymaga wykazania prawdziwości zdania 
+ i prawdziwości zdania 
+ dla pewnej
+liczby 
+.
+○ Dowód kroku indukcyjnego w drugiej zasadzie indukcji
+wymaga pokazania, że dla pewnej konkretnej wartości 
+zachodzi implikacja 
+.
+✓ W zasadzie silnej indukcji matematycznej warunek
+początkowy ma postać 
+,
+gdzie 
+ i 
+, a 
+ oznacza zdanie
+otwarte, w którym występuje liczba całkowita dodatnia .
+○ Dowód kroku indukcyjnego w drugiej zasadzie indukcji
+wymaga wykazania prawdziwości zdania 
+ dla każdej
+liczby 
+.
+○ Dowód warunku początkowego w drugiej zasadzie indukcji
+matematycznej wymaga pokazania prawdziwości pewnych zdań
+ dla dowolnych elementów , takich że 
+.
+Pytanie 7: Zasada indukcji matematycznej jest techniką,
+która może być zastosowana do dowodzenia twierdzeń
+:
+○ dotyczących kolejnych liczb rzeczywistych.
+○ dotyczących dowolnych liczb dodatnich.
+○ dotyczących liczb wymiernych.
+✓ w których  należy do zbioru liczb całkowitych dodatnich.
+○ w których  jest nieujemne.
+S(n
+​) ∧
+0
+S(n
+​ +
+0
+1) ∧... ∧S(k)
+S(k + 1)
+k ≥1
+k ≥n
+​0
+[S(n
+​) ∧
+0
+... ∧S(k)] ⇒S(k + 1)
+S(n
+​) ∧
+0
+S(n +
+0
+1) ∧... ∧S(n
+​)
+1
+n
+​, n
+​ ∈
+0
+1
+Z+ n
+​ ≤
+0
+n
+​1
+S(n)
+n
+S(k + 1)
+k ≥n
+​0
+S(n)
+n
+n
+​ ≤
+0
+n ≤n
+​1
+S(n)
+n
+n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+4/79
+Pytanie 8: Zaznacz zdanie prawdziwe.
+✓ Zależność postaci 
+, gdzie 
+ są pewnymi
+stałymi, 
+ i 
+, jest liniową zależnością
+rekurencyjną jednorodną rzędu trzeciego i może być
+rozwiązana za pomocą równania charakterystycznego stopnia
+trzeciego.
+○ Rozwiązanie liniowej niejednorodnej zależności
+rekurencyjnej rzędu pierwszego ze stałymi współczynnikami,
+postaci 
+ jest dane wzorem: 
+gdzie 
+ i  oznaczają pewne stałe, 
+.
+○ Rozwiązanie liniowej niejednorodnej zależności
+rekurencyjnej rzędu drugiego ze stałymi współczynnikami, ma
+postać 
+ lub 
+ w
+zależności od liczby różnych pierwiastków równania
+charakterystycznego.
+○ Rozwiązanie liniowej jednorodnej zależności rekurencyjnej
+rzędu drugiego ze stałymi współczynnikami o równaniu
+charakterystycznym o dwóch różnych pierwiastkach, ma postać
+ gdzie 
+ i 
+ są wyznaczane w oparciu o
+początkowe elementy ciągu.
+○ Wyznaczenie wzoru jawnego jest możliwe dla ciągów
+liczbowych opisanych jedynie zależnościami rekurencyjnymi
+jednorodnymi.
+c
+​a
+​ +
+n
+n
+c
+​a
+​ +
+n−1
+n−1
+c
+​a
++
+n−2
+n−2
+c
+​a
+​ =
+n−3
+n−3
+0
+c
+​, c
+​, c
+​, c
+​
+n
+n−1
+n−2
+n−3
+c
+​ =
+n 0 c
+​ =
+n−3 0
+a
+​ +
+n+1
+ca
+​ =
+n
+f(n)
+a
+​ =
+n
+a
+​d
+0
+n
+d
+​0 d
+n ∈N
+a
+​ =
+n
+c
+​r
+​ +
+1 1
+n
+c
+​r
+​
+2 2
+n
+a
+​ =
+n
+c
+​r
+​ +
+1 1
+n
+c
+​nr
+2
+n
+a
+​ =
+n
+c
+​x
+​ +
+1
+1
+n
+c
+​x
+​
+2
+2
+n
+x
+​1 x
+​2
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+5/79
+Pytanie 9: Zależność rekurencyjna 
+ jest
+zależnością rekurencyjną:
+✓ liniową ze stałymi współczynnikami rzędu czwartego
+jednorodną.
+○ liniową ze stałymi współczynnikami rzędu drugiego
+jednorodną.
+○ liniową ze stałymi współczynnikami rzędu pierwszego
+niejednorodną.
+○ liniową ze stałymi współczynnikami rzędu czwartego
+niejednorodną.
+○ liniową ze stałymi współczynnikami rzędu trzeciego
+jednorodną.
+Pytanie 10: Zależność rekurencyjna 
+ jest zależnością:
+○ która nie może być rozwiązana metodą równania
+charakterystycznego.
+○ dla której równanie charakterystyczne jest równaniem
+kwadratowym.
+✓ dla której równanie charakterystyczne jest równaniem
+stopnia trzeciego.
+○ nieliniową.
+○ niejednorodną.
+(a
+​ =
+0
+0, a
+​ =
+1
+3, a
+​ =
+2
+4, a
+​ =
+3
+6, 2a
+​ +
+n+1
+3a
+​ =
+n−3
+0 dla n ≥3)
+(a
+​ =
+0
+1, a
+​ =
+1
+2, a
+​ =
+2
+3, a
+​ +
+n
+5a
+​ −
+n−1
+4a
+​ =
+n−3
+0 dla n ≥3)
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+6/79
+Pytanie 11: Zaznacz zdanie prawdziwe:
+○ Liczby Stirlinga drugiego rodzaju opisujące liczbę
+sposobów podziału zbioru -elementowego na -niepustych
+podzbiorów są nie mniejsze niż liczby Stirlinga pierwszego
+rodzaju opisujące liczbę sposobów rozmieszczenia 
+elementów w  cyklach.
+○ Z definicji przyjmuje się, że liczba Stirlinga drugiego rodzaju
+ dla 
+, ponieważ opisywany przez nią podział
+jest niemożliwy.
+○ Liczby harmoniczne 
+ są dyskretnym odpowiednikiem
+funkcji 
+ i tworzą ciąg liczbowy rosnący
+logarytmicznie wolno dla 
+.
+✓ Liczby Eulera pierwszego rzędu 
+ oznaczają liczbę 
+-elementowych permutacji bez powtórzeń ze zbioru -
+elementowego zawierających  wzniesień.
+○ Twierdzenie Zeckendorfa stwierdza, iż każda liczba
+całkowita dodatnia  może być jednoznacznie przedstawiona w
+postaci iloczynu pewnych liczb Fibonacciego i zapisana w
+postaci odpowiedniego ciągu zer i jedynek.
+n
+k
+n
+k
+S(n, n) = 1
+n ≥0
+H
+​n
+f(x) =
+​x
+1
+n →∞
+​
+⟨n
+k ⟩
+n
+n
+k
+n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+7/79
+Pytanie 12: Zaznacz zdanie prawdziwe:
+○ Liczby Fibonacciego są przykładem zależności rekurencyjnej
+rzędu drugiego niejednorodnej.
+○ Ciąg liczb harmonicznych jest zbudowany z liczb
+całkowitych.
+✓ Za pomocą liczb Stirlinga pierwszego rodzaju 
+,
+, można obliczyć wartość funkcji 
+.
+○ Liczby Eulera związane są z liczbą -elementowych
+podzbiorów zbioru -elementowego.
+○ Liczby Stirlinga drugiego rodzaju związane są ze zliczaniem
+-elementowych permutacji ze zbioru -elementowego.
+s(n, k)
+k = 0, 1, … , n
+n!
+k
+n
+k
+n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+8/79
+Pytanie 13: Zaznacz zdanie prawdziwe:
+○ Zasada włączania i wyłączania ma postać: 
+✓ Zasada włączania i wyłączania, mówi, że aby wyznaczyć
+liczbę elementów zbioru 
+, należy
+zanalizować wszystkie możliwe przecięcia (części wspólne)
+zbiorów z rodziny 
+ i dodać liczność
+przecięć nieparzystej liczby zbiorów oraz odjąć liczność
+przecięć parzystej liczby zbiorów.
+○ Zasada włączania i wyłączania, mówi, że aby wyznaczyć
+liczbę elementów zbioru 
+, należy
+zanalizować wszystkie możliwe przecięcia zbiorów z rodziny
+ i dodać liczność przecięć parzystej liczby
+zbiorów oraz odjąć liczność przecięć nieparzystej liczby
+zbiorów.
+○ Zasada włączania i wyłączania jest uogólnieniem prawa
+sumy umożliwiającym obliczenie liczności części wspólnej
+zbiorów, bez konieczności wyznaczania elementów należących
+do tej części wspólnej.
+○ Prawo sumy (pozwalające na wyznaczenie liczności sumy
+dwóch zbiorów) nie jest równoważne zasadzie włączania i
+wyłączania (pozwalającej na wyznaczenie liczności sumy
+zbiorów 
+ dla 
+.
+​ A
+​ =
+∣⋃i=1
+n
+i∣
+​ ∣A
+​∣+
+∑i=1
+n
+i
+​ ∣A
+​ ∩
+∑1≤i<j≤n
+i
+A
+​∣+
+j
+⋯+ (−1)
+∣A
+​ ∩
+n−1
+1
+A
+​ ∩
+2
+⋯∩A
+​∣
+n
+A
+​ ∪
+1
+A
+​ ∪
+2
+⋯∪A
+​n
+{A , A
+​, … , A
+​}
+1
+2
+n
+A
+​ ∩
+1
+A
+​ ∩
+2
+⋯∩A
+​n
+{A
+​, A
+​, … , A
+​}
+1
+2
+n
+A
+​, … , A
+​
+1
+n
+n = 2
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+9/79
+Pytanie 14: Pełna poprawna zasada włączania i wyłączania
+dla 4 zbiorów składa się z
+○ 4 składników, ponieważ są 4 zbiory.
+✓ 15 składników.
+○ 16 składników, ponieważ należy sprawdzić część wspólną
+każdego zbioru z każdym.
+○ 5 składników.
+○ nieskończonej liczby składników.
+Pytanie 15: Zaznacz zdanie prawdziwe.
+○ Zasada szufladkowa Dirichleta stwierdza, że jeśli skończony
+zbiór 
+ jest podzielony na  rozłącznych niepustych
+podzbiorów, to dokładnie jeden z tych zbiorów zawiera
+ elementów lub więcej.
+○ Zasada szufladkowa Dirichleta stwierdza, że jeśli skończony
+zbiór 
+ jest podzielony na  rozłącznych niepustych
+podzbiorów, to liczność tych wszystkich zbiorów wynosi co
+najmniej 
+.
+○ Uogólniona zasada szufladkowa sprowadza się do
+„klasycznej” zasady szufladkowej, gdy każdy z elementów
+analizowanego zbioru 
+ należy do co najmniej jednego
+podzbioru spośród 
+.
+✓ Uogólniona zasada szufladkowa Dirichleta określa
+minimalną wartość średniej arytmetycznej liczb elementów
+zbiorów 
+ będących podzbiorami skończonego
+zbioru 
+, takimi że każdy element zbioru 
+ należy do co
+najmniej 1 spośród zbiorów 
+ (
+).
+○ Dowód uogólnionej zasady szufladkowej Dirichleta wymaga
+zastosowania zwykłej zasady szufladkowej.
+S
+k
+⌈∣S∣/k⌉
+S
+k
+⌊∣S∣/k⌋
+S
+A
+​, … , A
+​
+1
+k
+A
+​, … , A
+​
+1
+k
+S
+S
+A
+​i 1 ≤∣S∣/k
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+10/79
+Pytanie 16: Jeśli zbiór 12 elementowy zostanie podzielony
+w dowolny sposób na 3 niepuste rozłączne podzbiory, to
+○ dokładnie jeden podzbiór zawiera 4 elementy lub więcej.
+○ dokładnie jeden podzbiór zawiera 4 elementy.
+○ co najwyżej jeden podzbiór zawiera 4 elementy lub więcej.
+✓ co najmniej jeden podzbiór zawiera 4 elementy lub więcej.
+○ podzbiory są równoliczne.
+Pytanie 17: Zaznacz zdanie prawdziwe.
+○ Macierz o wymiarze 
+ zbudowaną z elementów ze
+zbioru 
+, gdzie 
+, w której w żadnym wierszu i
+kolumnie elementy się nie powtarzają nazywamy kwadratem
+łacińskim.
+✓ Rozszerzenie prostokąta łacińskiego 
+ (
+, 
+)
+do kwadratu 
+ nie jest możliwe, jeśli dla pewnego
+elementu  (
+) liczba jego wystąpień w prostokącie
+ jest mniejsza od 
+.
+○ Rozszerzenie dowolnego prostokąta łacińskiego o
+dodatkowe kolumny jest zawsze możliwe, należy jedynie w
+każdej nowej kolumnie umieszczać elementy występujące
+najrzadziej.
+○ Rozszerzalny prostokąt łaciński 
+ rozbudowuje się do
+kwadratu łacińskiego 
+ przez dopisanie najpierw 
+wierszy, a następnie 
+ kolumn.
+○ Dla  będącego liczbą pierwszą istnieje dokładnie 
+wzajemnie ortogonalnych kwadratów łacińskich o wymiarze
+, a dla  będącego potęgą liczby pierwszej co najmniej
+ wzajemnie ortogonalnych kwadratów łacińskich o
+wymiarze 
+.
+p × p
+{1, … , n}
+p < n
+p × q p ≤n q < n
+n × n
+l 1 ≤l ≤n
+l(l)
+p + q −n
+p × q
+n × n
+(n −q)
+(n −p)
+n
+n −1
+n × n
+n
+n −1
+n × n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+11/79
+Pytanie 18: Zaznacz zdanie prawdziwe:
+○ Dla dowolnej szachownicy 
+, wartość współczynnika 
+jest równa liczbie zabronionych pól obszaru 
+.
+✓ Wielomian szachowy dla obszaru 
+ o wymiarze 
+,
+postaci 
+, nie zawiera
+niezerowych współczynników 
+ dla 
+, ponieważ nie
+można ustawić więcej niż  wzajemnie nieatakujących się wież
+na szachownicy o wymiarze 
+.
+○ Każda linia pozioma dzieli dowolną szachownicę 
+ na dwa
+niezależne obszary, niemające wspólnych wierszy ani kolumn.
+○ Jeśli szachownica 
+ składa się z dwóch niezależnych
+obszarów 
+, to wówczas 
+.
+○ W oparciu o wielomian szachowy obszaru 
+ można
+wyznaczyć wszystkie współczynniki wielomianu szachowego dla
+dopełnienia tego obszaru 
+.
+Pytanie 19: Zaznacz zdanie prawdziwe.
+○ -wyrazową wariacją z powtórzeniami ze zbioru -
+elementowego nazywamy każdy -wyrazowy ciąg elementów
+tego zbioru, a liczba takich wariacji wynosi: 
+, gdzie 
+lub 
+.
+○ Liczba -wyrazowych wariacji z powtórzeniami jest równa
+liczbie -wyrazowych permutacji z powtórzeniami.
+✓ -wyrazowa wariacja z powtórzeniami ze zbioru -
+elementowego odpowiada rozmieszczeniu  rozróżnialnych
+elementów w  rozróżnialnych pudełkach.
+○ Liczba -wyrazowych wariacji z powtórzeniami ze zbioru -
+elementowego jest nie większa od liczby -wyrazowych wariacji
+bez powtórzeń.
+○ Istnieje 
+ różnych -wyrazowych wariacji z powtórzeniami
+ze zbioru -elementowego 
+ lub 
+.
+B
+r
+​1
+B
+B
+n × n
+r(x) = 1 + r
+​x +
+1
+r
+​x +
+2
+2
+⋯+ r
+​x
+n
+n
+r
+​k
+k > n
+n
+n × n
+B
+B
+C, D
+r(x) = r(C) + xr(D)
+B
+B
+k
+n
+k
+​
+(n−k)!
+n!
+k < n
+k ≥n
+k
+k
+k
+n
+k
+n
+k
+n
+k
+bb
+b
+a
+(a ≤b
+b < a)
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+12/79
+Pytanie 20: Obiekty kombinatoryczne 
+ i
+ zostały utworzone ze zbioru
+ i nie są identyczne (można je odróżnić).
+Podane obiekty mogą być przykładem:
+○ 4-elementowej kombinacji z powtórzeniami ze zbioru 5-
+elementowego.
+○ 5-elementowej wariacji z powtórzeniami ze zbioru 4-
+elementowego.
+✓ 4-elementowej wariacji bez powtórzeń ze zbioru 5-
+elementowego.
+○ Uporządkowanego podziału zbioru na dwa podzbiory.
+○ 4-elementowej kombinacji bez powtórzeń ze zbioru 5-
+elementowego.
+D, C, A, B
+A, D, C, B
+{A, B, C, D, E}
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+13/79
+Pytanie 21: Zaznacz zdanie prawdziwe.
+○ Kombinacja -elementowa z powtórzeniami ze zbioru -
+elementowego, to -elementowy podzbiór elementów tego
+zbioru, w którym kolejność elementów nie jest istotna.
+○ Każda -elementowa kombinacja z powtórzeniami ze
+zbioru -elementowego może być przedstawiona jako -
+elementowa permutacja z powtórzeniami ze zbioru -
+elementowego.
+✓ Każda -elementowa kombinacja z powtórzeniami ze
+zbioru -elementowego może być interpretowana jako
+rozmieszczenie  identycznych elementów w  rozróżnialnych
+pudełkach.
+○ Każda -elementowa kombinacja z powtórzeniami ze
+zbioru -elementowego może być przedstawiona jako
+permutacja z powtórzeniami dwóch różnych symboli
+powtarzających się odpowiednio  i  razy.
+○ Liczba wszystkich -elementowych kombinacji z
+powtórzeniami ze zbioru -elementowego wynosi 
+gdzie 
+.
+k
+n
+k
+k
+n
+k
+n
+k
+n
+k
+n
+k
+n
+n k
+k
+n
+​
+(
+n
+k+n−1)
+k < n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+14/79
+Pytanie 22: Do 6 rozróżnialnych pudełek wrzucane są w
+dowolny sposób 4 rozróżnialne elementy. Każdy sposób
+wrzucenia elementów do pudełek jest przykładem:
+✓ 4-elementowej wariacji z powtórzeniami ze zbioru 6-
+elementowego.
+○ 6-elementowej permutacji z powtórzeniami ze zbioru 4-
+elementowego.
+○ 4-elementowej kombinacji z powtórzeniami ze zbioru 6-
+elementowego.
+○ 4-elementowej wariacji bez powtórzeń ze zbioru 6-
+elementowego.
+○ 6-elementowej kombinacji z powtórzeniami ze zbioru 4-
+elementowego.
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+15/79
+Pytanie 23: Zaznacz zdanie prawdziwe.
+✓ Pierwsza zasada indukcji matematycznej może być
+sformułowana następująco 
+, gdzie 
+ oznacza zdanie otwarte, w
+którym występuje pewna liczba całkowita dodatnia .
+○ Pierwsza zasada indukcji może być podana dla dowolnego
+elementu 
+, od którego rozpoczyna się proces indukcyjny i
+przyjmuje wówczas postać 
+.
+○ Dowód kroku indukcyjnego w pierwszej zasadzie indukcji
+matematycznej wymaga wykazania prawdziwości zdania 
+ i
+prawdziwości zdania 
+ dla pewnej liczby 
+.
+○ Dowód warunku początkowego w pierwszej zasadzie
+indukcji matematycznej wymaga pokazania prawdziwości
+zdania 
+ dla dowolnego elementu 
+.
+○ Dowód kroku indukcyjnego w pierwszej zasadzie indukcji
+matematycznej wymaga wykazania prawdziwości zdania 
+ i
+prawdziwości zdania 
+ dla każdej liczby 
+.
+Pytanie 24: Zasada indukcji matematycznej może być
+zastosowana do dowodzenia twierdzeń 
+, w którym 
+należy do zbioru:
+○ liczb rzeczywistych dodatnich.
+✓ liczb naturalnych.
+○ dowolnego podzbioru zbioru liczb wymiernych.
+○ liczb całkowitych.
+○ liczb rzeczywistych.
+[S(1) ∧(∀
+​S(k) ⇒
+k≥1
+S(k +
+1))] ⇒∀
+​S(n)
+n≥1
+S(n)
+n
+n
+​0
+[S(n
+​) ∧
+0
+(S(k) ⇒S(k +
+1))] ⇒∀
+​S(n)
+n≥n
+​0
+S(k)
+S(k + 1)
+k ≥1
+S(n)
+n ≥n
+​0
+S(k)
+S(k + 1)
+k ≥n
+​0
+S(n)
+n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+16/79
+Pytanie 25: Zaznacz zdanie prawdziwe.
+○ Rozwiązanie zależności liniowej jednorodnej rzędu
+drugiego ze stałymi współczynnikami o równaniu
+charakterystycznym o dwóch różnych pierwiastkach 
+ i 
+ ma
+postać 
+.
+✓ Każda zależność postaci 
+, gdzie 
+ dla 
+ są zupełnie
+dowolnymi stałymi rzeczywistymi, jest liniową zależnością
+rekurencyjną rzędu -tego.
+○ Rozwiązanie liniowej jednorodnej zależności rekurencyjnej
+rzędu pierwszego ze stałymi współczynnikami postaci 
+ jest dane wzorem 
+, gdzie 
+, a 
+oznacza pewną stałą i nie 
+.
+○ Rozwiązanie zależności rekurencyjnej polega na
+wyznaczeniu wartości liczbowej elementu ciągu występującego
+po elementach początkowych.
+○ Zależność postaci 
+,
+gdzie 
+ są pewnymi stałymi, 
+ i 
+,
+może być rozwiązana za pomocą metody równania
+charakterystycznego.
+x
+​1 x
+​2
+a
+​ =
+n
+x
+​r
+​ +
+1 1
+n
+x
+​r
+​
+2 2
+n
+c
+​a
+​ +
+n
+n
+c
+​a
+​ +
+n−1
+n−1
+… +
+c
+​a
+​ =
+n−k
+n−k
+0
+c
+​i
+i = n −k, … , n
+k
+a
+​ +
+n+1
+ca
+​ =
+n
+0
+a
+​ =
+n
+a
+​b
+0 n
+b = −c
+c
+∈N
+c
+​a
+​ +
+n
+n
+c
+​a
+​ +
+n−1
+n−1
+c
+​a
+​ =
+n−2
+n−2
+1
+c
+​, c
+​, c
+​
+n
+n−1
+n−2
+c
+​ =
+n 0 c
+​ =
+n−2 0
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+17/79
+Pytanie 26: Zależność rekurencyjna 
+ dla 
+ jest
+zależnością rekurencyjną:
+○ liniową ze stałymi współczynnikami rzędu drugiego
+jednorodną.
+○ liniową ze stałymi współczynnikami rzędu pierwszego
+niejednorodną.
+✓ liniową ze stałymi współczynnikami rzędu czwartego
+niejednorodną.
+○ liniową ze stałymi współczynnikami rzędu czwartego
+jednorodną.
+○ którą można rozwiązać za pomocą metody równania
+charakterystycznego.
+Pytanie 27: Zależność rekurencyjna 
+ dla 
+ jest zależnością:
+○ która nie może być rozwiązana metodą równania
+charakterystycznego.
+○ dla której równanie charakterystyczne jest równaniem
+kwadratowym.
+○ nieliniową.
+✓ dla której równanie charakterystyczne jest równaniem
+stopnia czwartego.
+○ niejednorodną.
+(a
+​ =
+0
+0, a
+​ =
+1
+3, a
+​ =
+2
+4, a
+​ =
+3
+6, 2a
+​ +
+n
+3a
+​ =
+n−4
+2
+n ≥4
+(a
+​ =
+0
+1, a
+​ =
+1
+2, a
+​ =
+2
+3, a
+​ =
+3
+4, a
+​ +
+n+1
+5a
+​ −
+n−1
+4a
+​ =
+n−3
+0)
+n ≥
+3
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+18/79
+Pytanie 28: Zaznacz zdanie prawdziwe.
+✓ Wyrażenia postaci 
+ oraz 
+ są składnikami definicji rekurencyjnej liczb Stirlinga
+zarówno pierwszego (
+), jak i drugiego rodzaju (
+).
+○ Z definicji przyjmuje się, że liczba Stirlinga pierwszego
+rodzaju 
+ dla 
+, ponieważ opisywane przez nią
+rozmieszczenie obiektów w cyklach jest niemożliwe.
+○ Liczby Eulera drugiego rzędu 
+ oznaczają liczbę
+dowolnych permutacji z powtórzeniami ze zbioru -
+elementowego zawierających  wniesień takich, że pomiędzy
+poszczególnymi wystąpieniami pewnej liczby znajdują się tylko
+liczby większe od niej.
+○ Liczby harmoniczne drugiego rzędu 
+ są dyskretnym
+odpowiednikiem funkcji 
+.
+○ W oparciu o twierdzenie Zeckendorfa można stworzyć
+system liczbowy, w którym dowolna liczba rzeczywista dodatnia
+może być przedstawiona jako 
+, gdzie 
+,
+a 
+ oznacza liczbę Fibonacciego.
+Pytanie 29: Zaznacz zdanie prawdziwe.
+○ Liczby Stirlinga drugiego rodzaju dotyczą podziału zbioru
+na cykle, a liczby Stirlinga pierwszego rodzaju podziału zbioru
+na podzbiory.
+○ Liczby Eulera dotyczą wariacji z powtórzeniami.
+✓ Cykle jedno- i dwu-elementowe są równoważne zbiorom
+jedno- i dwu-elementowym.
+○ Ciąg liczb harmonicznych pierwszego rzędu jest zbieżny.
+○ Ciąg liczb Fibonacciego jest przykładem zależności
+rekurencyjnej rzędu trzeciego, ponieważ w zależności
+rekurencyjnej występują trzy elementy ciągu.
+x(n, n) = 1, n ≥0
+x(n, 0) =
+0, n > 0
+x = s
+x = S
+s(n, n) = 1
+n ≥0
+​
+⟨⟨n
+k ⟩⟩
+n
+k
+H
+​
+n
+(2)
+f(x) =
+​x
+1
+​ b
+​F
+​
+∑k=0
+m
+k
+k
+b
+​ ∈
+k
+{0, 1}
+F
+​k
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+19/79
+Pytanie 30: Zaznacz zdanie prawdziwe.
+○ Zasada włączania i wyłączania jest uogólnieniem prawa
+iloczynu dla więcej niż dwóch zbiorów skończonych.
+✓ Zasada włączania i wyłączania ma postać: 
+○ Zasada włączania i wyłączania umożliwia obliczenie
+liczności części wspólnej  zbiorów 
+ w oparciu o
+liczności sum zbiorów z rodziny 
+.
+○ Zasadę włączania i wyłączania stosuje się do obliczenia
+liczności sumy pewnej liczby zbiorów w sytuacji, gdy nie można
+wyznaczyć elementów należących do tej sumy.
+○ Zasadę włączania i wyłączania można zastosować wyłącznie
+do obliczenia liczności sumy zbiorów, których części wspólne
+nie są zbiorami pustymi; zasady tej nie można zastosować dla
+zbiorów rozłącznych.
+Pytanie 31: Poprawna pełna zasada włączania i wyłączania
+dla zbioru 
+ elementowego, którego pewne elementy
+spełniają własności 
+ ma postać:
+○ 
+○ 
+○ 
+✓ 
+○ 
+​ A
+​ =
+∣⋃i=1
+n
+i∣
+​ ∣A
+​∣−
+∑i=1
+n
+i
+​ ∣A
+​ ∩
+∑1≤i<j≤n
+i
+A
+​∣+
+j
+​ ∣A
+​ ∩
+∑1≤i<j<k≤n
+i
+A
+​ ∩
+j
+A
+​∣−
+k
+⋯+ (−1)
+∣A
+​ ∩
+n−1
+1
+A
+​ ∩
+2
+⋯∩A
+​∣
+n
+n
+A
+​, A
+​, ..., A
+​
+1
+2
+n
+{A
+​, A
+​, ..., A
+​}
+1
+2
+n
+N
+c
+​, (i =
+i
+1, 2, 3)
+N(c
+​ ∨
+1
+c
+​ ∨
+2
+c
+​) =
+3
+N(c
+​) +
+1
+N(c
+​) +
+2
+N(c
+​)
+3
+N(c
+​c
+​c
+​) =
+1 2 3
+N(c
+​) +
+1
+N(c
+​) −
+3
+N(c
+​c
+​)
+1 3
+N(
+​
+​
+​) =
+c
+​1c
+​2c
+​3
+N(c
+​) +
+1
+N(c
+​) +
+2
+N(c
+​) −
+3
+N(c
+​c
+​) −
+1 2
+N(c
+​c
+​) −
+1 3
+N(c
+​c
+​) +
+2 3
+N(c
+​c
+​c
+​)
+1 2 3
+N(
+​
+​
+​) =
+c
+​1c
+​2c
+​3
+N −N(c
+​) −
+1
+N(c
+​) −
+2
+N(c
+​) +
+3
+N(c
+​c
+​) +
+1 2
+N(c
+​c
+​) +
+1 3
+N(c
+​c
+​) −
+2 3
+N(c
+​c
+​c
+​)
+1 2 3
+N(c
+​c
+​c
+​) =
+1 2 3
+N −N(c
+​) −
+1
+N(c
+​) −
+2
+N(c
+​) +
+3
+N(c
+​c
+​) +
+1 2
+N(c
+​c
+​) +
+1 3
+N(c
+​c
+​)
+2 3
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+20/79
+Pytanie 32: Zaznacz zdanie prawdziwe:
+○ Zasada szufladkowa Dirichleta mówi, że jeśli skończony
+zbiór 
+ jest podzielony na  rozłącznych niepustych
+podzbiorów, to co najwyżej jeden z tych podzbiorów zawiera
+ elementów lub więcej.
+○ Zasada szufladkowa Dirichleta wynika z obserwacji, że jeśli
+ przedmiotów umieszcza się w zupełnie dowolny sposób w 
+szufladkach i 
+, to żadna szufladka nie będzie pusta.
+○ „Klasyczna” zasada szufladkowa dotyczy podziału zbioru 
+na dwa zbiory, a uogólniona zasada szufladkowa dotyczy
+podziału na dowolną liczbę zbiorów.
+✓ Uogólniona zasada szufladkowa Dirichleta mówi, że jeśli
+skończony zbiór 
+ jest podzielony na  podzbiorów
+, takich że każdy element 
+ należy do co
+najmniej  spośród tych podzbiorów, to średnia liczność
+zbiorów 
+ wynosi co najmniej 
+.
+○ Z uogólnionej zasady szufladkowej Dirichleta wynika, że
+jeśli skończony zbiór 
+ jest podzielony na  podzbiorów
+, takich że każdy element 
+ należy do dokładnie
+ spośród tych podzbiorów, to średnia liczność zbiorów 
+wynosi dokładnie 
+.
+Pytanie 33: Średnia liczność zbiorów 
+będących podzbiorami zbioru 8-elementowego 
+, takimi,
+że każdy element 
+ należy do co najmniej 3 podzbiorów
+wynosi:
+○ co najwyżej 6.
+○ dokładnie 6.
+○ co najwyżej 3.
+○ co najmniej 8.
+✓ co najmniej 6.
+S
+k
+⌈
+​⌉
+k
+∣S∣
+m
+n
+m > n
+S
+S
+k
+A
+​, A
+​, ..., A
+​
+1
+2
+k
+S
+p
+A
+​i
+​
+k
+p∣S∣
+S
+k
+A
+​, A
+​, ..., A
+​
+1
+2
+k
+S
+t
+A
+​i
+​
+t
+k∣S∣
+A
+​, A
+​, A
+​, A
+​
+1
+2
+3
+4
+S
+S
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+21/79
+Pytanie 34: Zaznacz zdanie prawdziwe.
+✓ Macierz o wymiarze 
+ zbudowana z elementów ze
+zbioru 
+, gdzie 
+, w której w żadnym wierszu i
+kolumnie elementy się nie powtarzają jest prostokątem
+łacińskim.
+○ Rozszerzenie prostokąta łacińskiego 
+ do kwadratu
+ jest możliwe tylko wówczas, jeśli liczba wystąpień
+poszczególnych elementów spełnia warunek 
+dla każdego 
+.
+○ Rozszerzenie prostokąta łacińskiego 
+ do kwadratu
+ jest zawsze możliwe i wymaga wyznaczenia transwersali
+rodziny zbiorów zawierających elementy nie występujące
+dotychczas odpowiednio w poszczególnych wierszach i
+kolumnach.
+○ Prostokąt łaciński 
+ rozbudowuje się do kwadratu
+łacińskiego 
+ przez dopisanie najpierw 
+ wierszy
+zbudowanych z dowolnej transwersali, a następnie 
+kolumn zbudowanych ze specyficznej transwersali zawierającej
+zbiór 
+.
+○ Dla  będącego liczbą pierwszą lub potęgą liczby pierwszej
+istnieje co najwyżej 
+ wzajemnie ortogonalnych
+kwadratów łacińskich o wymiarze 
+, a dla pozostałych
+wartości  istnieje dokładnie 
+ wzajemnie ortogonalnych
+kwadratów łacińskich o wymiarze 
+.
+p × p
+{1, ..., n}
+p < n
+p × q
+n × n
+l(i) > p + q −n
+i = 1, ..., n
+p × q
+n × n
+p × q
+n × n
+(n −p)
+(n −q)
+P
+n
+n −1
+n × n
+n
+n −1
+n × n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+22/79
+Pytanie 35: Zaznacz obiekt nie będący prostokątem
+łacińskim ze zbioru 
+:
+○ 
+○ 
+○ 
+✓ 
+✓ 
+{1, … , 6}
+[1, 2, 3, 4, 5, 6]
+​
+​
+​
+​
+2
+3
+5
+1
+6
+4
+1
+4
+6
+2
+3
+5
+​
+​
+​
+​
+​
+3
+2
+1
+1
+3
+2
+2
+1
+6
+​
+​
+​
+​
+​
+​
+​
+1
+6
+5
+4
+3
+2
+5
+4
+3
+6
+3
+4
+3
+2
+5
+4
+3
+2
+1
+1
+5
+2
+1
+6
+3
+6
+1
+6
+5
+4
+​
+​
+​
+​
+​
+6
+3
+1
+2
+5
+1
+3
+3
+4
+5
+2
+5
+3
+1
+6
+1
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+23/79
+Pytanie 36: Zaznacz zdanie prawdziwe.
+✓ Wielomian szachowy 
+, to funkcja tworząca, której współczynniki
+ oznaczają liczbę możliwych rozmieszczeń  wzajemnie nie
+atakujących się wież na szachownicy 
+ o wymiarze 
+.
+○ W wielomianie szachowym dla dowolnej szachownicy o
+wymiarze 
+ mogą wystąpić niezerowe współczynniki 
+dla 
+.
+○ Każdą szachownicę 
+ można zdekomponować na dwie
+inne szachownice 
+ i 
+, takie że w 
+ zabroniona jest
+kolumna, a w 
+ wiersz, zawierające pewne dowolnie wybrane
+pole .
+○ Jeśli szachownica 
+ składa się z dwóch niezależnych
+obszarów 
+ i 
+, to wówczas 
+ jest sumą wielomianów
+szachowych obszarów 
+ i 
+.
+○ Dekompzycję wielomianów stosuje się jedynie wówczas,
+gdy nie wyznacza się pełnego wielomianu szachowego
+pewnego obszaru o wymiarze 
+, ale oblicza się jedynie
+pojedynczy współczynnik tego wielomianu 
+ dla 
+.
+Pytanie 37: Zaznacz funkcję tworzącą, która może być
+wielomianem szachowym pewnej szachownicy o wymiarze
+5×5:
+✓ 
+○ 
+○ 
+○ 
+○ 
+r
+​(x) =
+B
+1 + r
+​x +
+1
+r
+​x +
+2
+2
+... +
+r
+​x +
+k
+k
+... + r
+​x
+n
+n
+r
+​k
+k
+B
+n × n
+n × n
+r
+​k
+k > n
+B
+B1 B2
+B1
+B2
+s
+B
+B1 B2
+r
+​(x)
+B
+B1 B2
+n × n
+r
+​k
+k < n
+r
+​(x) =
+B
+1 + 15x + 75x +
+2
+145x +
+3
+96x +
+4
+12x5
+r
+​(x) =
+B
+0 + 15x + 75x +
+2
+145x +
+3
+96x +
+4
+12x5
+r
+​(x) =
+B
+1 + 15x + 75x +
+2
+145x +
+3
+96x +
+4
+12x6
+r
+​(x) =
+B
+2 + 15x + 75x +
+2
+145x +
+3
+96x +
+4
+12x5
+r
+​(x) =
+B
+1 + 27x + 75x +
+2
+145x +
+3
+96x +
+4
+12x5
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+24/79
+Pytanie 38: Niech 
+ i 
+ będą podzbiorami pewnej
+przestrzeni 
+. Wśród poniższych zdań wskaż prawa
+algebry zbiorów.
+○ 
+✓ 
+✓ 
+○ 
+○ 
+Pytanie 39: Zaznacz wszystkie zdania prawdziwe.
+○ Relację, która jest jednocześnie relacją przechodnią,
+symetryczną i spójną w zbiorze 
+ nazywamy relacją liniowo
+porządkującą zbiór 
+.
+○ Relację, która jest jednocześnie relacją przechodnią,
+symetryczną i przeciwzwrotną w zbiorze 
+ nazywamy relacją
+liniowo porządkującą zbiór 
+.
+○ Relację, która jest jednocześnie relacją przechodnią,
+antysymetryczną i spójną w zbiorze 
+ nazywamy relacją
+liniowo porządkującą zbiór 
+.
+○ Relację, która jest jednocześnie relacją zwrotną,
+antysymetryczną i spójną w zbiorze 
+ nazywamy relacją
+liniowo porządkującą zbiór 
+.
+○ Relację, która jest jednocześnie relacją zwrotną,
+przechodnią i antysymetryczną w zbiorze 
+ nazywamy relacją
+liniowo porządkującą zbiór 
+.
+A, B C
+U
+=
+A ∩B
+∩
+A
+B
+(A ∩B) ∪C = (A ∪C) ∩(B ∪C)
+(A ∪B) ∩C = (A ∩C) ∪(B ∩C)
+=
+A ∪B
+∪
+A
+B
+=
+A ∪B
+A ∩B
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+25/79
+Pytanie 40: Wśród poniższych zdań wskaż wszystkie zdania
+będące definicjami odpowiednich obiektów:
+✓ Słowem danego alfabetu 
+ jest dowolny skończony ciąg
+liter zbioru 
+.
+✓ Jeżeli przez 
+ oznaczymy zbiór wszystkich słów
+zbudowanych z liter alfabetu 
+, to dowolny podzbiór zbioru
+ jest językiem nad alfabetem 
+.
+○ Językiem nad alfabetem 
+ jest zbiór potęgowy zbioru 
+.
+○ Słowem danego alfabetu 
+ jest dowolny skończony ciąg
+liter zbioru 
+, który zawiera co najwyżej jedno wystąpienie
+każdego z elementów zbioru 
+.
+○ Jeżeli przez 
+ oznaczymy zbiór wszystkich słów
+zbudowanych z liter alfabetu 
+, to językiem nad alfabetem 
+jest 
+.
+Pytanie 41: Niech 
+ będzie dowolnym grafem i
+niech 
+. Wśród poniższych zdań wskaż wszystkie
+zdania prawdziwe.
+✓ Minimalna liczba wierzchołków, które rozdzielają 
+ od 
+równa jest maksymalnej liczbie rozłącznych ścieżek z 
+ do 
+.
+○ Minimalna liczba wierzchołków, które rozdzielają 
+ od 
+równa jest minimalnej liczbie rozłącznych ścieżek z 
+ do 
+.
+○ Minimalna liczba wierzchołków, które rozdzielają 
+ od 
+równa jest liczności zbioru 
+.
+○ Minimalna liczba wierzchołków, które rozdzielają 
+ od 
+równa jest liczności zbioru 
+.
+○ Minimalna liczba wierzchołków, które rozdzielają 
+ od 
+równa jest 
+.
+Σ
+Σ
+Σ∗
+Σ
+Σ∗
+Σ
+Σ
+Σ
+Σ
+Σ
+Σ
+Σ∗
+Σ
+Σ
+Σ ×
+∗
+Σ∗
+G = (V , E)
+X, Y ⊆V
+X
+Y
+X
+Y
+X
+Y
+X
+Y
+X
+Y
+X
+X
+Y
+Y
+X
+Y
+min ∣X∣, ∣Y ∣
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+26/79
+Pytanie 42: Obiekty 
+ i 
+utworzono ze zbioru 
+. Kolejność tych
+obiektów oraz uporządkowanie ich elementów nie są
+istotne. Obiekty te są przykładem:
+○ podziału uporządkowanego zbioru 
+ponieważ elementy w obiektach są ustawione alfabetycznie.
+○ podziału zbioru 
+ na dwa podzbiory.
+○ dwóch 4-elementowych wariacji bez powtórzeń ze zbioru
+6-elementowego.
+○ dwóch 4-elementowych permutacji bez powtórzeń ze
+zbioru 6-elementowego.
+✓ dwóch 4-elementowych kombinacji z powtórzeniami ze
+zbioru 6-elementowego.
+∣A, C, D, E∣∣B, E, F, F∣
+{A, B, C, D, E, F}
+{A, B, C, D, E, F}
+{A, B, C, D, E, F}
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+27/79
+Pytanie 43: Zaznacz zdania prawdziwe.
+○ Wszystkie -elementowe kombinacje bez powtórzeń z -
+elementowego zbioru, dla 
+, mogą być
+wygenerowane za pomocą generacji ze wszystkich liczb
+binarnych z zakresu od  do 
+.
+○ Każde rozmieszczenie  identycznych elementów w 
+rozróżnialnych pudełkach odpowiada -elementowej
+kombinacji bez powtórzeń ze zbioru -elementowego.
+✓ Z każdej -elementowej kombinacji bez powtórzeń ze
+zbioru -elementowego można utworzyć 
+ różnych -
+wyrazowych wariacji bez powtórzeń ze zbioru -
+elementowego.
+○ Liczba wszystkich -elementowych kombinacji bez
+powtórzeń z -elementowego zbioru wynosi 
+ gdzie 
+lub 
+○ Każda -elementowa kombinacja bez powtórzeń ze zbioru
+-elementowego odpowiada pewnemu podziałowi tego zbioru
+na  podzbiorów.
+Pytanie 44: Do 7 rozróżnialnych pudełek można wrzucić (w
+dowolny sposób) 4 identyczne elementy na
+○ 
+ sposobów.
+○ 
+ sposobów.
+✓ 
+ sposobów.
+○ 
+ sposobów.
+○ 
+ sposobów.
+k
+n
+k = 0, … , n
+1
+2n
+k
+n
+k
+n
+k
+n
+k!
+k
+n
+k
+n
+​
+(k
+n)
+n ≤k
+k < n
+k
+n
+k
+​
+(4
+7)
+74
+​
+(
+4
+7+4−1)
+47
+​
+(7−4)!
+7!
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+28/79
+Pytanie 45: Zaznacz zdania prawdziwe.
+○ -wyrazową permutacją z powtórzeniami ze zbioru -
+elementowego nazywamy każdy -wyrazowy ciąg mogących
+się powtarzać elementów tego zbioru.
+○ Permutacja z powtórzeniami może być interpretowana jako
+dowolne rozmieszczenie  rozróżnialnych obiektów w 
+rozróżnialnych pudełkach.
+○ -wyrazowe permutacje z powtórzeniami są równoważne 
+-wyrazowym wariacjom z powtórzeniami.
+✓ Liczba -wyrazowych permutacji z powtórzeniami jest nie
+większa niż liczba -wyrazowych permutacji bez powtórzeń.
+○ W -elementowej permutacji z powtórzeniami ze zbioru
+, w której element 
+ powtarza się 
+ razy, dla
+, zachodzi: 
+.
+k
+n
+k
+n
+k
+k
+k
+k
+k
+n
+{a
+​, … , a
+​}
+1
+n
+a
+​i
+n
+​i
+i = 1, … , k
+​ n
+​ = n!
+∑i=1
+k
+i
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+29/79
+Pytanie 46: Zaznacz zdania prawdziwe.
+○ Rozwiązanie liniowej jednorodnej zależności rekurencyjnej
+rzędu pierwszego ze stałymi współczynnikami postaci 
+ jest dane wzorem 
+, gdzie  oznacza pewną
+stałą i 
+.
+○ Rozwiązanie zależności liniowej jednorodnej rzędu
+drugiego ze stałymi współczynnikami o równaniu
+charakterystycznym o jednym pierwiastku podwójnym ma
+postać 
+, gdzie wartości stałych 
+ i 
+ są
+wyznaczane w oparciu o początkowe elementy ciągu.
+✓ Rozwiązanie problemu wież z Hanoi, 
+, jest przykładem niejednorodnej liniowej
+zależności rekurencyjnej rzędu pierwszego ze stałymi
+współczynnikami.
+○ Zależność postaci 
+,
+gdzie 
+ dla 
+ są pewnymi stałymi rzeczywistymi,
+ i 
+ nazywamy liniową jednorodną zależnością
+rekurencyjną rzędu k-tego ze stałymi współczynnikami.
+○ Każdy pierwiastek pojedynczy  równania
+charakterystycznego wprowadza do rozwiązania liniowej
+jednorodnej zależności rekurencyjnej ze stałymi
+współczynnikami rzędu 
+ czynnik 
+, gdzie  jest pewną
+stałą, którą można wyznaczyć w oparciu o początkowe wyrazy
+ciągu.
+a
+​ +
+n+1
+ca
+​ =
+n
+0
+a
+​ =
+n
+ca
+​0
+n
+c
+n ∈N
+a
+​ =
+n
+c
+​r +
+1 n
+c
+​nr
+2
+n
+c
+​1 c
+​2
+T
+​ =
+n
+2T
+​ +
+n−1
+1, n > 0, T
+​ =
+0
+0
+c
+​a
+​ +
+n
+n
+c
+​a
+​ +
+n−1
+n−1
+⋯+ c
+​a
+​ =
+k
+k
+0
+c
+​i
+i = n, … , k
+c
+​ =
+n 0 c
+​ =
+k 0
+r
+k ≥2
+rcn
+c
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+30/79
+Pytanie 47: Zależność rekurencyjna 
+ jest
+zależnością rekurencyjną liniową ze stałymi
+współczynnikami:
+○ rzędu drugiego jednorodną,
+○ rzędu drugiego niejednorodną,
+○ rzędu trzeciego jednorodną,
+✓ rzędu trzeciego niejednorodną,
+○ rzędu 
+-szego jednorodną.
+Pytanie 48: Zależność rekurencyjna 
+ jest zależnością:
+○ niejednorodną,
+○ dla której równanie charakterystyczne jest równaniem
+kwadratowym,
+○ o stałych współczynnikach,
+✓ która nie może być rozwiązana metodą równania
+charakterystycznego,
+○ dla której równanie charakterystyczne jest równaniem
+stopnia trzeciego.
+{a
+​ =
+0
+0, a
+​ =
+1
+3, a
+​ =
+2
+4, a
+​ +
+n+1
+3a
+​ =
+n−2
+3n dla n ≥2}
+(n + 1)
+{a
+​ =
+0
+1, a
+​ =
+1
+2, na
+​ =
+n
+3a
+​ ⋅
+n−1 a
+​ =
+n−2
+0 dla n ≥2}
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+31/79
+Pytanie 49: Zaznacz zdania prawdziwe:
+○ Pierwsza zasada indukcji matematycznej dla pewnego
+ ma postać: 
+.
+○ Pierwszą zasadę indukcji matematycznej stosuje się do
+dowodzenia twierdzeń, w których prawdziwość pewnego
+zdania wynika z prawdziwości jednego, dowolnego ze zdań
+poprzedzających.
+✓ Pierwsza zasada indukcji matematycznej dla 
+ ma
+postać: 
+.
+○ Zasada indukcji matematycznej może być wykorzystana do
+dowodzenia twierdzeń dotyczących dowolnych liczb dodatnich.
+○ Jeśli pewne twierdzenie 
+ nie jest prawdziwe dla
+pewnych początkowych wartości 
+, to może ono być
+udowodnione z wykorzystaniem drugiej zasady indukcji
+matematycznej.
+n
+​ ∈
+0
+Z+
+[S(n
+​) ∧
+0
+[∀
+​[S(k) ⟹
+k≥1
+S(k +
+1)]]] ⟹∀
+​S(n)
+n≥1
+n
+​ =
+0
+1
+[(∀
+​[S(k) ⟹
+k≥1
+S(k + 1)]) ∧S(1)] ⟹
+∀
+​S(n)
+n∈Z+
+∀
+​S(n)
+n∈Z+
+n ≥1
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+32/79
+Pytanie 50: Zaznacz zdania prawdziwe.
+○ Pierwsza i druga zasada indukcji matematycznej są sobie
+równoważne tylko dla pewnego rodzaju twierdzeń.
+○ Dowód kroku indukcyjnego w pierwszej zasadzie indukcji
+matematycznej wymaga wykazania prawdziwości zdania 
+ i
+prawdziwości zdania 
+ dla pewnej liczby 
+.
+○ Dowód pierwszej zasady indukcji matematycznej nie
+dowodzi poprawności drugiej zasady indukcji matematycznej,
+ponieważ jest ona inaczej sformułowana.
+○ Pierwszą zasadę indukcji matematycznej stosuje się do
+dowodzenia twierdzeń, w których prawdziwość pewnego
+zdania wynika z prawdziwości jednego ze zdań
+poprzedzających.
+✓ Drugą zasadę indukcji matematycznej można zastosować
+do dowodzenia twierdzeń dotyczących liczb całkowitych
+dodatnich, w których prawdziwość zdania 
+ dla 
+ wynika z prawdziwości kilku zdań poprzedzających.
+S(k)
+S(k + 1)
+k ≥1
+S(n)
+n = k +
+1
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+33/79
+Pytanie 51: Zaznacz zdania prawdziwe.
+○ Definicja rekurencyjna liczb Stirlinga drugiego rodzaju
+zawiera zależność postaci: 
+, a definicja rekurencyjna liczb Stirlinga
+pierwszego rodzaju: 
+ (gdzie 
+).
+✓ Liczby Stirlinga drugiego rodzaju opisujące liczbę
+sposobów podziału zbioru -elementowego na  niepustych
+rozłącznych podzbiorów są nie większe niż liczby Stirlinga
+pierwszego rodzaju opisujące liczbę sposobów rozmieszczenia
+ elementów w  cyklach.
+○ Liczby Eulera drugiego rzędu 
+ oznaczają liczbę
+permutacji z powtórzeniami multizbioru 
+zawierających  wniesień.
+○ Liczby harmoniczne pierwszego rzędu tworzą ciąg zbieżny
+do pewnej granicy, ponieważ zgodnie z definicją rekurencyjną
+każda kolejna liczba 
+ powstaje z poprzedniej liczby 
+przez dodanie ułamka 
+.
+○ W systemie liczbowym Fibonacciego, zbudowanym w
+oparciu o twierdzenie Zeckendorfa, do jednoznacznej
+reprezentacji liczb całkowitych dodatnich wykorzystuje się
+wszystkie liczby Fibonacciego 
+, dla 
+.
+S(n, k) = S(n −1, k) +
+kS(n −1, k −1)
+s(n, k) = s(n −1, k) + (n −1)s(n −
+1, k −1)
+n > k > 0
+n
+k
+n
+k
+​
+⟨⟨n
+k⟩⟩
+{1, 1, 2, 2, … , k, k}
+n
+H
+​
+n+1
+H
+​n
+​
+(n+1)
+1
+F
+​k
+k ≥0
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+34/79
+Pytanie 52: Zaznacz zdania prawdziwe.
+○ W ciągu liczby Stirlinga drugiego rodzaju mogą pojawić się
+liczby nie będące liczbami całkowitymi.
+✓ Każdej -elementowej permutacji bez powtórzeń ze zbioru
+-elementowego odpowiada pewien układ cykli i każdemu
+układowi cykli odpowiada pewna -elementowa permutacja
+bez powtórzeń ze zbioru -elementowego.
+○ Liczby harmoniczne rzędu , dla 
+, tworzą ciąg
+rozbieżny.
+○ Liczby Fibonacciego są liczbami opisanymi zależnością
+rekurencyjną rzędu trzeciego, ponieważ w definicji występują
+trzy elementy ciągu.
+○ Liczby Eulera związane są z liczbą cykli Eulera w grafie.
+Pytanie 53: Pełna poprawna zasada włączania i wyłączania
+dla 4 zbiorów jest formułą składającą się z:
+○ 4 składników, ponieważ są 4 zbiory.
+○ 16 składników, ponieważ należy sprawdzić część wspólną
+każdego zbioru z każdym.
+✓ 15 składników.
+○ 8 składników.
+○ nieznanej liczby składników, ponieważ ich liczba zależy od
+liczności tych zbiorów.
+n
+n
+n
+n
+r
+r > 1
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+35/79
+Pytanie 54: Zaznacz zdania prawdziwe.
+○ Zasada włączania i wyłączania mówi, że liczba elementów
+pewnego zbioru 
+, 
+, które nie spełniają żadnego z
+warunków 
+, 
+, jest równa 
+, gdzie 
+ oznacza liczbę elementów
+ spełniających warunek 
+.
+○ Zasada włączania i wyłączania w postaci alternatywnej
+dotyczy pewnego zbioru 
+, dla którego zdefiniowane są
+warunki 
+, 
+, które muszą być spełnione przez
+wszystkie elementy zbioru 
+.
+✓ Dla zbioru 
+ i warunków 
+, 
+, spełnionych przez
+pewne elementy ze zbioru 
+, liczba elementów, które nie
+spełniają żadnego z tych warunków wynosi: 
+.
+○ Symbol 
+ występujący w zasadzie włączania i
+wyłączania oznacza liczbę elementów ze zbioru 
+ spełniających
+warunki 
+ i 
+ i równocześnie nie spełniających pozostałych
+warunków 
+, 
+.
+○ Dowód zasady włączania i wyłączania w postaci
+alternatywnej jest oparty o prawa teorii mnogości.
+S ∣S∣= N
+c
+​i 1 ≤i ≤t
+N = N −N(c
+​) −
+1
+N(c
+​) −
+2
+... −N(c
+​)
+t
+N(c
+​)
+i
+S
+c
+​i
+S
+c
+​i 1 ≤i ≤t
+S
+S
+c
+​i 1 ≤i ≤t
+S
+N(
+​
+​...
+​) =
+c
+​1c
+​2
+c
+​t
+∣S∣−
+​ N(c
+​) +
+∑1≤i≤t
+i
+​ N(c
+​c
+​) −
+∑1≤i<j≤t
+i j
+​ N(c
+​c
+​c
+​) +
+∑1≤i<j<k≤t
+i j k
+⋯+ (−1) N(c
+​c
+​...c
+​)
+t
+1 2
+t
+N(c
+​c
+​)
+i j
+S
+c
+​i c
+​j
+c
+​k (1 ≤i, j, k ≤t, k =i, k =j)
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+36/79
+Pytanie 55: Zaznacz zdania prawdziwe.
+○ Zasada szufladkowa Dirichleta mówi, że jeśli skończony
+zbiór 
+ jest podzielony na  rozłącznych niepustych
+podzbiorów, to każdy z tych podzbiorów zawiera 
+elementów lub więcej.
+○ Dowód zasady szufladkowej Dirichleta wykorzystuje pojęcie
+uporządkowanego podziału zbioru.
+○ „Klasyczna” zasada szufladkowa Dirichleta w żaden sposób
+nie wynika z uogólnionej zasady szufladkowej Dirichleta,
+ponieważ dotyczy zbiorów o odmiennych własnościach.
+✓ Z zasady szufladkowej Dirichleta wynika, że jeśli skończony
+zbiór 
+ jest podzielony na  rozłącznych niepustych
+podzbiorów, to średnia liczność tych zbiorów wynosi 
+.
+○ Uogólniona zasada szufladkowa Dirichleta określa wartość
+średniej arytmetycznej liczb elementów zbiorów 
+będących rozłącznymi podzbiorami pewnego skończonego
+zbioru 
+.
+Pytanie 56: Średnia liczność zbiorów
+ będących podzbiorami zbioru 18-
+elementowego 
+, takimi, że każdy element 
+ należy do
+dokładnie 3 podzbiorów wynosi:
+○ nie może być określona.
+✓ dokładnie 9.
+○ co najwyżej 9.
+○ co najmniej 9.
+○ dokładnie 3.
+S
+k
+⌈∣S∣/k⌉
+S
+k
+​
+k
+∣S∣
+A
+​, ..., A
+​
+1
+k
+S
+A
+​, A
+​, A
+​, A
+​, A
+​, A
+​
+1
+2
+3
+4
+5
+6
+S
+S
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+37/79
+Pytanie 57: Zaznacz zdania prawdziwe.
+✓ Rozszerzenie prostokąta łacińskiego 
+ do kwadratu
+ jest zawsze możliwe i wymaga wyznaczenia transwersali
+rodziny zbiorów zawierających elementy nie występujące
+dotychczas w poszczególnych wierszach.
+○ Każda macierz o wymiarze 
+ zbudowana z elementów
+ze zbioru 
+, gdzie 
+, w której w
+żadnym wierszu elementy się nie powtarzają jest prostokątem
+łacińskim.
+○ Rozszerzenie dowolnego prostokąta łacińskiego o
+dodatkowe kolumny jest zawsze możliwe, należy jedynie w
+każdej nowej kolumnie umieszczać elementy występujące
+najrzadziej.
+○ Pewne prostokąty łacińskie 
+, w których liczba
+wystąpień niektórych elementów jest zbyt mała, nie mogą być
+rozszerzone do kwadratu łacińskiego 
+.
+○ Kwadratem grecko-łacińskim, czyli kwadratem Eulera,
+nazywamy złożenie dwóch dowolnych kwadratów łacińskich o
+takim samym rozmiarze.
+n × q
+n × n
+p × q
+{1, … , n}
+min(p, q) < n
+p × n
+n × n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+38/79
+Pytanie 58: Dany jest poniższy prostokąt łaciński 
+ ze
+zbioru 
+. Zaznacz kolumnę, której 
+dopisać do tego prostokąta, jeśli ma być nadal rozszerzalny
+do kwadratu łacińskiego 
+: 
+○ 
+○ 
+✓ 
+○ 
+○ 
+L
+{1, 6}
+nie mo na
+z˙
+6 × 6 L =
+​
+​
+​
+​
+​
+​
+2
+4
+3
+5
+3
+5
+4
+6
+4
+3
+6
+1
+6
+1
+2
+4
+​
+5
+2
+1
+3
+​
+1
+2
+5
+3
+​
+5
+6
+1
+3
+​
+5
+6
+1
+2
+​
+1
+6
+5
+2
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+39/79
+Pytanie 59: Zaznacz zdania prawdziwe.
+○ Wielomian szachowy 
+ to funkcja, której wartość oznacza liczbę
+możliwych rozmieszczeń  wzajemnie atakujących się wież na
+szachownicy o wymiarze 
+.
+○ Szachownica 
+ składa się z dwóch niezależnych obszarów
+ i 
+, to wówczas 
+.
+○ Dekompzycja wielomianów szachowych jest możliwa tylko i
+wyłącznie wówczas, jeśli daną szachownicę można podzielić na
+dwa rozłączne obszary nie mające wspólnych wierszy ani
+kolumn.
+✓ W dowolnym wielomianie szachowym dla szachownicy o
+wymiarze 
+ wszystkie współczynniki 
+ stojące przy 
+dla 
+ przyjmują wartość zerową.
+○ Szachownicę 
+ można zdekomponować, poprzez wybór
+pewnego pola dopuszczalnego , na dwie szachownice 
+ i
+, takie że w 
+ niedostępny jest wiersz, a w 
+ niedostępna
+jest kolumna zawierająca pole .
+Pytanie 60: Zaznacz funkcję tworzącą, która 
+wielomianem szachowym 
+ podanej
+szachownicy 
+: <img src="img/zad_20_sterna_2019-
+2020.png" height="100" />
+○ 
+✓ 
+○ 
+○ 
+○ 
+r
+​(x) =
+f
+1 + r
+​x +
+1
+r
+​x +
+2
+2
+... +
+r
+​x +
+k
+k
+... + r
+​x
+n
+n
+x
+n × n
+B
+C D
+r
+​(x) =
+f
+r
+​(x) +
+C
+xr
+​(x)
+D
+n × n
+r
+​k
+xk
+k > n
+B
+s
+B1
+B2
+B1
+B2
+s
+mo e by
+z˙
+cˊ
+dopełnienia
+B
+r
+​(x) =
+B
+1 + 15x + 35x +
+2
+50x +
+3
+26x +
+4
+4x5
+r
+​(x) =
+B
+1 + 10x + 35x +
+2
+50x +
+3
+26x +
+4
+4x5
+r
+​(x) =
+B
+1 + 15x + 35x +
+2
+50x +
+3
+26x +
+4
+4x6
+r
+​(x) =
+B
+1 + 10x + 35x +
+2
+50x +
+3
+26x +
+4
+4x6
+r
+​(x) =
+B
+1 + 25x + 35x +
+2
+50x +
+3
+26x +
+4
+4x5
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+40/79
+Pytanie 61: Wskaż wszystkie zdania prawdziwe:
+○ Zdania złożone 
+ są zdaniami logicznie
+równoważnymi, jeżeli 
+ ma wartość logiczną prawdy zawsze
+wtedy, gdy 
+ ma wartość logiczną prawdy.
+○ Zdania złożone 
+ są zdaniami logicznie
+równoważnymi, jeżeli 
+ ma wartość logiczną prawdy zawsze
+wtedy, gdy 
+ ma wartość logiczną prawdy.
+✓ Zdania złożone 
+ są zdaniami logicznie
+równoważnymi, jeżeli mają takie same wartości logiczne dla
+wszystkich możliwych sposobów przypisania wartości
+logicznych ich zmiennym zdaniowym.
+○ Zdania złożone 
+ są zdaniami logicznie
+równoważnymi, jeżeli 
+ ma wartość logiczną fałszu zawsze
+wtedy, gdy zdanie 
+ ma wartość logiczną fałszu.
+○ Zdania złożone 
+ są zdaniami logicznie
+równoważnymi, jeżeli 
+ i 
+ mają przeciwne wartości logiczne
+dla wszystkich możliwych sposobów przypisania wartości
+logicznych ich zmiennym zdaniowym.
+P i Q
+Q
+P
+P i Q
+P
+Q
+P i Q
+P i Q
+Q
+P
+P i Q
+P Q
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+41/79
+Pytanie 62: Wskaż wszystkie zdania prawdziwe:
+○ Jeżeli zdanie złożone 
+ zawiera zdanie 
+, 
+ jest zdaniem
+takim, że 
+ i w 
+ zastąpimy dokładnie jedno
+wystąpienie 
+ przez 
+, to otrzymamy zdanie złożone 
+ takie,
+że 
+.
+✓ Jeżeli zdanie złożone 
+ jest tautologią i wszystkie
+wystąpienia pewnej zmiennej  (zdania składowego)
+występującej w zdaniu 
+ zastąpimy zdaniem 
+, to otrzymane
+zdanie złożone 
+ będzie również tautologią.
+○ Jeżeli zdanie złożone 
+ zawiera zdanie 
+, 
+ jest zdaniem
+takim, że 
+ i w 
+ zastąpimy dokładnie jedno
+wystąpienie 
+ przez 
+, to otrzymamy zdanie złożone 
+ takie,
+że 
+.
+○ Jeżeli zdanie złożone 
+ jest zdaniem sprzecznym i
+wszystkie wystąpienia pewnej zmiennej  (zdania składowego)
+występującej w zdaniu 
+ zastąpimy zdaniem 
+, to otrzymane
+zdanie złożone 
+ będzie tautologią.
+✓ Jeżeli zdanie złożone 
+ zawiera zdanie 
+, 
+ jest zdaniem
+takim, że 
+ i w 
+ zastąpimy jedno lub więcej wystąpień
+ przez 
+, to otrzymamy zdanie złożone 
+ takie, że 
+.
+P
+Q R
+Q ⇒R
+P
+Q
+R
+P
+​1
+P ≡P
+​1
+P
+p
+P
+R
+P
+​1
+P
+Q R
+Q ⇒R
+P
+Q
+R
+P
+​1
+P ≡P
+​1
+P
+p
+P
+R
+P
+​1
+P
+Q R
+Q ⇔R
+P
+Q
+R
+P1
+P ≡P
+​1
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+42/79
+Pytanie 63: Wskaż definicję relacji równoważności:
+○ Relację 
+, która jest relacją przeciwzwrotną,
+symetryczną i przechodnią, nazywamy relacją równoważności.
+✓ Relację 
+, która jest relacją zwrotną,
+symetryczną i przechodnią, nazywamy relacją równoważności.
+○ Relację 
+, która jest relacją zwrotną,
+antysymetryczną i przechodnią, nazywamy relacją
+równoważności.
+○ Relację 
+, która jest relacją przeciwzwrotną,
+antysymetryczną i przechodnią, nazywamy relacją
+równoważności.
+○ Relację 
+, która jest spójną, symetryczną i
+przechodnią, nazywamy relacją równoważności.
+ρ ⊆X × X
+ρ ⊆X × X
+ρ ⊆X × X
+ρ ⊆X × X
+ρ ⊆X × X
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+43/79
+Pytanie 64: Wskaż zdania będące definicjami izomorfizmu
+grafów:
+○ Funkcja 
+ jest izomorfizmem grafów, jeżeli 
+jest funkcją wzajemnie jednoznaczną oraz dla każdej pary
+wierzchołków 
+, 
+ wtedy i tylko wtedy,
+gdy 
+.
+○ Funkcja 
+ jest izomorfizmem grafów, jeżeli 
+jest funkcją wzajemnie jednoznaczną oraz dla każdej pary
+wierzchołków 
+, 
+ wtedy i tylko wtedy,
+gdy 
+.
+✓ Funkcja 
+ jest izomorfizmem grafów, jeżeli 
+jest funkcją wzajemnie jednoznaczną oraz dla każdej pary
+wierzchołków 
+, 
+ wtedy i tylko wtedy,
+gdy 
+.
+○ Funkcja 
+ jest izomorfizmem grafów, jeżeli 
+jest funkcją wzajemnie jednoznaczną oraz dla każdej pary
+wierzchołków 
+, 
+ wtedy i tylko wtedy,
+gdy 
+.
+○ Funkcja 
+ jest izomorfizmem grafów, jeżeli 
+jest funkcją wzajemnie jednoznaczną oraz dla każdej pary
+wierzchołków 
+, 
+ wtedy i tylko
+wtedy, gdy 
+.
+f : V
+​ →
+1
+V
+​2
+f
+x, y ∈V
+​1 {x, y} ∈E
+​2
+{f(x), f(y)} ∈E
+​2
+f : V
+​ →
+1
+V
+​2
+f
+x, y ∈V
+​1 {x, y} ∈E
+​1
+{f(x), f(y)} ∈E
+​1
+f : V
+​ →
+1
+V
+​2
+f
+x, y ∈V
+​1 {x, y} ∈E
+​1
+{f(x), f(y)} ∈E
+​2
+f : V
+​ →
+1
+V
+​2
+f
+x, y ∈V
+​1 {x, y} ∈E
+​1
+{f(x), f(y)} ∈/ E
+​2
+f : V
+​ →
+1
+V
+​2
+f
+x, y ∈V
+​1 {f(x), f(y)} ∈E
+​1
+{f(x), f(y)} ∈E
+​2
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+44/79
+Pytanie 65: Niech 
+ będzie grafem
+dwudzielnym. Wśród poniższych zdań wskaż wszystkie
+zdania prawdziwe.
+○ Skojarzeniem z 
+ do 
+ w 
+ jest zbiór złożony z 
+krawędzi, które nie mają wspólnych wierzchołków końcowych.
+✓ Skojarzeniem z 
+ do 
+ w 
+ jest zbiór złożony z 
+krawędzi, które nie mają wspólnych wierzchołków końcowych.
+○ Skojarzeniem z 
+ do 
+ w 
+ jest zbiór z tych krawędzi,
+które oba wierzchołki końcowe mają w zbiorze 
+.
+○ Skojarzeniem z 
+ do 
+ w 
+ jest zbiór z tych krawędzi,
+które oba wierzchołki końcowe mają w zbiorze 
+.
+○ Skojarzeniem z 
+ do 
+ w 
+ jest podzbiór zbioru 
+zawierający wszystkie wierzchołki o stopniu parzystym.
+Pytanie 66: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe:
+✓ Jeżeli 
+, to równanie diofantyczne 
+ma rozwiązania całkowite 
+ wtedy i tylko wtedy,
+gdy 
+ dzieli .
+○ Jeżeli 
+, to równanie diofantyczne 
+ma rozwiązania całkowite 
+ wtedy i tylko wtedy,
+gdy  dzieli 
+.
+○ Jeżeli 
+, to równanie diofantyczne 
+ma rozwiązania całkowite 
+ wtedy i tylko wtedy,
+gdy  i  są liczbami pierwszymi.
+○ Jeżeli 
+, to równanie diofantyczne 
+ma rozwiązania całkowite 
+ wtedy i tylko wtedy,
+gdy  dzieli 
+.
+○ Jeżeli 
+, to równanie diofantyczne 
+ma rozwiązania całkowite 
+ wtedy i tylko wtedy,
+gdy 
+ dzieli .
+G = (V
+​, V
+​, E)
+1
+2
+V
+​1
+V
+​2
+G
+∣V
+​∣
+2
+V
+​1
+V
+​2
+G
+∣V
+​∣
+1
+V
+​1
+V
+​2
+G
+V
+​1
+V
+​1
+V
+​2
+G
+V
+​2
+V
+​1
+V
+​2
+G
+V
+​1
+a, b, c ∈P
+ax + by = c
+x = x
+​, y =
+0
+y
+​0
+gcd(a, b)
+c
+a, b, c ∈P
+ax + by = c
+x = x
+​, y =
+0
+y
+​0
+c
+gcd(a, b)
+a, b, c ∈P
+ax + by = c
+x = x
+​, y =
+0
+y
+​0
+a b
+a, b, c ∈P
+ax + by = c
+x = x
+​, y =
+0
+y
+​0
+c
+lcm(a, b)
+a, b, c ∈P
+ax + by = c
+x = x
+​, y =
+0
+y
+​0
+lcm(a, b)
+c
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+45/79
+Pytanie 67: Niech 
+ będzie grafem sprzężonym pewnego
+grafu 
+. Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe:
+○ W grafie 
+ istnieje ścieżka Hamiltona wtedy i tylko wtedy,
+gdy w grafie 
+ istnieje droga Eulera.
+✓ W grafie 
+ istnieje droga Eulera wtedy i tylko wtedy, gdy w
+grafie 
+ istnieje ścieżka Hamiltona.
+○ W grafie 
+ istnieje droga Eulera wtedy i tylko wtedy, gdy w
+grafie 
+ istnieje obwód Eulera.
+○ W grafie 
+ istnieje ścieżka Hamiltona wtedy i tylko wtedy,
+gdy w grafie 
+ istnieje cykl Hamiltona.
+○ W grafie 
+ istnieje cykl Hamiltona wtedy i tylko wtedy, gdy
+w grafie 
+ istnieje ścieżka Hamiltona.
+H
+G
+G
+H
+G
+H
+G
+H
+G
+H
+G
+H
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+46/79
+Pytanie 68: Niech 
+ będzie grafem
+dwudzielnym. Wśród poniższych zdań wskaż wszystkie
+zdania prawdziwe:
+✓ Minimalna liczba wierzchołków grafu 
+, wśród których jest
+co najmniej jeden koniec każdej jego krawędzi równa jest
+maksymalnej liczbie krawędzi w skojarzeniu.
+○ Minimalna liczba wierzchołków grafu 
+, wśród których jest
+co najmniej jeden koniec każdej jego krawędzi równa jest
+minimalnej liczbie krawędzi w skojarzeniu.
+○ Minimalna liczba wierzchołków grafu 
+, wśród których jest
+co najmniej jeden koniec każdej jego krawędzi równa jest
+liczbie krawędzi grafu 
+.
+○ Maksymalna liczba wierzchołków grafu 
+, wśród których
+jest co najmniej jeden koniec każdej jego krawędzi równa jest
+minimalnej liczbie wierzchołków w skojarzeniu.
+○ Maksymalna liczba wierzchołków grafu 
+, wśród których
+jest co najmniej jeden koniec każdej jego krawędzi równa jest
+maksymalnej liczbie wierzchołków w skojarzeniu.
+Pytanie 69: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe:
+○ 
+ jest wykładniczą funkcją
+tworzącą sekwencji liczb 
+✓ 
+jest funkcją tworzącą
+sekwencji liczb 
+✓ 
+ jest funkcją tworzącą
+sekwencji liczb 
+○ 
+ jest wykładniczą funkcją
+tworzącą sekwencji liczb 
+○ 
+ jest funkcją tworzącą
+sekwencji liczb 
+G = (V
+​, V
+​, E)
+1
+2
+G
+G
+G
+G
+G
+G
+1 + 2 x +
+2
+3 x +
+2
+2
+4 x +
+2
+3
+...
+1 , 2 , 3 , 4 , ...
+2
+2
+2
+2
+1 + 2 x +
+2
+3 x +
+2
+2
+4 x +
+2
+3
+...
+1 , 2 , 3 , 4 , ...
+2
+2
+2
+2
+x + 2 x +
+2
+2
+3 x +
+2
+2
+4 x +
+2
+4
+...
+0 , 1 , 2 , 3 , 4 , ...
+2
+2
+2
+2
+2
+x + 2 x +
+2
+2
+3 x +
+2
+2
+4 x +
+2
+4
+...
+0 , 1 , 2 , 3 , 4 , ...
+2
+2
+2
+2
+2
+x + 2 x +
+2
+2
+3 x +
+2
+2
+4 x +
+2
+4
+...
+1 , 2 , 3 , 4 , ...
+2
+2
+2
+2
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+47/79
+Pytanie 70: Funkcję 
+ można przedstawić w postaci: 
+. Wśród
+poniższych zdań wskaż wszystkie zdania prawdziwe:
+○ 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+.
+○ 
+ jest funkcją tworzącą sekwencji liczb 
+.
+✓ 
+ jest funkcją tworzącą sekwencji liczb 
+.
+○ 
+ jest funkcją tworzącą sekwencji liczb
+.
+✓ 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+.
+Pytanie 71: Zaznacz wszystkie zdania prawdziwe:
+○ Zdaniem odwrotnym do zdania 
+ jest zdanie 
+.
+✓ Zdaniem przeciwstawnym do zdania 
+ jest zdanie
+.
+○ Zdanie złożone jest tautologią, jeżeli jest ono fałszywe
+niezależnie od wartości logicznych jego zdań składowych.
+○ Zdaniem odwrotnym do zdania 
+ jest zdanie 
+.
+○ Zdaniem przeciwstawnym do zdania 
+ jest zdanie
+.
+ex
+e =
+x
+1 + x +
+​ +
+2!
+x2
+​ +
+3!
+x3
+​ +
+4!
+x4
+⋯=
+​
+​
+∑i=0
+∞
+i!
+xi
+ex
+1, 1,
+​,
+​,
+​, …
+2!
+1
+3!
+1
+4!
+1
+ex
+1, 1, 1, 1, 1, 1, …
+ex
+1, 1,
+​,
+​,
+​, …
+2!
+1
+3!
+1
+4!
+1
+ex
+1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, …
+ex
+1, 1, 1, 1, 1, 1, …
+p →q
+p →¬q
+p →q
+¬q →¬p
+p →q
+¬p →
+¬q
+p →q
+¬q →p
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+48/79
+Pytanie 72: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe:
+○  i 
+ są liczbami względnie pierwszymi.
+✓  i  są liczbami względnie pierwszymi.
+○  jest najmniejszą liczbą pierwszą.
+✓  jest najmniejszą liczbą pierwszą.
+○  jest najmniejszą liczbą pierwszą.
+Pytanie 73: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe:
+○ Rodzina zbiorów 
+ ma transwersalę
+wtedy i tylko wtedy, gdy 
+ dla wszystkich 
+.
+○ Jeżeli 
+ jest rodziną zbiorów, a
+, to 
+ ma transwersalę, która
+zawiera zbiór 
+ wtedy i tylko wtedy, gdy 
+ ma transwersalę
+oraz 
+ dla każdego 
+.
+✓ Rodzina zbiorów 
+ ma transwersalę
+wtedy i tylko wtedy, gdy 
+ dla wszystkich 
+.
+✓ Jeżeli 
+ jest rodziną zbiorów, a
+, to 
+ ma transwersalę, która
+zawiera zbiór 
+ wtedy i tylko wtedy, gdy 
+ ma transwersalę
+oraz 
+ dla każdego 
+.
+○ Transwersalą rodziny zbiorów 
+ jest
+zbiór 
+,
+którego elementy mogą zostać zapisane w pewnym porządku.
+5 10
+2 3
+1
+2
+0
+A = (A
+​, A
+​, … , A
+​)
+1
+2
+n
+∣
+​ A
+​∣≥
+⋃i∈I
+i
+∣I∣
+I ⊆
+{A
+​, A
+​, … , A
+​}
+1
+2
+n
+A = (A
+​, A
+​, … , A
+​)
+1
+2
+n
+P ⊆A
+​ ∪
+1
+A
+​ ∪
+2
+⋯∪A
+​n
+A
+P
+A
+∣P ∖(
+​ A
+​)∣≥
+⋃i∈I
+i
+n −∣I∣
+I ⊆
+{1, 2, … , n}
+A = (A
+​, A
+​, … , A
+​)
+1
+2
+n
+∣
+​ A
+​∣≥
+⋃i∈I
+i
+∣I∣
+I ⊆
+{1, 2, … , n}
+A = (A
+​, A
+​, … , A
+​)
+1
+2
+n
+P ⊆A
+​ ∪
+1
+A
+​ ∪
+2
+⋯∪A
+​n
+A
+P
+A
+∣P ∖(
+​ A
+​)∣≤
+⋃i∈I
+i
+n −∣I∣
+I ⊆
+{1, 2, … , n}
+A = (A
+​, A
+​, … , A
+​)
+1
+2
+n
+Y = (A ∪
+1
+A
+​ ∪
+2
+⋯∪A
+​) ∖
+n
+(A
+​ ∩
+1
+A
+​ ∩
+2
+⋯∩A
+​)
+n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+49/79
+Pytanie 74: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe:
+○ Każdy graf 
+-etykietowalny jest również 
+-
+etykietowalny, gdzie  jest liczbą wierzchołków w grafie.
+✓ Jeżeli graf 
+ jest etykietowalny za pomocą etykiet o
+długości 
+ zbudowanych nad alfabetem o dowolnej
+liczności, to jest on również etykietowalny za pomocą etykiet o
+długości 
+ zbudowanych nad alfabetem o
+dowolnej liczności.
+✓ Każdy graf 
+-etykietowalny jest również 
+-
+etykietowalny, gdzie  jest liczbą wierzchołków w grafie.
+○ Grafu niespójnego nie można zaetykietować.
+○ Każdy graf 
+-etykietowalny jest również 
+-
+etykietowalny, gdzie  jest liczbą wierzchołków w grafie.
+Pytanie 75: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe:
+○ Liczby całkowite  i  są względnie pierwsze, jeżeli istnieją
+liczby całkowite  i , takie że 
+.
+✓ Liczby całkowite  i  są względnie pierwsze, jeżeli
+.
+○ Liczby całkowite  i  są względnie pierwsze, jeżeli
+.
+✓ Liczby całkowite  i  są względnie pierwsze, jeżeli istnieją
+liczby całkowite  i , takie że 
+.
+○ Liczby całkowite  i  są względnie pierwsze, jeżeli istnieją
+liczby całkowite  i , takie że 
+.d
+(∞, k)
+(n −k, k)
+n
+G
+k > 2
+l = 2, … , k −1
+(∞, k)
+(nk, k)
+n
+(∞, k)
+(k, nk)
+n
+a b
+x y
+ax + by = 2
+a b
+gcd(a, b) = 1
+a b
+gcd(a, b) = 0
+a b
+x y
+ax + by = 1
+a b
+x y
+ax + by =
+​2
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+50/79
+Pytanie 76: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe:
+○ Funkcja 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+rzeczywistych 
+.
+✓ Funkcja 
+ jest funkcją tworzącą sekwencji liczb rzeczywistych
+.
+○ Funkcja 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+rzeczywistych 
+.
+○ Funkcja 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+rzeczywistych 
+.
+✓ Funkcja 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+rzeczywistych 
+.
+f(x) = a
+​x
+​ +
+0
+0
+a
+​x
+​ +
+1
+1
+a
+​x
+​ +
+2
+2
+2
+a
+​x
+​ +
+3
+3
+3
+⋯=
+​ a
+​x
+​
+∑i=0
+∞
+i
+i
+i
+a
+​, a
+​x
+​, a
+​x
+​, a
+​x
+​, …
+0
+1
+1
+2
+2
+3
+3
+f(x) = a
+​ +
+0
+a
+​x +
+1
+a
+​x +
+2
+2
+a
+​x +
+3
+3
+⋯=
+​ a
+​x
+∑i=0
+∞
+i
+i
+a
+​, a
+​, a
+​, a
+​, …
+0
+1
+2
+3
+f(x) =
+​ +
+a
+​0
+1
+​ +
+a
+​1
+x
+​ +
+a
+​2
+2!x2
+​ +
+a
+​3
+3!x3
+⋯=
+​
+​
+∑i=0
+∞
+a
+​i
+i!xi
+a
+​, a
+​, a
+​, a
+​, …
+0
+1
+2
+3
+f(x) = a
+​ +
+0
+a
+​x +
+1
+a
+​x +
+2
+2
+a
+​x +
+3
+3
+⋯=
+​ a
+​x
+∑i=0
+∞
+i
+i
+a
+​, a
+​, a
+​, a
+​, …
+0
+1
+2
+3
+f(x) = a
+​ +
+0
+a
+​x +
+1
+​ +
+2!
+a
+​x
+2
+2
+​ +
+3!
+a
+​x
+3
+3
+⋯=
+​
+​
+∑i=0
+∞
+i!
+a
+​x
+i
+i
+a
+​, a
+​, a
+​, a
+​, …
+0
+1
+2
+3
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+51/79
+Pytanie 77: Wybierz wszystkie poprawne:
+○ Relację, która jest jednocześnie relacją przechodnią,
+symetryczną i spójną w zbiorze 
+ nazywamy relacją liniowo
+porządkującą zbiór 
+.
+○ Relację, która jest jednocześnie relacją przechodnią,
+symetryczną i przeciwzwrotną w zbiorze 
+ nazywamy relacją
+liniowo porządkującą zbiór 
+.
+○ Relację, która jest jednocześnie relacją zwrotną,
+antysymetryczną i spójną w zbiorze 
+ nazywamy relacją
+liniowo porządkującą zbiór 
+.
+✓ Relację, która jest jednocześnie relacją przechodnią,
+antysymetryczną, zwrotną i spójną w zbiorze 
+ nazywamy
+relacją liniowo porządkującą zbiór 
+.
+○ Relację, która jest jednocześnie relacją zwrotną,
+przechodnią i antysymetryczną w zbiorze 
+ nazywamy relacją
+liniowo porządkującą zbiór 
+.
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+52/79
+Pytanie 78: Wybierz wszystkie poprawne:
+○ Graf 
+ jest grafem dwudzielnym, jeżeli
+występuje w nim parzysta liczba rozłącznych ścieżek Hamiltona.
+○ Graf 
+ jest grafem dwudzielnym, jeżeli 
+, 
+ oraz dla każdej krawędzi 
+zachodzi 
+.
+✓ Graf 
+ jest grafem dwudzielnym, jeżeli jego
+zbiór wierzchołków można podzielić na dwa rozłączne
+podzbiory w taki sposób, że żadna krawędź występująca w tym
+grafie nie jest incydentna z dwoma wierzchołkami należącymi
+do tego samego podzbioru.
+○ Graf 
+ jest grafem dwudzielnym, jeżeli
+występuje w nim parzysta liczba rozłącznych cykli.
+✓ Graf 
+ jest grafem dwudzielnym, jeżeli 
+, 
+ oraz dla każdej krawędzi 
+zachodzi 
+.
+Pytanie 79: Wybierz wszystkie poprawne:
+○ Skojarzenie w grafie 
+ jest to największy
+podgraf pełny tego grafu.
+○ Skojarzenie w grafie 
+ jest to jego drzewo
+rozpinające.
+○ Skojarzenie w grafie 
+ jest to ścieżka
+przechodząca przez wszystkie jego wierzchołki.
+○ Skojarzenie w grafie 
+ jest to droga
+przechodząca przez wszystkie jego krawędzie.
+✓ Skojarzenie w grafie 
+ jest to zbiór krawędzi, z
+których żadne dwie nie mają wspólnego wierzchołka
+końcowego.
+G = (V , E)
+G = (V , E)
+V =
+V
+​ ∪
+1
+V
+​2 V
+​ ⊆
+1
+V
+​2
+{x, y} ∈E
+x ∈V
+​ ∧
+1
+y ∈V
+​2
+G = (V , E)
+G = (V , E)
+G = (V , E)
+V =
+V
+​ ∪
+1
+V
+​2 V
+​ ∩
+1
+V
+​ =
+2
+∅
+{x, y} ∈E
+x ∈V
+​ ∧
+1
+y ∈V
+​2
+G = (V , E)
+G = (V , E)
+G = (V , E)
+G = (V , E)
+G = (V , E)
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+53/79
+Pytanie 80: Wśród poniższych zdań wskaż wszystkie zdania
+będące definicjami drzewa.
+○ Graf 
+ jest drzewem, jeżeli posiada korzeń.
+○ Graf 
+ jest drzewem, jeżeli nie zawiera cykli i
+.
+✓ Graf 
+ jest drzewem, jeżeli nie zawiera cykli i
+jeżeli 
+ oraz 
+, to dodanie do 
+ krawędzi
+ spowoduje powstanie grafu 
+ zawierającego
+dokładnie jeden cykl.
+✓ Graf 
+ jest drzewem, jeżeli nie zawiera cykli i
+.
+○ Graf 
+ jest drzewem, jeżeli jest spójny i 
+.
+G = (V , E)
+G = (V , E)
+∣V ∣= ∣E∣−1
+G = (V , E)
+x, y ∈V
+{x, y} ∈/ E
+G
+{x, y}
+G′
+G = (V , E)
+∣V ∣= ∣E∣+ 1
+G = (V , E)
+∣V ∣=
+∣E∣−1
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+54/79
+Pytanie 81: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe.
+○ 1-graf 
+ jest grafem sprzężonym wtedy i tylko
+wtedy, gdy dla każdej pary wierzchołków 
+ spełniony
+jest następujący warunek: 
+.
+✓ 1-graf 
+ jest grafem sprzężonym wtedy i tylko
+wtedy, gdy dla każdej pary wierzchołków 
+ spełniony
+jest następujący warunek: 
+.
+○ 1-graf 
+ jest grafem sprzężonym wtedy i tylko
+wtedy, gdy dla każdej pary wierzchołków 
+ spełniony
+jest następujący warunek: 
+.
+○ 1-graf 
+ jest grafem sprzężonym wtedy i tylko
+wtedy, gdy dla każdej pary wierzchołków 
+ spełniony
+jest następujący warunek: 
+.
+○ 1-graf 
+ jest grafem sprzężonym wtedy i tylko
+wtedy, gdy dla każdej pary wierzchołków 
+ spełniony
+jest następujący warunek: 
+.
+H = (A, U)
+x, y ∈A
+N (x) ∩
++
+N (y) =
++
+∅⇒
+N (x) ∩
+−
+N (y) =
+−
+∅
+H = (A, U)
+x, y ∈A
+N (x) ∩
++
+N (y) =
++
+∅⇒
+N (x) =
++
+N (y)
++
+H = (A, U)
+x, y ∈A
+N (x) ∩
++
+N (y) =
++
+∅⇒
+(N (x) =
++
+N (y) ∧
++
+N (x) ∩
+−
+N (y) =
+−
+∅)
+H = (A, U)
+x, y ∈A
+N (x) ∩
+−
+N (y) =
+−
+∅⇒
+N (x) ∩
++
+N (y) =
++
+∅
+H = (A, U)
+x, y ∈A
+N (x) ∩
++
+N (y) =
++
+∅⇒
+N (x) ∩
+−
+N (y) =
+−
+∅
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+55/79
+Pytanie 82: Niech 
+ będzie grafem
+nieskierowanym bez wierzchołków izolowanych. Wśród
+poniższych zdań wskaż zdania prawdziwe.
+○ 
+ zawiera cykl Hamiltona wtedy i tylko wtedy, gdy 
+ jest
+spójny i każdy wierzchołek 
+ ma nieparzysty stopień.
+○ 
+ zawiera drogę Eulera wtedy i tylko wtedy, gdy 
+ jest
+spójny i zawiera dokładnie dwa wierzchołki o stopniu
+nieparzystym.
+✓ 
+ zawiera obwód Eulera wtedy i tylko wtedy, gdy 
+ jest
+spójny i każdy wierzchołek 
+ ma parzysty stopień.
+○ 
+ zawiera drogę Eulera wtedy i tylko wtedy, gdy 
+ jest
+spójny i zawiera dokładnie dwa wierzchołki o stopniu
+parzystym.
+○ 
+ zawiera cykl Hamiltona wtedy i tylko wtedy, gdy 
+ jest
+spójny i każdy wierzchołek 
+ ma parzysty stopień.
+Pytanie 83: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe.
+✓ 
+ jest funkcją tworzącą
+sekwencji liczb 
+.
+○ 
+ jest funkcją tworzącą
+sekwencji liczb 
+.
+○ 
+ jest funkcją tworzącą
+sekwencji liczb 
+.
+○ 
+ jest wykładniczą
+funkcją tworzącą sekwencji liczb 
+.
+○ 
+ jest funkcją tworzącą
+sekwencji liczb 
+.
+G = (V , E)
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+1 + 2x + 3x +
+2
+4x +
+3
+5x +
+4
+…
+1, 2, 3, 4, 5, …
+x + x +
+2
+x +
+3
+x +
+4
+x +
+5
+…
+0, 1, 2, 3, 4, …
+1 + 2x + 3x +
+2
+4x +
+3
+5x +
+4
+…
+0, 1, 2, 3, 4, …
+1 + 2x + 3x +
+2
+4x +
+3
+5x +
+4
+…
+1, 2, 3, 4, 5, …
+x + x +
+2
+x +
+3
+x +
+4
+x +
+5
+…
+1, 2, 3, 4, 5, …
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+56/79
+Pytanie 84: Wybierz wszystkie poprawne:
+✓ Między dwoma dowolnymi wierzchołkami  i  należącymi
+do sieci minimalna przepustowość przekroju, który rozdziela 
+od , równa jest maksymalnej wartości przepływu z  do .
+○ Między dwoma dowolnymi wierzchołkami  i  należącymi
+do sieci maksymalna przepustowość przekroju, który rozdziela
+ od , równa jest minimalnej wartości przepływu z  do .
+○ Między dwoma dowolnymi wierzchołkami  i  należącymi
+do sieci minimalna przepustowość przekroju, który rozdziela 
+od , równa jest minimalnej wartości przepływu z  do .
+○ Między dwoma dowolnymi wierzchołkami  i  należącymi
+do sieci maksymalna przepustowość przekroju, który rozdziela
+ od , równa jest maksymalnej wartości przepływu z  do .
+○ Między dwoma dowolnymi wierzchołkami  i  należącymi
+do sieci minimalna przepustowość przekroju, który rozdziela 
+od , równa jest 
+.
+x y
+x
+y
+x
+y
+x y
+x
+y
+x
+y
+x y
+x
+y
+x
+y
+x y
+x
+y
+x
+y
+x y
+x
+y
+out(x)
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+57/79
+Pytanie 85: Wybierz wszystkie poprawne:
+○ Jeżeli liczby 
+ są wynikiem pewnego turnieju,
+to ich suma może być większa niż 
+.
+○ Jeżeli liczby 
+ są wynikiem pewnego turnieju,
+to ich suma może być mniejsza niż 
+.
+○ Jeżeli liczby 
+ są wynikiem pewnego turnieju,
+to dla pewnego , takiego że 
+, można wybrać 
+spośród tych liczb w taki sposób, że suma wybranych liczb jest
+mniejsza niż 
+.
+✓ Jeżeli liczby 
+ są wynikiem pewnego turnieju,
+to dla żadnego , takiego że 
+, nie można wybrać 
+spośród tych liczb w taki sposób, że suma wybranych liczb jest
+mniejsza niż 
+.
+✓ Jeżeli liczby 
+ są wynikiem pewnego turnieju,
+to ich suma nie może być ani mniejsza, ani większa niż 
+.
+Pytanie 86: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe.
+○ W grafie de Bruijna 
+ może wystąpić co najwyżej 
+etykiet o długości .
+○ W grafie de Bruijna 
+ może wystąpić co najwyżej 
+etykiet o długości .
+○ Graf de Bruijna 
+ zawiera 
+ łuków.
+○ Graf de Bruijna 
+ zawiera 
+ wierzchołków.
+✓ Graf de Bruijna 
+ zawiera 
+ wierzchołków.
+b
+​, b
+​, … , b
+​
+1
+2
+n
+​
+(2
+n)
+b
+​, b
+​, … , b
+​
+1
+2
+n
+​
+(2
+n)
+b
+​, b
+​, … , b
+​
+1
+2
+n
+r
+2 ≤r ≤n
+r
+​
+(2
+n)
+b
+​, b
+​, … , b
+​
+1
+2
+n
+r
+2 ≤r ≤n
+r
+​
+(2
+r)
+b
+​, b
+​, … , b
+​
+1
+2
+n
+​
+(2
+n)
+B(d, k)
+k
+d
+B(d, k)
+d
+k
+B(d, k)
+kd
+B(d, k)
+kd
+B(d, k)
+dk
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+58/79
+Pytanie 87: Wśród poniższych zdań wskaż wszystkie zdania
+prawdziwe.
+○ Funkcja 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+rzeczywistych 
+.
+○ Funkcja 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+rzeczywistych 
+.
+○ Funkcja 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+rzeczywistych 
+.
+✓ Funkcja 
+ jest funkcją tworzącą sekwencji liczb rzeczywistych
+.
+✓ Funkcja 
+ jest wykładniczą funkcją tworzącą sekwencji liczb
+rzeczywistych 
+.
+f(x) = a
+​ +
+0
+a
+​x +
+1
+a
+​x +
+2
+2
+a
+​x +
+3
+3
+⋯=
+​ a
+​x
+∑i=0
+∞
+i
+i
+a
+​, a
+​, a
+​, a
+​, …
+0
+1
+2
+3
+f(x) = a
+​ +
+0
+0
+a
+​x +
+1
+1
+a
+​x +
+2
+2
+a
+​x +
+3
+3
+⋯=
+​ a
+​x
+∑i=0
+∞
+i
+i
+a
+​x
+​, a
+​x
+​, a
+​x
+​, a
+​x
+​, …
+0
+0
+1
+1
+2
+2
+3
+3
+f(x) =
+​ +
+a
+​0
+1
+​ +
+a
+​1
+x
+​ +
+a
+​2
+2!x2
+​ +
+a
+​3
+3!x3
+⋯=
+​
+​
+∑i=0
+∞
+a
+​i
+i!xi
+a
+​, a
+​, a
+​, a
+​, …
+0
+1
+2
+3
+f(x) = a
+​ +
+0
+a
+​x +
+1
+a
+​x +
+2
+2
+a
+​x +
+3
+3
+⋯=
+​ a
+​x
+∑i=0
+∞
+i
+i
+a
+​, a
+​, a
+​, a
+​, …
+0
+1
+2
+3
+f(x) = a
+​ +
+0
+a
+​x +
+1
+​ +
+2!
+a
+​x
+2
+2
+​ +
+3!
+a
+​x
+3
+3
+⋯=
+​
+​
+∑i=0
+∞
+i!
+a
+​x
+i
+i
+a
+​, a
+​, a
+​, a
+​, …
+0
+1
+2
+3
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+59/79
+Pytanie 88: Wśród poniższych zdań wskaż definicje
+odpowiednich relacji.
+○ Relację 
+ nazywamy spójną wtedy i tylko wtedy,
+gdy warunki 
+ i 
+ implikują warunek
+ dla każdych trzech elementów 
+ zbioru 
+.
+✓ Relację 
+ nazywamy symetryczną wtedy i tylko
+wtedy, gdy z warunku 
+ wynika warunek 
+dla każdego 
+.
+○ Relację 
+ nazywamy zwrotną wtedy i tylko
+wtedy, gdy dla każdego 
+ spełniony jest warunek
+.
+✓ Relację 
+ nazywamy antysymetryczną wtedy i
+tylko wtedy, gdy warunki 
+ i 
+ pociągają za
+sobą warunek 
+ dla każdej pary 
+ elementów zbioru
+.
+○ Relację 
+ nazywamy przeciwzwrotną wtedy i
+tylko wtedy, gdy dla każdego 
+ spełniony jest warunek
+.
+ρ ⊂X × X
+⟨x, y⟩∈ρ ⟨y, z⟩∈ρ
+⟨x, z⟩∈ρ
+x, y, z
+X
+ρ ⊂X × X
+⟨x, y⟩∈ρ
+⟨y, x⟩∈ρ
+x, y ∈X
+ρ ⊂X × X
+x ∈X
+⟨x, x⟩∈/ ρ
+ρ ⊂X × X
+⟨x, y⟩∈ρ ⟨y, x⟩∈ρ
+x = y
+x, y
+X
+ρ ⊂X × X
+x ∈X
+⟨x, x⟩∈ρ
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+60/79
+Pytanie 89: Wśród poniższych zdań wskaż definicje
+odpowiednich funkcji.
+○ Funkcję różnowartościową 
+, która przekształca
+zbiór 
+ w zbiór 
+ nazywamy przekształceniem wzajemnie
+jednoznacznym zbioru 
+ na zbiór 
+.
+✓ Funkcję różnowartościową 
+, która przekształca
+zbiór 
+ w zbiór 
+ nazywamy przekształceniem wzajemnie
+jednoznacznym zbioru 
+ na zbiór 
+.
+○ Funkcją odwrotną do funkcji 
+ jest taka funkcja
+, która każdemu elementowi 
+ przyporządkowuje
+element 
+ taki, że 
+.
+✓ Funkcją odwrotną do funkcji 
+ jest taka funkcja
+, która każdemu elementowi 
+ przyporządkowuje
+element 
+ taki, że 
+.
+○ Funkcją odwrotną do funkcji 
+ jest taka funkcja
+, która każdemu elementowi 
+ przyporządkowuje
+element 
+ taki, że 
+.
+Pytanie 90: Niech 
+. Wśród poniższych zdań
+wskaż wszystkie zdania prawdziwe.
+✓ 
+ dla wszystkich 
+.
+○ 
+ dla każdego 
+.
+○ 
+ dla wszystkich 
+.
+○ 
+.
+✓ Jeżeli 
+ dla pewnych 
+ oraz  dzieli
+dwie z trzech liczb 
+, to  dzieli również trzecią z tych
+liczb.
+f : X →Y
+X
+Y
+Y
+X
+f : X →Y
+X
+Y
+X
+Y
+f : X →Y
+f −1
+y ∈Y
+x ∈X
+f(x) = x
+f : X →Y
+f −1
+y ∈Y
+x ∈X
+f(x) = y
+f : X →Y
+f −1
+y ∈Y
+x ∈X
+f(x) = y−1
+a, b, c ∈Z
+[(a∣b) ∧(a∣c)] ⇒a∣(bx + cy)
+x, y ∈Z
+a∣b ⇒a∣xb
+x ∈Z
+[(a∣b) ∧(a∣c)] ⇒(bx + cy)∣a
+x, y ∈Z
+[(a∣b) ∧(b∣c)] ⇒c∣a
+x = y + z
+x, y, z ∈Z
+a
+x, y, z
+a
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+61/79
+Pytanie 91: Wybierz wszystkie poprawne:
+✓ Turniej z udziałem  graczy oznaczonych kolejnymi
+liczbami całkowitymi dodatnimi 
+ jest zbiorem 
+uporządkowanych par zawodników, przy czym dla 
+ w turnieju występuje albo para 
+ albo para 
+.
+○ Turniej z udziałem  graczy oznaczonych kolejnymi
+liczbami całkowitymi dodatnimi 
+ jest posortowaną
+listą zawodników.
+○ Turniej z udziałem  graczy oznaczonych kolejnymi
+liczbami całkowitymi dodatnimi 
+ jest zbiorem 
+nieuporządkowanych par zawodników.
+○ Turniej z udziałem  graczy oznaczonych kolejnymi
+liczbami całkowitymi dodatnimi 
+ jest zbiorem 
+nieuporządkowanych trójek zawodników.
+○ Turniej z udziałem  graczy oznaczonych kolejnymi
+liczbami całkowitymi dodatnimi 
+ jest zbiorem
+wszystkich zawodników.
+n
+1, 2, … , n
+​
+(2
+n)
+1 ≤i <
+j ≤n
+(i, j)
+(j, i)
+n
+1, 2, … , n
+n
+1, 2, … , n
+​
+(2
+n)
+n
+1, 2, … , n
+​
+(3
+n)
+n
+1, 2, … , n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+62/79
+Pytanie 92: Wśród poniższych zdań wskaż reguły
+podstawiania.
+○ Jeżeli zdanie złożone 
+ jest zdaniem sprzecznym i
+wszystkie wystąpienia pewnej zmiennej  (zdania składowego)
+występującej w zdaniu 
+ zastąpimy zdaniem 
+, to otrzymane
+zdanie złożone 
+ będzie tautologią.
+✓ Jeżeli zdanie złożone 
+ zawiera zdanie 
+, 
+ jest zdaniem
+takim, że 
+ i jeśli w 
+ zastąpimy jedno lub więcej
+wystąpień 
+ przez 
+, to otrzymamy zdanie złożone 
+ takie,
+że 
+.
+○ Jeżeli zdanie złożone 
+ zawiera zdanie 
+, 
+ jest zdaniem
+takim, że 
+ i w 
+ zastąpimy dokładnie jedno
+wystąpienie 
+ przez 
+, to otrzymamy zdanie złożone 
+ takie,
+że 
+.
+○ Jeżeli zdanie złożone 
+ zawiera zdanie 
+, 
+ jest zdaniem
+takim, że 
+ i w 
+ zastąpimy dokładnie jedno
+wystąpienie 
+ przez 
+, to otrzymamy zdanie złożone 
+ takie,
+że 
+.
+✓ Jeżeli zdanie złożone 
+ jest tautologią i wszystkie
+wystąpienia pewnej zmiennej  (zdania składowego)
+występującej w zdaniu 
+ zastąpimy zdaniem 
+, to otrzymane
+zdanie złożone 
+ będzie również tautologią.
+P
+p
+P
+R
+P
+​1
+P
+Q R
+Q ⇔R
+P
+Q
+R
+P
+​1
+P ⇔P
+​1
+P
+Q R
+R ⇒Q
+P
+Q
+R
+P
+​1
+P ⇔P
+​1
+P
+Q R
+Q ⇒R
+P
+Q
+R
+P
+​1
+P ⇔P
+​1
+P
+p
+P
+R
+P
+​1
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+63/79
+Pytanie 93: Wśród poniższych zdań wskaż wszystkie zdania
+będące definicjami odpowiednich zbiorów.
+✓ Dla danej funkcji 
+ oznaczamy przez 
+następujący zbiór funkcji: 
+ istnieją
+dodatnie stałe  i 
+ takie, że 
+ dla
+wszystkich 
+.
+○ Dla danej funkcji 
+ oznaczamy przez 
+następujący zbiór funkcji: 
+ istnieją
+dodatnie stałe  i 
+ takie, że 
+ dla
+wszystkich 
+.
+✓ Dla danej funkcji 
+ oznaczamy przez 
+następujący zbiór funkcji: 
+ istnieją
+dodatnie stałe  i 
+ takie, że 
+ dla
+wszystkich 
+.
+○ Dla danej funkcji 
+ oznaczamy przez 
+następujący zbiór funkcji: 
+ istnieją
+dodatnie stałe  i 
+ takie, że 
+ dla
+wszystkich 
+.
+○ Dla danej funkcji 
+ oznaczamy przez 
+następujący zbiór funkcji: 
+ istnieją
+dodatnie stałe  i 
+ takie, że 
+ dla
+wszystkich 
+.
+g(n)
+O(g(n))
+O(g(n)) = {f(n) :
+c n
+​0
+0 ≤f(n) ≤cg(n)
+n ≥n }
+0
+g(n)
+O(g(n))
+O(g(n)) = {f(n) :
+c n
+​0
+0 ≤f(n) ≤cg(n)
+n ≤n }
+0
+g(n)
+Ω(g(n))
+Ω(g(n)) = {f(n) :
+c n
+​0
+0 ≤cg(n) ≤f(n)
+n ≥n }
+0
+g(n)
+Ω(g(n))
+Ω(g(n)) = {f(n) :
+c n
+​0
+0 ≤f(n) ≤cg(n)
+n ≥n }
+0
+g(n)
+Ω(g(n))
+Ω(g(n)) = {f(n) :
+c n
+​0
+0 ≤cg(n) ≤f(n)
+n ≤n }
+0
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+64/79
+Pytanie 94: Wśród poniższych zdań wskaż zdania
+prawdziwe.
+○ Dla każdego drzewa 
+ zachodzi 
+.
+✓ Graf nieskierowany 
+ jest spójny wtedy i tylko
+wtedy, gdy posiada drzewo rozpinające.
+○ W drzewie 
+ między każdą parą wierzchołków
+ istnieją co najmniej dwie ścieżki.
+✓ W drzewie 
+ między każdą parą wierzchołków
+ istnieje dokładnie jedna ścieżka.
+○ Drzewo 
+ takie, że 
+, ma co najmniej
+trzy wierzchołki o stopniu równym 1.
+Pytanie 95: Niech dana będzie przestrzeń 
+ oraz pewien
+jej podzbiór 
+. Wśród poniższych zdań wskaż wszystkie
+zdania prawdziwe.
+✓ Zbiór potęgowy zbioru 
+ jest to zbiór wszystkich
+podzbiorów zbioru 
+.
+○ Dopełnienie zbioru 
+ jest to zbiór 
+.
+○ Dopełnienie zbioru 
+ jest to zbiór 
+.
+○ Dopełnienie zbioru 
+ jest to zbiór 
+.
+○ Zbiór potęgowy zbioru 
+ jest to zbiór zawierający te
+elementy przestrzeni 
+, które nie należą do 
+.
+G = (V , E)
+∣V ∣= ∣E∣−
+1
+G = (V , E)
+G = (V , E)
+x, y ∈V
+G = (V , E)
+x, y ∈V
+G = (V , E)
+∣V ∣≥2
+U
+A
+A
+A
+A
+A ∖U
+A
+A ∪U
+A
+A ∩U
+A
+U
+A
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+65/79
+Pytanie 96: Niech  i  będą zdaniami logicznymi prostymi,
+ niech będzie dowolną tautologią, a 
+ dowolnym
+zdaniem sprzecznym. Wśród poniższych par zdań wskaż
+zdania logicznie równoważne.
+✓ 
+○ 
+○ 
+✓ 
+○ 
+Pytanie 97: Niech 
+ i 
+ będą podzbiorami pewnej
+przestrzeni 
+. Wśród poniższych zdań wskaż prawa
+algebry zbiorów.
+○ 
+○ 
+✓ 
+○ 
+✓ 
+p q
+T
+​0
+F
+​0
+p →q, ¬p ∨q
+p ∧F
+​, p
+0
+p ∨T
+​, p
+0
+p ∧F
+​, F
+​
+0
+0
+p ∧T
+​, ¬p
+0
+A, B C
+U
+=
+A ∩B
+∩
+A
+B
+(A ∩B) ∩C = A ∪(B ∩C)
+A ∪(A ∩B) = A
+A ∩(A ∪B) = A
+=
+A ∪B
+∩
+A
+B
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+66/79
+Pytanie 98: Zaznacz zdania prawdziwe:
+○ Wszystkie -elementowe kombinacje bez powtórzeń z -
+elementowego zbioru, dla 
+, mogą być
+wygenerowane za pomocą generacji wszystkich liczb binarnych
+z zakresu od  do 
+.
+○ Każde rozmieszczenie  identycznych elementów w 
+rozróżnialnych pudełkach odpowiada -elementowej
+kombinacji bez powtórzeń ze zbioru -elementowego.
+✓ Z każdej -elementowej kombinacji bez powtórzeń ze
+zbioru -elementowego można utworzyć 
+ różnych -
+wyrazowych wariacji bez powtórzeń ze zbioru -
+elementowego.
+○ Liczba wszystkich -elementowych kombinacji bez
+powtórzeń ze zbioru -elementowego wynosi 
+, gdzie 
+.
+○ Każda -elementowa kombinacja bez powtórzeń ze zbioru
+-elementowego odpowiada pewnemu podziałowi tego zbioru
+na  podzbiorów.
+k
+n
+k = 0, … , n
+1
+2n
+k
+n
+k
+n
+k
+n
+k!
+k
+n
+k
+n
+​
+(k
+n)
+n ≤
+k < n
+k
+n
+k
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+67/79
+Pytanie 99: Obiekty 
+ i 
+ utworzono ze
+zbioru 
+. Kolejność tych obiektów oraz
+uporządkowanie ich elementów nie jest istotna. Obiekty te
+są przykładem:
+○ podziału uporządkowanego zbioru 
+,
+ponieważ elementy w obiektach są ustawione alfabetycznie.
+✓ podziału zbioru 
+ na dwa podzbiory.
+○ dwóch 3-elementowych wariacji bez powtórzeń ze zbioru
+6-elementowego.
+○ dwóch 3-elementowych permutacji bez powtórzeń ze
+zbioru 6-elementowego.
+○ dwóch 3-elementowych permutacji z powtórzeniami, w
+których poszczególne elementy występują tylko jeden raz.
+Pytanie 100: Zaznacz zdania prawdziwe:
+○ -wyrazową permutacją z powtórzeniami ze zbioru -
+elementowego nazywamy każdy -wyrazowy ciąg mogących
+się powtarzać elementów tego zbioru.
+○ Permutacja z powtórzeniami może być interpretowana jako
+dowolne rozmieszczenie  rozróżnialnych obiektów w 
+rozróżnialnych pudełkach.
+○ -wyrazowe permutacje z powtórzeniami są równoważne 
+-wyrazowym wariacjom z powtórzeniami
+✓ Liczba -wyrazowych permutacji z powtórzeniami jest nie
+większa niż liczba -wyrazowych permutacji bez powtórzeń.
+○ W -elementowej permutacji z powtórzeniami ze zbioru
+, w której element 
+ powtarza się 
+ razy, dla
+, zachodzi: 
+.
+∣A, C, D∣∣B, E, F∣
+{A, B, C, D, E, F}
+{A, B, C, D, E, F}
+{A, B, C, D, E, F}
+k
+n
+k
+n
+k
+k
+k
+n
+n
+n
+{a
+​, … , a
+​}
+1
+n
+a
+​i
+n
+​i
+i = 1, … , k
+​ n
+​ =
+∑i=1
+k
+i
+n!
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+68/79
+Pytanie 101: 3 identyczne elementy mogą być wrzucone w
+dowolny sposób do 6 rozróżnialnych pudełek na
+○ 
+ sposobów.
+○ 
+ sposobów.
+○ 
+ sposobów.
+✓ 
+ sposobów.
+○ 
+ sposobów.
+Pytanie 102: Zaznacz zdania prawdziwe:
+○ Pierwsza zasada indukcji matematycznej dla pewnego
+ ma postać: 
+.
+○ Pierwszą zasadę indukcji matematycznej stosuje się do
+dowodzenia twierdzeń, w których prawdziwość pewnego
+zdania wynika z prawdziwości jednego, dowolnego ze zdań
+poprzedzających.
+✓ Pierwsza zasada indukcji matematycznej dla 
+ ma
+postać: 
+.
+○ Zasada indukcji matematycznej może być wykorzystana do
+dowodzenia twierdzeń dotyczących dowolnych liczb dodatnich.
+○ Jeśli pewne twierdzenie 
+ nie jest prawdziwe dla
+pewnych początkowych wartości 
+, to może ono być
+udowodnione z wykorzystaniem drugiej zasady indukcji
+matematycznej.
+​
+(3
+6)
+63
+36
+​
+(
+3
+6+3−1)
+​
+3!
+6!
+n
+​ ∈
+0
+Z+
+[S(n
+​) ∧
+0
+[∀
+​[S(k) ⟹
+k≥1
+S(k +
+1)]]] ⟹∀
+​S(n)
+n≥1
+n
+​ =
+0
+1
+[(∀
+​[S(k) ⟹
+k≥1
+S(k + 1)]) ∧S(1)] ⟹
+∀
+​S(n)
+n∈Z+
+∀
+​S(n)
+n∈Z+
+n ≥1
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+69/79
+Pytanie 103: Pierwsza i druga zasada indukcji
+matematycznej:
+✓ są równoważne.
+○ nie są równoważne.
+○ są równoważne jedynie dla twierdzeń dotyczących liczb
+naturalnych.
+○ mogą być zastosowane do dowodzenia twierdzeń
+dotyczących liczb rzeczywistych dodatnich.
+○ są technikami dowodzenia twierdzeń dotyczących
+wyłącznie zależności rekurencyjnych jednorodnych.
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+70/79
+Pytanie 104: Zaznacz zdania prawdziwe:
+○ Druga zasada indukcji matematycznej dla dowolnych
+, 
+, ma postać: 
+○ Druga zasada indukcji matematycznej jest wykorzystywana
+do dowodzenia twierdzeń postaci: 
+, takich że
+zdanie 
+ nie jest prawdziwe dla pewnych początkowych
+wartości 
+.
+✓ Druga zasada indukcji matematycznej dla 
+, 
+ma postać:
+○ Jeśli w dowodzie kroku indukcyjnego wykorzystuje się
+założenie o prawdziwości tylko jednego ze zdań 
+poprzedzających zdanie 
+, 
+, to w pierwszej
+zasadzie twierdzenia wystarczy pierwsza zasada indukcji
+matematycznej.
+○ W pierwszej zasadzie indukcji matematycznej z
+prawdziwości warunku początkowego lub kroku indukcyjnego
+wynika prawdziwość hipotezy indukcyjnej.
+n
+​, n
+​ ∈
+0
+1
+Z+ n
+​ ≤
+0
+n
+​1
+[[S(1) ∧S(2) ∧… ∧
+S(n
+​)] ∧
+1
+[∀
+​[[S(1) ∧
+k≥n
+​0
+S(2) ∧… ∧S(k)] ⇒S(k +
+1)]]] ⇒∀
+​S(n)
+n≥n
+​1
+∀
+​S(n)
+n∈Z+
+S(n)
+n ∈Z+
+n
+​ =
+0
+1 n
+​ ≥
+1
+1
+∀
+​[[S(1) ∧S(2) ∧… ∧S(k)] ⇒S(k + 1)] ∧[S(1) ∧S(2) ∧… ∧S(n
+​)]
+[ k≥n
+​1
+1
+∀
+​S(n)
+n≥n
+​1
+S(x)
+S(k + 1) x ≤k
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+71/79
+Pytanie 105: Zaznacz zdania prawdziwe:
+○ Rozwiązanie liniowej jednorodnej zależności rekurencyjnej
+rzędu pierwszego ze stałymi współczynnikami postaci 
+,  oznacza pewną stałą i 
+.
+○ Rozwiązanie zależności liniowej jednorodnej rzędu
+drugiego ze stałymi współczynnikami o równaniu
+charakterystycznym o pierwiastku podwójnym ma postać
+, gdzie 
+ i 
+ są wyznaczane w oparciu o
+początkowe elementy ciągu.
+✓ Pełna definicja ciągu opisanego zależnością rekurencyjną
+rzędu -tego musi zawierać wartości  kolejnych (np.
+początkowych) elementów tego ciągu.
+○ Zależność rekurencyjna postaci 
+, gdzie 
+ dla 
+ są pewnymi
+stałymi rzeczywistymi, 
+ i 
+ nazywamy liniową
+jednorodną zależnością rekurencyjną rzędu k-tego ze stałymi
+współczynnikami.
+○ Każdy pierwiastek pojedynczy  równania
+charakterystycznego wprowadza do rozwiązania liniowej
+jednorodnej zależności rekurencyjnej ze stałymi
+współczynnikami rzędu 
+ czynnik 
+, gdzie  jest pewną
+stałą, którą można wyznaczyć w oparciu o początkowe wyrazy
+ciągu.
+a =
+n
+ca
+​0
+n c
+n ∈N
+a
+​ =
+n
+c
+​r +
+1 n
+c
+​nr
+2
+n
+c
+​1 c
+​2
+k
+k
+c
+​a
+​ +
+n
+n
+c
+​a
+​ +
+n−1
+n−1
+… + c
+​a
+​ =
+k
+k
+0
+c
+​i
+i = n, … , k
+c
+​ =
+n 0 c
+​ =
+k 0
+r
+k ≥2
+rcn
+c
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+72/79
+Pytanie 106: Zależność rekurencyjna 
+ jest
+zależnością rekurencyjną:
+✓ liniową ze stałymi współczynnikami rzędu trzeciego
+niejednorodną.
+○ liniową ze stałymi współczynnikami rzędu drugiego
+jednorodną.
+○ liniową ze stałymi współczynnikami rzędu drugiego
+niejednorodną.
+○ liniową ze stałymi współczynnikami rzędu pierwszego
+jednorodną.
+○ liniową ze stałymi współczynnikami rzędu trzeciego
+jednorodną.
+Pytanie 107: Zależność rekurencyjna 
+ jest zależnością:
+○ niejednorodną.
+○ dla której równanie charakterystyczne jest równaniem
+kwadratowym.
+✓ nieliniową.
+✓ która nie może być rozwiązywana metodą równania
+charakterystycznego.
+○ dla której równanie charakterystyczne jest równaniem
+stopnia trzeciego.
+(a
+​ =
+0
+0, a
+​ =
+1
+3, a
+​ =
+2
+4, a
+​ =
+n+1
+3a
+​ =
+n−2
+3n dla n ≥2)
+(a
+​ =
+0
+1, a
+​ =
+1
+2, na
+​ +
+n
+3a
+​ −
+n−1
+a
+​ =
+n−2
+0 dla n ≥2)
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+73/79
+Pytanie 108: Zaznacz zdania prawdziwe:
+✓ Liczby Stirlinga drugiego rodzaju opisujące liczbę
+sposobów podziału zbioru -elementowego na  niepustych
+rozłącznych podzbiorów są nie większe niż liczby Stirlinga
+pierwszego rodzaju opisujące liczbę sposobów rozmieszczenia
+ elementów w  niepustych cyklach.
+○ Definicja rekurencyjna liczb Stirlinga drugiego rodzaju
+zawiera zależność postaci: 
+, a definicja rekurencyjna liczb Stirlinga
+pierwszego rodzaju: 
+ 
+.
+○ Liczby Eulera drugiego rzędu 
+ oznaczają liczbę
+permutacji z powtórzeniami multizbioru 
+zawierających  wzniesień.
+○ Liczby harmoniczne pierwszego rzędu tworzą ciąg zbieżny
+do pewnej granicy, ponieważ zgodnie z definicją rekurencyjną
+każda kolejna liczba 
+ powstaje z poprzedniej liczby 
+przez dodanie ułamka 
+.
+○ W systemie liczbowym Fibonacciego, zbudowanym w
+oparciu o twierdzenie Zeckendorfa, do jednoznacznej
+reprezentacji liczb całkowitych dodatnich wykorzystuje się
+wszystkie liczby Fibonacciego 
+, dla 
+.
+n
+k
+n
+k
+S(n, k) = S(n −1, k) + k ⋅
+S(n −1, k −1)
+s(n, k) = s(n −1, k) + (n −1) ⋅
+s(n −1, k −1) (gdz e n >
+ıˊ
+0, k > 0)
+​
+⟨⟨k
+n⟩⟩
+{1, 1, 2, 2, … , k, k}
+n
+H
+​
+n+1
+H
+​n
+​
+n+1
+1
+F
+​k
+k ≥0
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+74/79
+Pytanie 109: Zaznacz zdania prawdziwe:
+○ Liczby harmoniczne rzędu , dla 
+, tworzą ciąg
+rozbieżny.
+○ W ciągu liczby Stirlinga drugiego rodzaju mogą pojawić się
+liczby niebędące liczbami całkowitymi.
+✓ Każdej -elementowej permutacji bez powtórzeń ze zbioru
+-elementowego odpowiada pewien układ cykli i każdemu
+układowi cykli odpowiada pewna -elementowa permutacja
+bez powtórzeń ze zbioru -elementowego.
+○ Liczby Fibonacciego są liczbami opisanymi zależnością
+rekurencyjną rzędu trzeciego, ponieważ w definicji występują
+trzy elementy ciągu.
+○ Liczby Eulera związane są z liczbą cykli Eulera w grafie.
+Pytanie 110: Poprawna zasada włączania i wyłączania dla 3
+dowolnych zbiorów ma postać:
+○ 
+○ 
+○ 
+✓ 
+○ 
+r
+r > 1
+n
+n
+n
+n
+∣A
+​ ∩
+1
+A
+​ ∩
+2
+A
+​∣=
+3
+∣A
+​∣⋅
+1
+∣A
+​∣⋅
+2
+∣A
+​∣
+3
+∣A
+​ ∪
+1
+A
+​ ∪
+2
+A
+​∣=
+3
+∣A
+​∣+
+1
+∣A
+​∣+
+2
+∣A
+​∣−
+3
+∣A
+​ ∪
+1
+A
+​∣−
+2
+∣A
+​ ∪
+1
+A
+​∣−
+3
+∣A
+​ ∪
+2
+A
+​∣+
+3
+∣A
+​ ∪
+1
+A
+​ ∪
+2
+A
+​∣
+3
+∣A
+​ ∪
+1
+A
+​ ∪
+2
+A
+​∣=
+3
+∣A
+​∣+
+1
+∣A
+​∣+
+2
+∣A
+​∣−
+3
+∣A
+​ ∩
+1
+A
+​∣−
+2
+∣A
+​ ∩
+1
+A
+​∣−
+3
+∣A
+​ ∩
+2
+A
+​∣+
+3
+∣A
+​ ∪
+1
+A
+​ ∪
+2
+A
+​∣
+3
+∣A
+​ ∪
+1
+A
+​ ∪
+2
+A
+​∣=
+3
+∣A
+​∣+
+1
+∣A
+​∣+
+2
+∣A
+​∣−
+3
+∣A
+​ ∩
+1
+A
+​∣−
+2
+∣A
+​ ∩
+1
+A
+​∣−
+3
+∣A
+​ ∩
+2
+A
+​∣+
+3
+∣A
+​ ∩
+1
+A
+​ ∩
+2
+A
+​∣
+3
+∣A
+​ ∪
+1
+A
+​ ∪
+2
+A
+​∣=
+3
+∣A
+​∣+
+1
+∣A
+​∣+
+2
+∣A
+​∣−
+3
+∣A
+​ ∩
+1
+A
+​ ∩
+2
+A
+​∣
+3
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+75/79
+Pytanie 111: Zaznacz zdania prawdziwe:
+○ Zasada włączania i wyłączania mówi, że liczba elementów
+pewnego zbioru 
+, 
+, które nie spełniają żadnego z
+warunków 
+, 
+, jest równa 
+, gdzie 
+ oznacza liczbę elementów
+ spełniających warunek 
+.
+✓ Zasada włączania i wyłączania dla zbioru 
+ i warunków 
+,
+, spełnionych przez pewne elementy ze zbioru 
+ ma
+postać: 
+.
+○ Zasada włączania i wyłączania w postaci alternatywnej
+dotyczy pewnego zbioru 
+, dla którego zdefiniowane są
+warunki 
+, 
+, które muszą być spełnione przez
+wszystkie elementy zbioru 
+.
+○ Symbol 
+ występujący w zasadzie włączania i
+wyłączania oznacza liczbę elementów ze zbioru 
+ spełniających
+warunki 
+ i równocześnie niespełniających pozostałych
+warunków 
+ (
+, 
+, 
+).
+○ Dowód zasady włączania i wyłączania w postaci
+alternatywnej jest oparty o prawa teorii mnogości.
+S ∣S∣= N
+c
+​i 1 ≤i ≤t
+N = N −N(c
+​) −
+1
+N(c
+​) −
+2
+... −N(c
+​)
+t
+N(c
+​)
+i
+S
+c
+​i
+S
+c
+​i
+1 ≤i ≤t
+S
+N(
+​) =
+c
+​, c
+​, … , c
+​
+1
+2
+t
+∣S∣−
+​ N(c
+​) +
+∑1≤i≤t
+i
+​ N(c
+​, c
+​) −
+∑1≤i<j≤t
+i
+j
+​ N(c
+​, c
+​, c
+​) +
+∑1≤i<j<k≤t
+i
+j
+k
+... +
+(−1) N(c
+​, c
+​, … , c
+​)
+t
+1
+2
+t
+S
+c
+​i 1 ≤i ≤t
+S
+N(c
+​c
+​)
+i j
+S
+c
+​ ∧
+i
+c
+​j
+c
+​k 1 ≤i, j ≤t k =i k =j
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+76/79
+Pytanie 112: Zaznacz zdania prawdziwe:
+○ Zasada szufladkowa Dirichleta mówi, że jeśli skończony
+zbiór 
+ jest podzielony na  rozłącznych niepustych
+podzbiorów, to każdy z tych podzbiorów zawiera 
+elementów lub więcej.
+○ Dowód zasady szufladkowej Dirichleta wykorzystuje pojęcie
+uporządkowanego podziału zbioru.
+○ „Klasyczna” zasada szufladkowa Dirichleta w żaden sposób
+nie wynika z uogólnionej zasady szufladkowej Dirichleta,
+ponieważ dotyczy zbiorów o odmiennych własnościach.
+✓ Z zasady szufladkowej Dirichleta wynika, że jeśli skończony
+zbiór 
+ jest podzielony na  rozłącznych niepustych
+podzbiorów, to średnia liczność tych zbiorów wynosi 
+.
+○ Uogólniona zasada szufladkowa Dirichleta określa wartość
+średniej arytmetycznej liczb elementów zbiorów 
+będących rozłącznymi podzbiorami pewnego skończonego
+zbioru 
+.
+Pytanie 113: Średnia liczność zbiorów 
+będących podzbiorami zbioru 
+ elementowego 
+, takimi,
+że każdy element 
+ należy do dokładnie  podzbiorów:
+✓ wynosi dokładnie .
+○ wynosi dokładnie 
+.
+○ wynosi mniej niż .
+○ wynosi co najmniej 
+.
+○ nie może być określona.
+S
+k
+∣S∣/k
+S
+k
+∣S∣/k
+A
+​, … , A
+​
+1
+k
+S
+A
+​, A
+​, A
+​, A
+​, A
+​
+1
+2
+3
+4
+5
+10
+S
+S
+4
+8
+10
+8
+10
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+77/79
+Pytanie 114: Zaznacz zdania prawdziwe:
+○ Każda macierz o wymiarze 
+ zbudowana z elementów
+ze zbioru 
+, gdzie 
+, w której w
+żadnym wierszu elementy się nie powtarzają jest prostokątem
+łacińskim.
+✓ Rozszerzanie prostokąta łacińskiego 
+ o jeden wiersz
+wymaga wyznaczenia dowolnego systemu różnych
+reprezentantów rodziny zbiorów 
+, gdzie zbiór
+ zawiera elementy dotychczas niewystępujące w kolumnie 
+(
+).
+○ Rozszerzając prostokąt łaciński 
+, do kwadratu 
+należy w nowej kolumnie umieścić wszystkie elementy 
+, dla których liczba wystąpień spełnia warunek
+.
+○ Pewne prostokąty łacińskie 
+, w których liczba
+wystąpień niektórych elementów jest zbyt mała, nie mogą być
+rozszerzone do kwadratu łacińskiego 
+.
+○ Kwadratem grecko-łacińskim, czyli kwadratem Eulera,
+nazywamy złożenie dwóch dowolnych kwadratów łacińskich o
+takim samym rozmiarze.
+p × q
+{1, … , n}
+min(p, q) < n
+p × n
+{A
+​, … , A
+​}
+1
+n
+A
+​i
+i
+1 ≤i ≤n
+p × q
+n × n
+i =
+1, … , n
+L(i) > p + q −n
+p × n
+n × n
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+78/79
+Pytanie 115: Zaznacz zdania prawdziwe:
+○ Wielomian szachowy 
+, to funkcja, której wartość oznacza liczbę
+możliwych rozmieszczeń  wzajemnie nieatakujących się wież
+na szachownicy o wymiarze 
+.
+○ Jeśli szachownica 
+ składa się z dwóch niezależnych
+obszarów 
+ i 
+, to wówczas 
+.
+✓ Jeśli w wielomianie szachowym 
+ dla szachownicy 
+ o
+wymiarze 
+ współczynnik 
+, to na szachownicy 
+nie można rozmieścić  wzajemnie nieatakujących się wież.
+○ Dekompzycja wielomianów szachowych jest możliwa
+wyłącznie wówczas, jeśli daną szachownicę można podzielić na
+dwa rozłączne obszary niemające wspólnych wierszy ani
+kolumn.
+○ Szachownicę 
+ można zdekomponować, poprzez wybór
+pewnego pola dopuszczalnego , na dwie szachownice 
+ i
+, takie że w 
+ niedostępny jest wiersz, a w 
+ niedostępna
+jest kolumna zawierająca pole .
+Pytanie 116: Zaznacz funkcję tworzącą, która może być
+wielomianem szachowym pewnej szachownicy o wymiarze
+:
+○ 
+.
+✓ 
+.
+○ 
+.
+○ 
+.
+○ 
+.
+r
+​(x) =
+B
+1 + r
+​x +
+1
+r
+​x +
+2
+2
+... +
+r
+​x +
+k
+k
+... + r
+​x
+n
+n
+n
+x × x
+B
+C D
+r
+​(x) =
+B
+r
+​(x) +
+C
+r
+​(x)
+D
+r
+​(x) =
+B
+1 + r
+​x +
+1
+r
+​x +
+2
+2
+... + r
+​x +
+k
+k
+... + r
+​x
+n
+n
+B
+n × n
+r
+​ =
+n
+0
+B
+n
+B
+s
+B1
+B2
+B1
+B2
+s
+5 × 5
+r
+​(x) =
+B
+2 + 7x + 16x +
+2
+13x +
+3
+3x +
+4
+0x5
+r
+​(x) =
+B
+1 + 7x + 16x +
+2
+13x +
+3
+3x +
+4
+0x5
+r
+​(x) =
+B
+1 + 7x + 16x +
+2
+13x +
+3
+3x +
+4
+1x6
+r
+​(x) =
+B
+1 + 26x + 16x +
+2
+13x +
+3
+3x +
+4
+0x5
+r
+​(x) =
+B
+0 + 7x + 16x +
+2
+13x +
+3
+3x +
+4
+0x5
+5.02.2026, 18:19
+Baza pytań | Dyskretna-Machen
+https://dyskretna.drogą.pl/baza.php
+79/79

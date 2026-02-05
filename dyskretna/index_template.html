@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematyka Dyskretna - Baza Pytań PUT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --bg-tertiary: #0f3460;
+            --accent: #4fc3f7;
+            --accent-dark: #29b6f6;
+            --accent-glow: rgba(79, 195, 247, 0.3);
+            --purple: #ab47bc;
+            --purple-dark: #8e24aa;
+            --green: #66bb6a;
+            --red: #ef5350;
+            --orange: #ffa726;
+            --yellow: #ffc107;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0bec5;
+            --text-muted: #78909c;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+        .light-mode {
+            --bg-primary: #f8f9fb;
+            --bg-secondary: #eef1f5;
+            --bg-tertiary: #e2e8f0;
+            --accent: #3b82f6;
+            --accent-dark: #2563eb;
+            --accent-glow: rgba(59, 130, 246, 0.18);
+            --purple: #8b5cf6;
+            --purple-dark: #7c3aed;
+            --green: #22c55e;
+            --red: #ef4444;
+            --orange: #f59e0b;
+            --yellow: #eab308;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --card-bg: #ffffff;
+            --border: rgba(148, 163, 184, 0.25);
+        }
+        .light-mode body, .light-mode { background: linear-gradient(135deg, #f8f9fb 0%, #eef1f5 50%, #e2e8f0 100%); }
+        .light-mode .subtitle { color: #6366f1; }
+        .light-mode h1 { text-shadow: none; }
+        .light-mode .question-type { color: #6366f1; border-color: #a5b4fc; }
+        .light-mode .mode-panel h3,
+        .light-mode .quiz-type-card .title { color: #7c3aed; }
+        .light-mode .quiz-type-card { background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.15); }
+        .light-mode .quiz-type-card:hover { border-color: #8b5cf6; }
+        .light-mode .quiz-type-card.selected { background: rgba(139, 92, 246, 0.18); border-color: #8b5cf6; }
+        .light-mode .custom-settings { background: rgba(59, 130, 246, 0.06); }
+        .light-mode .timer-display { background: rgba(59, 130, 246, 0.06); }
+        .light-mode .results-stat,
+        .light-mode .history-item { background: rgba(59, 130, 246, 0.06); }
+        .light-mode .page-info { color: #6366f1; }
+        .light-mode .shortcuts-hint code { background: rgba(99, 102, 241, 0.1); }
+        .light-mode .question-card { box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04); }
+        .light-mode .question-card:hover { border-color: rgba(99, 102, 241, 0.3); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .light-mode .stat-box { background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .light-mode .option { background: #f8fafc; }
+        .light-mode .option:hover { background: #eff6ff; border-color: rgba(59, 130, 246, 0.3); }
+        .light-mode .option.selected { background: #eff6ff; border-color: #3b82f6; }
+        .light-mode .option.correct { background: #f0fdf4; border-color: #22c55e; }
+        .light-mode .option.incorrect { background: #fef2f2; border-color: #ef4444; }
+        .light-mode .option.missed { background: #fefce8; border-color: #eab308; }
+        .light-mode .btn-primary { color: #ffffff; }
+        .light-mode .question-number { color: #ffffff; }
+        .light-mode .mode-tab.active { color: #ffffff; }
+        .light-mode .mode-panel { border-color: #8b5cf6; }
+        .light-mode .search-box { background: #ffffff; }
+        .light-mode footer { color: #94a3b8; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        header { text-align: center; padding: 25px 0; margin-bottom: 20px; }
+        h1 { font-size: 2.3em; color: var(--accent); text-shadow: 0 0 20px var(--accent-glow); margin-bottom: 8px; }
+        .subtitle { color: #81d4fa; font-size: 1.05em; margin-bottom: 8px; }
+        .description { color: var(--text-secondary); font-size: 0.9em; max-width: 700px; margin: 0 auto; line-height: 1.5; }
+        
+        /* Top bar */
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+        .theme-toggle { background: var(--card-bg); border: 1px solid var(--border); padding: 8px 15px; border-radius: 20px; cursor: pointer; color: var(--text-primary); display: flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .theme-toggle:hover { border-color: var(--accent); }
+        
+        /* Stats */
+        .stats { display: flex; justify-content: center; gap: 15px; margin: 15px 0; flex-wrap: wrap; }
+        .stat-box { background: var(--card-bg); padding: 12px 20px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px); border: 1px solid var(--border); min-width: 100px; transition: transform 0.2s; }
+        .stat-box:hover { transform: translateY(-2px); }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: var(--accent); }
+        .stat-label { font-size: 0.8em; color: var(--text-secondary); }
+        
+        /* Buttons */
+        button { padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9em; transition: all 0.3s ease; font-weight: 500; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #1a1a2e; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 20px var(--accent-glow); }
+        .btn-secondary { background: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); border-color: var(--accent); }
+        .btn-quiz { background: linear-gradient(135deg, var(--purple), var(--purple-dark)); color: white; }
+        .btn-quiz:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(171, 71, 188, 0.4); }
+        .btn-success { background: linear-gradient(135deg, var(--green), #43a047); color: white; }
+        .btn-danger { background: linear-gradient(135deg, var(--red), #e53935); color: white; }
+        
+        /* Mode Selection */
+        .mode-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+        .mode-tab { padding: 10px 20px; border: 2px solid var(--border); border-radius: 25px; background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; }
+        .mode-tab.active { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); border-color: var(--accent); color: #1a1a2e; }
+        .mode-tab:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+        
+        /* Quiz Mode Panel */
+        .mode-panel { background: var(--card-bg); border: 2px solid var(--purple); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .mode-panel h3 { color: #ce93d8; margin-bottom: 20px; text-align: center; font-size: 1.3em; }
+        
+        /* Quiz Types Grid */
+        .quiz-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .quiz-type-card { background: rgba(171, 71, 188, 0.1); border: 2px solid transparent; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s; }
+        .quiz-type-card:hover { border-color: var(--purple); transform: translateY(-3px); }
+        .quiz-type-card.selected { border-color: var(--purple); background: rgba(171, 71, 188, 0.25); }
+        .quiz-type-card .icon { font-size: 2em; margin-bottom: 10px; }
+        .quiz-type-card .title { font-weight: bold; color: #ce93d8; margin-bottom: 5px; }
+        .quiz-type-card .desc { font-size: 0.85em; color: var(--text-secondary); }
+        
+        /* Custom Quiz Settings */
+        .custom-settings { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; align-items: center; margin: 20px 0; padding: 15px; background: rgba(0,0,0,0.2); border-radius: 10px; }
+        .custom-settings label { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); }
+        .custom-settings input[type="number"], .custom-settings select { width: 80px; padding: 8px; border: 1px solid var(--purple); border-radius: 6px; background: rgba(255, 255, 255, 0.1); color: var(--text-primary); text-align: center; }
+        .custom-settings input[type="checkbox"] { transform: scale(1.3); accent-color: var(--purple); }
+        
+        /* Timer */
+        .timer-display { font-size: 2em; font-weight: bold; color: var(--accent); text-align: center; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px; margin: 15px 0; font-family: 'Courier New', monospace; }
+        .timer-display.warning { color: var(--orange); animation: pulse 1s infinite; }
+        .timer-display.danger { color: var(--red); animation: pulse 0.5s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        
+        /* Progress Bar */
+        .progress-container { margin: 15px 0; }
+        .progress-bar { width: 100%; height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 5px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-dark)); border-radius: 5px; transition: width 0.3s ease; }
+        .progress-text { text-align: center; margin-top: 5px; font-size: 0.85em; color: var(--text-secondary); }
+        
+        /* Controls */
+        .controls { display: flex; justify-content: center; gap: 10px; margin: 15px 0; flex-wrap: wrap; }
+        
+        /* Search and Filter */
+        .search-filter-row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
+        .search-box { flex: 1; min-width: 250px; padding: 12px 15px; border: 1px solid var(--border); border-radius: 10px; background: var(--card-bg); color: var(--text-primary); font-size: 0.95em; }
+        .search-box::placeholder { color: var(--text-muted); }
+        .search-box:focus { outline: none; border-color: var(--accent); }
+        .filter-buttons { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        .filter-btn { padding: 8px 14px; font-size: 0.85em; border-radius: 20px; }
+        .filter-btn.active { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #1a1a2e; border-color: var(--accent); }
+        
+        /* Question Card */
+        .question-card { background: var(--card-bg); border-radius: 15px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); backdrop-filter: blur(10px); transition: all 0.3s ease; position: relative; }
+        .question-card:hover { border-color: rgba(79, 195, 247, 0.3); }
+        .question-card.bookmarked { border-color: var(--yellow); }
+        .question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
+        .question-number { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #1a1a2e; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; }
+        .question-badges { display: flex; gap: 8px; align-items: center; }
+        .question-type { font-size: 0.8em; color: #81d4fa; padding: 4px 10px; border: 1px solid #81d4fa; border-radius: 15px; }
+        .bookmark-btn { background: none; border: none; font-size: 1.3em; cursor: pointer; padding: 5px; transition: transform 0.2s; }
+        .bookmark-btn:hover { transform: scale(1.2); }
+        .question-text { font-size: 1.05em; line-height: 1.7; margin-bottom: 20px; }
+        
+        /* Options */
+        .options { display: flex; flex-direction: column; gap: 10px; }
+        .option { display: flex; align-items: flex-start; padding: 15px; background: rgba(255, 255, 255, 0.03); border-radius: 10px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; }
+        .option:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(79, 195, 247, 0.3); }
+        .option.selected { background: rgba(79, 195, 247, 0.15); border-color: var(--accent); }
+        .option.correct { background: rgba(102, 187, 106, 0.2); border-color: var(--green); }
+        .option.incorrect { background: rgba(239, 83, 80, 0.2); border-color: var(--red); }
+        .option.missed { background: rgba(255, 193, 7, 0.15); border-color: var(--yellow); }
+        .option input { margin-right: 15px; margin-top: 3px; transform: scale(1.2); accent-color: var(--accent); flex-shrink: 0; }
+        .option-text { flex: 1; line-height: 1.6; }
+        .option-icon { margin-left: 10px; font-size: 1.2em; flex-shrink: 0; }
+        .question-actions { margin-top: 15px; display: flex; justify-content: flex-end; gap: 10px; }
+        
+        /* Flashcard Mode */
+        .flashcard-container { perspective: 1000px; margin: 40px auto; max-width: 700px; }
+        .flashcard { width: 100%; min-height: 350px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; cursor: pointer; }
+        .flashcard.flipped { transform: rotateY(180deg); }
+        .flashcard-face { position: absolute; width: 100%; min-height: 350px; backface-visibility: hidden; border-radius: 20px; padding: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .flashcard-front { background: linear-gradient(135deg, #1e3c72, #2a5298); border: 2px solid var(--accent); }
+        .flashcard-back { background: linear-gradient(135deg, #134e5e, #71b280); transform: rotateY(180deg); border: 2px solid var(--green); }
+        .flashcard-question { font-size: 1.2em; line-height: 1.7; margin-bottom: 20px; }
+        .flashcard-answer { font-size: 1.1em; line-height: 1.6; }
+        .flashcard-hint { font-size: 0.85em; color: rgba(255,255,255,0.6); margin-top: 20px; }
+        .flashcard-nav { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .flashcard-progress { display: flex; justify-content: center; gap: 5px; margin: 20px 0; flex-wrap: wrap; }
+        .flashcard-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--card-bg); border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
+        .flashcard-dot.current { background: var(--accent); border-color: var(--accent); }
+        .flashcard-dot.known { background: var(--green); border-color: var(--green); }
+        
+        /* Quiz Results */
+        .quiz-results { background: var(--card-bg); border-radius: 20px; padding: 40px; text-align: center; border: 2px solid var(--accent); }
+        .quiz-results h2 { color: var(--accent); margin-bottom: 20px; font-size: 1.8em; }
+        .results-score { font-size: 4em; font-weight: bold; margin: 20px 0; }
+        .results-score.excellent { color: var(--green); }
+        .results-score.good { color: var(--accent); }
+        .results-score.average { color: var(--orange); }
+        .results-score.poor { color: var(--red); }
+        .results-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin: 30px 0; }
+        .results-stat { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; }
+        .results-stat .value { font-size: 1.8em; font-weight: bold; color: var(--accent); }
+        .results-stat .label { font-size: 0.85em; color: var(--text-secondary); margin-top: 5px; }
+        .results-message { font-size: 1.2em; color: var(--text-secondary); margin: 20px 0; }
+        .results-actions { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+        
+        /* History Panel */
+        .history-panel { background: var(--card-bg); border-radius: 15px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .history-panel h3 { color: var(--accent); margin-bottom: 15px; }
+        .history-list { max-height: 200px; overflow-y: auto; }
+        .history-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 8px; }
+        .history-item .date { color: var(--text-muted); font-size: 0.85em; }
+        .history-item .score { font-weight: bold; }
+        .history-item .score.good { color: var(--green); }
+        .history-item .score.bad { color: var(--red); }
+        
+        /* Navigation */
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border); }
+        .page-info { color: #81d4fa; font-size: 0.9em; }
+        
+        /* Keyboard shortcuts hint */
+        .shortcuts-hint { position: fixed; bottom: 20px; right: 20px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 15px; font-size: 0.8em; color: var(--text-muted); backdrop-filter: blur(10px); max-width: 200px; }
+        .shortcuts-hint code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; }
+        
+        /* Footer */
+        footer { text-align: center; padding: 25px; margin-top: 25px; color: var(--text-muted); font-size: 0.85em; }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        
+        /* Hidden utility */
+        .hidden { display: none !important; }
+        
+        /* Modal */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+        .modal { background: var(--bg-secondary); border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; border: 1px solid var(--border); }
+        .modal h3 { color: var(--accent); margin-bottom: 20px; }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.7em; }
+            .stats { gap: 8px; }
+            .stat-box { padding: 10px 12px; min-width: 80px; }
+            .stat-number { font-size: 1.4em; }
+            .question-card { padding: 18px; }
+            .quiz-types { grid-template-columns: repeat(2, 1fr); }
+            .navigation { flex-direction: column; gap: 15px; }
+            .controls { flex-direction: column; }
+            .controls button { width: 100%; }
+            .shortcuts-hint { display: none; }
+            .flashcard-face { padding: 20px; }
+        }
+        
+        /* KaTeX styling */
+        .katex { color: var(--text-primary); }
+        .option-text .katex { font-size: 1em; }
+        .question-text .katex { font-size: 1.05em; }
+
+        /* META Section */
+        .meta-panel { padding: 10px 0; }
+        .meta-intro {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--accent-glow), rgba(139, 92, 246, 0.12));
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+        .meta-intro h2 {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .meta-intro p { color: var(--text-secondary); font-size: 1.05em; }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 16px;
+        }
+        .meta-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 20px;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .meta-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            border-radius: 14px 0 0 14px;
+        }
+        .meta-card:nth-child(5n+1)::before { background: var(--accent); }
+        .meta-card:nth-child(5n+2)::before { background: var(--purple); }
+        .meta-card:nth-child(5n+3)::before { background: var(--green); }
+        .meta-card:nth-child(5n+4)::before { background: var(--orange); }
+        .meta-card:nth-child(5n+5)::before { background: var(--red); }
+        .meta-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .meta-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .meta-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px; height: 32px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.85em;
+            color: #fff;
+        }
+        .meta-card:nth-child(5n+1) .meta-number { background: var(--accent); }
+        .meta-card:nth-child(5n+2) .meta-number { background: var(--purple); }
+        .meta-card:nth-child(5n+3) .meta-number { background: var(--green); }
+        .meta-card:nth-child(5n+4) .meta-number { background: var(--orange); }
+        .meta-card:nth-child(5n+5) .meta-number { background: var(--red); }
+        .meta-card-title {
+            font-weight: 700;
+            font-size: 1em;
+            color: var(--text-primary);
+        }
+        .meta-card-body {
+            color: var(--text-secondary);
+            font-size: 0.92em;
+            line-height: 1.6;
+            padding-left: 12px;
+        }
+        .meta-card-body code {
+            background: var(--accent-glow);
+            color: var(--accent);
+            padding: 2px 7px;
+            border-radius: 5px;
+            font-size: 0.93em;
+            font-weight: 600;
+        }
+        .meta-card-body .meta-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-glow), rgba(139, 92, 246, 0.12));
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2px 0;
+        }
+        .meta-card-body .meta-arrow {
+            color: var(--accent);
+            font-weight: 700;
+            margin: 0 4px;
+        }
+        @media (max-width: 768px) {
+            .meta-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span id="themeIcon">🌙</span>
+                <span id="themeText">Ciemny</span>
+            </button>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-secondary" onclick="showHistory()">📊 Historia</button>
+                <button class="btn-secondary" onclick="exportProgress()">💾 Eksport</button>
+                <button class="btn-secondary" onclick="importProgress()">📂 Import</button>
+            </div>
+        </div>
+        
+        <header>
+            <h1>📚 Matematyka Dyskretna</h1>
+            <p class="subtitle">Baza pytań egzaminacyjnych PUT</p>
+            <p class="description">Kompleksowa baza pytań z egzaminów. Wybierz tryb nauki, rozwiązuj quizy różnej trudności lub ucz się z fiszek!</p>
+        </header>
+        
+        <div class="mode-tabs">
+            <button class="mode-tab active" onclick="setMode('learn')">📖 Nauka</button>
+            <button class="mode-tab" onclick="setMode('quiz')">🎯 Quiz</button>
+            <button class="mode-tab" onclick="setMode('flashcards')">🃏 Fiszki</button>
+            <button class="mode-tab" onclick="setMode('bookmarks')">⭐ Zakładki</button>
+            <button class="mode-tab" onclick="setMode('meta')">🧠 Meta</button>
+        </div>
+        
+        <!-- Quiz Settings Panel -->
+        <div id="quizPanel" class="mode-panel hidden">
+            <h3>🎯 Wybierz typ quizu</h3>
+            <div class="quiz-types">
+                <div class="quiz-type-card" onclick="selectQuizType('quick')">
+                    <div class="icon">⚡</div>
+                    <div class="title">Szybki</div>
+                    <div class="desc">10 pytań, bez limitu czasu</div>
+                </div>
+                <div class="quiz-type-card selected" onclick="selectQuizType('standard')">
+                    <div class="icon">📝</div>
+                    <div class="title">Standardowy</div>
+                    <div class="desc">20 pytań, 30 minut</div>
+                </div>
+                <div class="quiz-type-card" onclick="selectQuizType('hard')">
+                    <div class="icon">🔥</div>
+                    <div class="title">Trudny</div>
+                    <div class="desc">40 pytań, 45 minut</div>
+                </div>
+                <div class="quiz-type-card" onclick="selectQuizType('exam')">
+                    <div class="icon">🎓</div>
+                    <div class="title">Egzamin</div>
+                    <div class="desc">Wszystkie pytania, 90 minut</div>
+                </div>
+                <div class="quiz-type-card" onclick="selectQuizType('custom')">
+                    <div class="icon">⚙️</div>
+                    <div class="title">Własny</div>
+                    <div class="desc">Dostosuj do siebie</div>
+                </div>
+                <div class="quiz-type-card" onclick="selectQuizType('mistakes')">
+                    <div class="icon">❌</div>
+                    <div class="title">Błędne</div>
+                    <div class="desc">Tylko wcześniejsze błędy</div>
+                </div>
+            </div>
+            
+            <div id="customSettings" class="custom-settings hidden">
+                <label>Liczba pytań: <input type="number" id="customCount" value="20" min="5" max="116"></label>
+                <label>Limit czasu: <input type="number" id="customTime" value="30" min="0" max="180"> min (0 = bez)</label>
+                <label><input type="checkbox" id="shuffleOptions" checked> Losuj odpowiedzi</label>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn-quiz" onclick="startQuiz()" style="font-size: 1.1em; padding: 15px 40px;">🚀 Rozpocznij Quiz</button>
+            </div>
+        </div>
+        
+        <!-- Flashcards Panel -->
+        <div id="flashcardsPanel" class="hidden">
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard" onclick="flipCard()">
+                    <div class="flashcard-face flashcard-front">
+                        <div class="flashcard-question" id="flashcardQuestion"></div>
+                        <div class="flashcard-hint">Kliknij, aby zobaczyć odpowiedź</div>
+                    </div>
+                    <div class="flashcard-face flashcard-back">
+                        <div class="flashcard-answer" id="flashcardAnswer"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard-progress" id="flashcardProgress"></div>
+            <div class="flashcard-nav">
+                <button class="btn-secondary" onclick="prevFlashcard()">← Poprzednia</button>
+                <button class="btn-success" onclick="markKnown()">✓ Umiem</button>
+                <button class="btn-danger" onclick="markUnknown()">✗ Powtórz</button>
+                <button class="btn-secondary" onclick="nextFlashcard()">Następna →</button>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn-primary" onclick="shuffleFlashcards()">🔀 Losuj kolejność</button>
+                <button class="btn-secondary" onclick="resetFlashcards()">↻ Resetuj postęp</button>
+            </div>
+        </div>
+        
+        <!-- META Panel -->
+        <div id="metaPanel" class="meta-panel hidden">
+            <div class="meta-intro">
+                <h2>🧠 META — Szybkie Wskazówki Egzaminacyjne</h2>
+                <p>Zbiór heurystyk i skrótów myślowych, które pomagają szybko wyeliminować błędne odpowiedzi na egzaminie.</p>
+            </div>
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">1</span><span class="meta-card-title">Małe ziomeczki (Σ)</span></div>
+                    <div class="meta-card-body">Szukaj odpowiedzi z <strong>sigmą (Σ)</strong>, która ma <strong>4 niewiadome na dole</strong>, albo <strong>2 ekipy po 3 znaki</strong>. Jak widzisz takie „ziomeczki" — to jest poprawna odpowiedź.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">2</span><span class="meta-card-title">Równoważność i tautologia</span></div>
+                    <div class="meta-card-body">Odpowiedzi dotyczące <strong>równoważności</strong> i <strong>tautologii</strong> — szukaj ich <strong>na początku</strong> listy odpowiedzi.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">3</span><span class="meta-card-title">Lewa strona kreseczki + najdłuższy</span></div>
+                    <div class="meta-card-body">Odpowiedź po <strong>lewej stronie kreseczki</strong> (separatora) <code>+</code> wybierz <strong>najdłuższą</strong> odpowiedź.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">4</span><span class="meta-card-title">n × n + nieatakujące</span></div>
+                    <div class="meta-card-body">Jeśli w 4/5 odpowiedzi jest <code>n×n</code>, to poprawna jest ta <strong>bez n×n</strong>.<br>Dodatkowo: <span class="meta-highlight">n×n w środku <span class="meta-arrow">&gt;</span> n×n na końcu</span></div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">5</span><span class="meta-card-title">(i, j) oraz (j, i)</span></div>
+                    <div class="meta-card-body">Gdy w odpowiedziach pojawiają się pary <code>(i, j)</code> oraz <code>(j, i)</code> — zwróć uwagę na <strong>symetrię relacji</strong>. Obie pary są kluczowe.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">6</span><span class="meta-card-title">Indukcja S(1)</span></div>
+                    <div class="meta-card-body">W pytaniach o <strong>indukcję matematyczną</strong> — szukaj odpowiedzi z <code>S(1)</code> (krok bazowy dla n=1).</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">7</span><span class="meta-card-title">15 składników</span></div>
+                    <div class="meta-card-body">Gdy pytanie dotyczy liczby składników — odpowiedzią jest <code>15</code>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">8</span><span class="meta-card-title">S / k</span></div>
+                    <div class="meta-card-body">Szukaj odpowiedzi w postaci <code>S / k</code> — iloraz sumy przez liczbę elementów.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">9</span><span class="meta-card-title">Relacje — 4 warunki</span></div>
+                    <div class="meta-card-body">W pytaniach o relacje poprawna odpowiedź musi zawierać <strong>dokładnie 4 warunki</strong> (zwrotność, symetria, przechodniość, antysymetria itp.).</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">10</span><span class="meta-card-title">k-tego: d^k, n^k</span></div>
+                    <div class="meta-card-body">Odpowiedzi z potęgami: <code>d<sup>k</sup></code>, <code>n<sup>k</sup></code> — szukaj wzorów z wykładnikiem <code>k</code>. <em>(not sure)</em></div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">11</span><span class="meta-card-title">k!</span></div>
+                    <div class="meta-card-body">Szukaj odpowiedzi z <code>k!</code> — <strong>silnia</strong> pojawia się często w pytaniach o permutacje i kombinatorykę.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">12</span><span class="meta-card-title">Co najmniej</span></div>
+                    <div class="meta-card-body">Gdy w pytaniu pada <strong>"co najmniej"</strong> — odpowiedź zwykle zawiera to samo sformułowanie. Szukaj <code>co najmniej</code>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">13</span><span class="meta-card-title">n⁰ = 1 lub ∀</span></div>
+                    <div class="meta-card-body">Szukaj odpowiedzi z <code>n<sup>0</sup> = 1</code> lub z <strong>kwantyfikatorem uniwersalnym</strong> <code>∀</code>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">14</span><span class="meta-card-title">Brat bliźniak 0 + najdłuższy</span></div>
+                    <div class="meta-card-body">Szukaj odpowiedzi "bliźniaczej" do <code>0</code> (np. identyczna struktura ale z zerem) <code>+</code> wybierz <strong>najdłuższą</strong> opcję.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">15</span><span class="meta-card-title">x(n, n)</span></div>
+                    <div class="meta-card-body">Szukaj odpowiedzi w postaci <code>x(n, n)</code> — funkcja z dwoma identycznymi argumentami.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">16</span><span class="meta-card-title">Wielokrotność liczby</span></div>
+                    <div class="meta-card-body">Słowo <strong>przed</strong> „wielokrotność" jest kluczowe. Np. <span class="meta-highlight">dokładnie 3 <span class="meta-arrow">→</span> odpowiedź: dokładnie 9</span> (kwadrat lub wielokrotność).</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">17</span><span class="meta-card-title">gcd dzieli c</span></div>
+                    <div class="meta-card-body">W pytaniach o NWD: szukaj odpowiedzi <code>gcd(a,b) | c</code> — <strong>gcd dzieli c</strong>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">18</span><span class="meta-card-title">Kombinacja z powtórzeniami</span></div>
+                    <div class="meta-card-body">2 grupy z 3 elementami w zbiorze 4-elementowym <span class="meta-arrow">→</span> <strong>kombinacja z powtórzeniami</strong>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">19</span><span class="meta-card-title">n pudełek → permutacje</span></div>
+                    <div class="meta-card-body"><code>n</code> pudełek na końcu, a jeśli jest <code>k</code> pudełek <span class="meta-arrow">→</span> odpowiedź to <strong>permutacje</strong>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">20</span><span class="meta-card-title">Droga Eulera → Ścieżka Hamiltona</span></div>
+                    <div class="meta-card-body">Nie myl pojęć! <span class="meta-highlight">Droga Eulera</span> (krawędzie) <span class="meta-arrow">→</span> <span class="meta-highlight">Ścieżka Hamiltona</span> (wierzchołki). Szukaj ścieżki Hamiltona.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">21</span><span class="meta-card-title">MinMax</span></div>
+                    <div class="meta-card-body">Szukaj odpowiedzi z <code>min-max</code> — optymalizacja przez minimalizację maksimum lub odwrotnie.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">22</span><span class="meta-card-title">Wieża Hanoi >>> wszystko</span></div>
+                    <div class="meta-card-body"><strong>Wieża Hanoi</strong> dominuje nad innymi odpowiedziami. Jeśli pojawia się jako opcja — <strong>prawie zawsze</strong> jest poprawna.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">23</span><span class="meta-card-title">Drzewo + jedna ścieżka</span></div>
+                    <div class="meta-card-body">W pytaniach o drzewa — szukaj odpowiedzi z <strong>dokładnie jedną ścieżką</strong> między dwoma wierzchołkami.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">24</span><span class="meta-card-title">2 Stirling < 1 Stirling</span></div>
+                    <div class="meta-card-body">Liczby Stirlinga: <span class="meta-highlight">II rodzaju <span class="meta-arrow">&lt;</span> I rodzaju</span>. Stirling 2 jest mniejszy od Stirling 1.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">25</span><span class="meta-card-title">V = E + 1 oraz najdłuższy</span></div>
+                    <div class="meta-card-body">Drzewa: <code>V = E + 1</code> (wierzchołki = krawędzie + 1). Dodatkowo wybierz <strong>najdłuższą</strong> odpowiedź.</div>
+                </div>
+            </div>
+
+            <!-- Claude's META -->
+            <div class="meta-intro" style="margin-top: 40px;">
+                <h2>🤖 Meta Pana Claude'a</h2>
+                <p>Wzorce wyciągnięte automatycznie z analizy <strong>116 pytań</strong> z bazy. Statystyki oparte na danych — nie na intuicji.</p>
+            </div>
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">🅰️</span><span class="meta-card-title">Odpowiedź E prawie nigdy nie jest poprawna</span></div>
+                    <div class="meta-card-body">Pozycja E jest poprawna tylko w <code>5.4%</code> pytań jednokrotnego wyboru (5 z 92). Jeśli strzelasz — <strong>nigdy nie stawiaj na E</strong>. Jedyne wyjątki: pytania #33, #42, #50, #79, #86.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">🅱️</span><span class="meta-card-title">„Zaznacz zdanie prawdziwe" → stawiaj na C</span></div>
+                    <div class="meta-card-body">W 43 pytaniach z tym nagłówkiem, odpowiedź <code>C</code> jest poprawna w <strong>37.2%</strong> przypadków. Dalej: B (25.6%), D (18.6%), A (16.3%), E (2.3%). <span class="meta-highlight">C to bezpieczny zakład</span></div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">🅲</span><span class="meta-card-title">Najdłuższa odpowiedź = 35% szans</span></div>
+                    <div class="meta-card-body">Poprawna odpowiedź jest <strong>najdłuższą opcją</strong> w <code>34.8%</code> pytań. W top 2 najdłuższych — <code>58.7%</code>. Najkrótsza opcja jest poprawna tylko w 8.7%. <span class="meta-highlight">Długa = prawdziwa</span></div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">🚫</span><span class="meta-card-title">„co najwyżej" → ZAWSZE fałsz</span></div>
+                    <div class="meta-card-body">Fraza <code>co najwyżej</code> pojawia się 9 razy w opcjach — za <strong>każdym razem</strong> w niepoprawnej odpowiedzi (<code>0/9 = 0%</code>). Widzisz „co najwyżej"? <strong>Eliminuj natychmiast.</strong></div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">🚫</span><span class="meta-card-title">„jedynie" / „wyłącznie" / „wówczas" → ELIMINUJ</span></div>
+                    <div class="meta-card-body"><code>jedynie</code>: 0/5 poprawnych. <code>wyłącznie</code>: 0/4. <code>wówczas</code>: 0/9. Te słowa sygnalizują <strong>zbyt mocne ograniczenie</strong> — zawsze eliminuj takie opcje.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">⚠️</span><span class="meta-card-title">„dowolny" to pułapka (82% fałsz)</span></div>
+                    <div class="meta-card-body">Warianty słowa <code>dowolny</code> pojawiają się w poprawnej odpowiedzi tylko w <strong>18.4%</strong> przypadków (7 z 38). W 81.6% to fałsz — zbyt szerokie uogólnienie.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">✅</span><span class="meta-card-title">„nie większa niż" → 80% prawda</span></div>
+                    <div class="meta-card-body">Fraza <code>nie większa / nie większe</code> pojawia się 5 razy — w <strong>4 przypadkach (80%)</strong> jest to poprawna odpowiedź. Np. pytania #45, #51, #100, #108.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">✅</span><span class="meta-card-title">„również" → 71% prawda</span></div>
+                    <div class="meta-card-body">Słowo <code>również</code> pojawia się w poprawnych odpowiedziach w <strong>71.4%</strong> (5/7). Np. pytanie #62: „będzie <em>również</em> tautologią" ✓, #74: „jest <em>również</em> etykietowalny" ✓.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">2️⃣</span><span class="meta-card-title">Multi-choice = ZAWSZE dokładnie 2</span></div>
+                    <div class="meta-card-body">W <strong>każdym</strong> z 24 pytań wielokrotnego wyboru poprawna odpowiedź to <strong>dokładnie 2 opcje</strong>. Nigdy 1, nigdy 3. <span class="meta-highlight">Zaznacz zawsze 2!</span></div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">🚫</span><span class="meta-card-title">„dla pewnej" → ZAWSZE fałsz</span></div>
+                    <div class="meta-card-body">Fraza <code>dla pewnej</code> pojawia się 4 razy — za <strong>każdym razem</strong> w błędnej opcji (0/4). Szukaj raczej <code>dla każdej</code> lub kwantyfikatora <code>∀</code>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">📦</span><span class="meta-card-title">Identyczne elementy + pudełka → kombinacja z powtórzeniami</span></div>
+                    <div class="meta-card-body">W pytaniach „identyczne elementy do rozróżnialnych pudełek" (pyt. #4, #21, #42, #44, #101) — odpowiedź <strong>ZAWSZE</strong> to <code>kombinacja z powtórzeniami</code>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">♟️</span><span class="meta-card-title">Wielomian szachowy: zaczyna się od „1 +"</span></div>
+                    <div class="meta-card-body">We wszystkich pytaniach o wielomian szachowy (pyt. #37, #60, #116) poprawna odpowiedź <strong>zaczyna się od <code>1 +</code></strong> (bo r₀ = 1 z definicji). Odrzuć opcje z innym wolnym wyrazem.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">🔄</span><span class="meta-card-title">Rekurencja: prawa strona ≠ 0 → niejednorodna</span></div>
+                    <div class="meta-card-body">Jeśli po prawej stronie rekurencji jest <strong>≠ 0</strong> (np. = 3n, = 2) → <code>niejednorodna</code>. Jeśli <code>= 0</code> → jednorodna. Jeśli współczynnik zależy od n (np. <code>na_n</code>) → <strong>nieliniowa</strong>.</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-header"><span class="meta-number">📊</span><span class="meta-card-title">Grafy: odpowiedź NIGDY na D ani E</span></div>
+                    <div class="meta-card-body">W pytaniach o grafy (single-choice) poprawna jest <strong>tylko na pozycjach A, B, C</strong> (po ~33% każda). <code>D</code> i <code>E</code> mają <strong>0%</strong> poprawnych.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Quiz Timer -->
+        <div id="quizTimer" class="timer-display hidden">00:00</div>
+        
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-box"><div class="stat-number" id="totalQuestions">0</div><div class="stat-label">Pytań</div></div>
+            <div class="stat-box"><div class="stat-number" id="answeredQuestions">0</div><div class="stat-label">Odpowiedzi</div></div>
+            <div class="stat-box"><div class="stat-number" id="correctAnswers">0</div><div class="stat-label">Poprawnych</div></div>
+            <div class="stat-box"><div class="stat-number" id="scorePercent">0%</div><div class="stat-label">Wynik</div></div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+            <div class="progress-text" id="progressText">Postęp: 0%</div>
+        </div>
+        
+        <!-- Learn Mode Controls -->
+        <div id="learnControls" class="controls">
+            <button class="btn-primary" onclick="checkAllAnswers()">✓ Sprawdź wszystkie</button>
+            <button class="btn-secondary" onclick="resetProgress()">↻ Resetuj postęp</button>
+            <button class="btn-secondary" onclick="shuffleQuestions()">🔀 Losuj kolejność</button>
+            <button class="btn-secondary" id="autoShuffleBtn" onclick="toggleAutoShuffle()">🔀 Auto-losuj: WYŁ</button>
+        </div>
+        
+        <!-- Quiz Mode Controls -->
+        <div id="quizControls" class="controls hidden">
+            <button class="btn-success" onclick="finishQuiz()">✓ Zakończ quiz</button>
+            <button class="btn-danger" onclick="cancelQuiz()">✗ Anuluj</button>
+        </div>
+        
+        <!-- Search and Filter -->
+        <div id="searchFilter" class="search-filter-row">
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Szukaj w pytaniach..." oninput="filterQuestions()">
+            <div class="filter-buttons">
+                <button class="btn-secondary filter-btn active" data-filter="all" onclick="setFilter('all')">Wszystkie</button>
+                <button class="btn-secondary filter-btn" data-filter="unanswered" onclick="setFilter('unanswered')">Nowe</button>
+                <button class="btn-secondary filter-btn" data-filter="correct" onclick="setFilter('correct')">Poprawne</button>
+                <button class="btn-secondary filter-btn" data-filter="incorrect" onclick="setFilter('incorrect')">Błędne</button>
+            </div>
+        </div>
+        
+        <!-- Questions Container -->
+        <div id="questionsContainer"></div>
+        
+        <!-- Quiz Results -->
+        <div id="quizResults" class="quiz-results hidden"></div>
+        
+        <!-- History Modal -->
+        <div id="historyModal" class="modal-overlay hidden" onclick="closeModal(event)">
+            <div class="modal" onclick="event.stopPropagation()">
+                <h3>📊 Historia quizów</h3>
+                <div class="history-list" id="historyList"></div>
+                <div class="modal-actions">
+                    <button class="btn-danger" onclick="clearHistory()">🗑️ Wyczyść</button>
+                    <button class="btn-primary" onclick="closeHistory()">Zamknij</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div id="navigation" class="navigation">
+            <button class="btn-secondary" onclick="prevPage()">← Poprzednia</button>
+            <span class="page-info" id="pageInfo">Strona 1 z 1</span>
+            <button class="btn-secondary" onclick="nextPage()">Następna →</button>
+        </div>
+        
+        <!-- Keyboard Shortcuts -->
+        <div class="shortcuts-hint" id="shortcutsHint">
+            <strong>Skróty:</strong><br>
+            <code>←</code> <code>→</code> Nawigacja<br>
+            <code>Space</code> Sprawdź<br>
+            <code>R</code> Resetuj<br>
+            <code>S</code> Losuj
+        </div>
+        
+        <footer>
+            <p>Inspirowane stroną <a href="https://dyskretna.xn--drog-eta.pl" target="_blank">dyskretna.drogą.pl</a></p>
+            <p>Materiały edukacyjne do nauki własnej • Wersja 2.0</p>
+        </footer>
+    </div>
+    
+    <input type="file" id="importFile" style="display:none" accept=".json" onchange="handleImport(event)">
+    
+    <script>
+        // === STATE ===
+        let questions = [], displayQuestions = [], userAnswers = {}, checkedQuestions = new Set(), bookmarks = new Set();
+        let currentMode = 'learn', currentFilter = 'all', currentSearch = '', currentPage = 1, questionsPerPage = 10;
+        let quizType = 'standard', quizActive = false, quizStartTime = null, quizTimeLimit = 0, timerInterval = null;
+        let flashcardIndex = 0, knownCards = new Set(), flashcardQuestions = [];
+        let autoShuffle = false;
+        let history = [];
+        
+        // === INITIALIZATION ===
+        function init() {
+            loadProgress();
+            questions = getEmbeddedQuestions();
+            displayQuestions = [...questions];
+            flashcardQuestions = [...questions];
+            updateStats();
+            renderQuestions();
+            renderMath();
+            setupKeyboardShortcuts();
+        }
+        
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('dyskretna_progress_v3');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    userAnswers = data.answers || {};
+                    checkedQuestions = new Set(data.checked || []);
+                    bookmarks = new Set(data.bookmarks || []);
+                    history = data.history || [];
+                }
+            } catch (e) { console.error('Load error:', e); }
+        }
+        
+        function saveProgress() {
+            try {
+                localStorage.setItem('dyskretna_progress_v3', JSON.stringify({
+                    answers: userAnswers,
+                    checked: [...checkedQuestions],
+                    bookmarks: [...bookmarks],
+                    history: history
+                }));
+            } catch (e) { console.error('Save error:', e); }
+        }
+        
+        // === MATH RENDERING ===
+        function renderMath() {
+            if (typeof renderMathInElement !== 'undefined') {
+                setTimeout(() => {
+                    renderMathInElement(document.body, {
+                        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+                        throwOnError: false
+                    });
+                }, 50);
+            }
+        }
+        
+        // === MODE SWITCHING ===
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-tab').forEach((tab, i) => {
+                tab.classList.toggle('active', ['learn', 'quiz', 'flashcards', 'bookmarks', 'meta'][i] === mode);
+            });
+            
+            // Hide all panels
+            document.getElementById('quizPanel').classList.add('hidden');
+            document.getElementById('flashcardsPanel').classList.add('hidden');
+            document.getElementById('metaPanel').classList.add('hidden');
+            document.getElementById('learnControls').classList.add('hidden');
+            document.getElementById('quizControls').classList.add('hidden');
+            document.getElementById('searchFilter').classList.add('hidden');
+            document.getElementById('questionsContainer').classList.add('hidden');
+            document.getElementById('quizResults').classList.add('hidden');
+            document.getElementById('navigation').classList.add('hidden');
+            document.getElementById('quizTimer').classList.add('hidden');
+            
+            if (mode === 'learn') {
+                document.getElementById('learnControls').classList.remove('hidden');
+                document.getElementById('searchFilter').classList.remove('hidden');
+                document.getElementById('questionsContainer').classList.remove('hidden');
+                document.getElementById('navigation').classList.remove('hidden');
+                displayQuestions = [...questions];
+                questionsPerPage = 10;
+                currentPage = 1;
+                renderQuestions();
+            } else if (mode === 'quiz') {
+                document.getElementById('quizPanel').classList.remove('hidden');
+                if (quizActive) {
+                    document.getElementById('quizPanel').classList.add('hidden');
+                    document.getElementById('quizControls').classList.remove('hidden');
+                    document.getElementById('questionsContainer').classList.remove('hidden');
+                    document.getElementById('navigation').classList.remove('hidden');
+                    if (quizTimeLimit > 0) document.getElementById('quizTimer').classList.remove('hidden');
+                }
+            } else if (mode === 'flashcards') {
+                document.getElementById('flashcardsPanel').classList.remove('hidden');
+                renderFlashcard();
+            } else if (mode === 'bookmarks') {
+                document.getElementById('learnControls').classList.remove('hidden');
+                document.getElementById('searchFilter').classList.remove('hidden');
+                document.getElementById('questionsContainer').classList.remove('hidden');
+                document.getElementById('navigation').classList.remove('hidden');
+                displayQuestions = questions.filter(q => bookmarks.has(q.id));
+                currentPage = 1;
+                renderQuestions();
+            } else if (mode === 'meta') {
+                document.getElementById('metaPanel').classList.remove('hidden');
+            }
+            updateStats();
+        }
+        
+        // === QUIZ LOGIC ===
+        function selectQuizType(type) {
+            quizType = type;
+            document.querySelectorAll('.quiz-type-card').forEach(card => card.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+            document.getElementById('customSettings').classList.toggle('hidden', type !== 'custom');
+        }
+        
+        function startQuiz() {
+            let count, timeLimit = 0, shuffleOpts = true;
+            
+            switch (quizType) {
+                case 'quick': count = 10; timeLimit = 0; break;
+                case 'standard': count = 20; timeLimit = 30; break;
+                case 'hard': count = 40; timeLimit = 45; break;
+                case 'exam': count = questions.length; timeLimit = 90; break;
+                case 'mistakes':
+                    displayQuestions = questions.filter(q => checkedQuestions.has(q.id) && !isQuestionCorrect(q));
+                    if (displayQuestions.length === 0) { alert('Brak błędnych pytań!'); return; }
+                    count = displayQuestions.length;
+                    timeLimit = Math.ceil(count * 1.5);
+                    break;
+                case 'custom':
+                    count = parseInt(document.getElementById('customCount').value) || 20;
+                    timeLimit = parseInt(document.getElementById('customTime').value) || 0;
+                    shuffleOpts = document.getElementById('shuffleOptions').checked;
+                    break;
+            }
+            
+            if (quizType !== 'mistakes') {
+                displayQuestions = [...questions].sort(() => Math.random() - 0.5).slice(0, Math.min(count, questions.length));
+            }
+            
+            if (shuffleOpts) {
+                displayQuestions = displayQuestions.map(q => ({
+                    ...q, options: [...q.options].sort(() => Math.random() - 0.5)
+                }));
+            }
+            
+            // Reset answers for quiz
+            displayQuestions.forEach(q => { delete userAnswers[q.id]; checkedQuestions.delete(q.id); });
+            
+            quizActive = true;
+            quizStartTime = Date.now();
+            quizTimeLimit = timeLimit * 60 * 1000;
+            questionsPerPage = 5;
+            currentPage = 1;
+            
+            document.getElementById('quizPanel').classList.add('hidden');
+            document.getElementById('quizControls').classList.remove('hidden');
+            document.getElementById('questionsContainer').classList.remove('hidden');
+            document.getElementById('navigation').classList.remove('hidden');
+            
+            if (quizTimeLimit > 0) {
+                document.getElementById('quizTimer').classList.remove('hidden');
+                startTimer();
+            }
+            
+            updateStats();
+            renderQuestions();
+        }
+        
+        function startTimer() {
+            updateTimerDisplay();
+            timerInterval = setInterval(() => {
+                updateTimerDisplay();
+                const remaining = quizTimeLimit - (Date.now() - quizStartTime);
+                if (remaining <= 0) {
+                    finishQuiz();
+                }
+            }, 1000);
+        }
+        
+        function updateTimerDisplay() {
+            const elapsed = Date.now() - quizStartTime;
+            const remaining = Math.max(0, quizTimeLimit - elapsed);
+            const minutes = Math.floor(remaining / 60000);
+            const seconds = Math.floor((remaining % 60000) / 1000);
+            const timer = document.getElementById('quizTimer');
+            timer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            timer.classList.remove('warning', 'danger');
+            if (remaining < 60000) timer.classList.add('danger');
+            else if (remaining < 300000) timer.classList.add('warning');
+        }
+        
+        function finishQuiz() {
+            if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+            quizActive = false;
+            
+            // Check all unanswered
+            displayQuestions.forEach(q => { if (userAnswers[q.id]?.length > 0) checkedQuestions.add(q.id); });
+            
+            const total = displayQuestions.length;
+            const answered = displayQuestions.filter(q => checkedQuestions.has(q.id)).length;
+            const correct = displayQuestions.filter(q => checkedQuestions.has(q.id) && isQuestionCorrect(q)).length;
+            const score = answered > 0 ? Math.round((correct / total) * 100) : 0;
+            const elapsed = Math.round((Date.now() - quizStartTime) / 1000);
+            
+            // Save to history
+            history.unshift({ date: new Date().toLocaleString('pl-PL'), score, correct, total, time: elapsed, type: quizType });
+            if (history.length > 20) history.pop();
+            saveProgress();
+            
+            // Show results
+            showQuizResults(score, correct, total, elapsed);
+        }
+        
+        function showQuizResults(score, correct, total, time) {
+            let scoreClass = score >= 80 ? 'excellent' : score >= 60 ? 'good' : score >= 40 ? 'average' : 'poor';
+            let message = score >= 80 ? '🎉 Świetna robota!' : score >= 60 ? '👍 Dobry wynik!' : score >= 40 ? '📚 Jeszcze trochę nauki!' : '💪 Nie poddawaj się!';
+            
+            document.getElementById('quizResults').innerHTML = `
+                <h2>🏆 Wyniki Quizu</h2>
+                <div class="results-score ${scoreClass}">${score}%</div>
+                <div class="results-message">${message}</div>
+                <div class="results-stats">
+                    <div class="results-stat"><div class="value">${correct}/${total}</div><div class="label">Poprawne</div></div>
+                    <div class="results-stat"><div class="value">${total - correct}</div><div class="label">Błędne</div></div>
+                    <div class="results-stat"><div class="value">${Math.floor(time / 60)}:${String(time % 60).padStart(2, '0')}</div><div class="label">Czas</div></div>
+                </div>
+                <div class="results-actions">
+                    <button class="btn-primary" onclick="reviewQuiz()">📋 Przejrzyj odpowiedzi</button>
+                    <button class="btn-quiz" onclick="setMode('quiz')">🔄 Nowy quiz</button>
+                    <button class="btn-secondary" onclick="setMode('learn')">📖 Wróć do nauki</button>
+                </div>
+            `;
+            
+            document.getElementById('quizControls').classList.add('hidden');
+            document.getElementById('questionsContainer').classList.add('hidden');
+            document.getElementById('navigation').classList.add('hidden');
+            document.getElementById('quizTimer').classList.add('hidden');
+            document.getElementById('quizResults').classList.remove('hidden');
+        }
+        
+        function reviewQuiz() {
+            document.getElementById('quizResults').classList.add('hidden');
+            document.getElementById('questionsContainer').classList.remove('hidden');
+            document.getElementById('navigation').classList.remove('hidden');
+            document.getElementById('learnControls').classList.remove('hidden');
+            currentPage = 1;
+            renderQuestions();
+        }
+        
+        function cancelQuiz() {
+            if (confirm('Czy na pewno chcesz anulować quiz?')) {
+                if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+                quizActive = false;
+                setMode('learn');
+            }
+        }
+        
+        // === FLASHCARDS ===
+        function renderFlashcard() {
+            if (flashcardQuestions.length === 0) return;
+            const q = flashcardQuestions[flashcardIndex];
+            const correctAnswers = q.options.filter(o => o.correct).map(o => o.text).join('<br>• ');
+            
+            document.getElementById('flashcardQuestion').innerHTML = q.question;
+            document.getElementById('flashcardAnswer').innerHTML = `<strong>Poprawna odpowiedź:</strong><br>• ${correctAnswers}`;
+            document.getElementById('flashcard').classList.remove('flipped');
+            
+            // Progress dots
+            let dots = '';
+            flashcardQuestions.forEach((_, i) => {
+                let cls = i === flashcardIndex ? 'current' : '';
+                if (knownCards.has(flashcardQuestions[i].id)) cls += ' known';
+                dots += `<div class="flashcard-dot ${cls}" onclick="goToFlashcard(${i})"></div>`;
+            });
+            document.getElementById('flashcardProgress').innerHTML = dots;
+            
+            renderMath();
+        }
+        
+        function flipCard() { document.getElementById('flashcard').classList.toggle('flipped'); }
+        function prevFlashcard() { flashcardIndex = (flashcardIndex - 1 + flashcardQuestions.length) % flashcardQuestions.length; renderFlashcard(); }
+        function nextFlashcard() { flashcardIndex = (flashcardIndex + 1) % flashcardQuestions.length; renderFlashcard(); }
+        function goToFlashcard(i) { flashcardIndex = i; renderFlashcard(); }
+        function markKnown() { knownCards.add(flashcardQuestions[flashcardIndex].id); nextFlashcard(); }
+        function markUnknown() { knownCards.delete(flashcardQuestions[flashcardIndex].id); nextFlashcard(); }
+        function shuffleFlashcards() { flashcardQuestions.sort(() => Math.random() - 0.5); flashcardIndex = 0; renderFlashcard(); }
+        function resetFlashcards() { knownCards = new Set(); flashcardIndex = 0; renderFlashcard(); }
+        
+        // === QUESTIONS RENDERING ===
+        function getFilteredQuestions() {
+            let filtered = displayQuestions;
+            if (currentFilter === 'unanswered') filtered = filtered.filter(q => !checkedQuestions.has(q.id));
+            else if (currentFilter === 'correct') filtered = filtered.filter(q => checkedQuestions.has(q.id) && isQuestionCorrect(q));
+            else if (currentFilter === 'incorrect') filtered = filtered.filter(q => checkedQuestions.has(q.id) && !isQuestionCorrect(q));
+            if (currentSearch) {
+                const s = currentSearch.toLowerCase();
+                filtered = filtered.filter(q => q.question.toLowerCase().includes(s) || q.options.some(o => o.text.toLowerCase().includes(s)));
+            }
+            return filtered;
+        }
+        
+        function renderQuestions() {
+            const container = document.getElementById('questionsContainer');
+            const filtered = getFilteredQuestions();
+            const totalPages = Math.ceil(filtered.length / questionsPerPage);
+            if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+            const start = (currentPage - 1) * questionsPerPage;
+            const pageQuestions = filtered.slice(start, start + questionsPerPage);
+            container.innerHTML = pageQuestions.map((q, i) => renderQuestion(q, start + i + 1)).join('');
+            document.getElementById('pageInfo').textContent = `Strona ${currentPage} z ${totalPages || 1} (${filtered.length} pytań)`;
+            renderMath();
+        }
+        
+        function renderQuestion(q, displayNum) {
+            const isChecked = checkedQuestions.has(q.id);
+            const answers = userAnswers[q.id] || [];
+            const isBookmarked = bookmarks.has(q.id);
+            
+            return `<div class="question-card ${isBookmarked ? 'bookmarked' : ''}" id="question-${q.id}">
+                <div class="question-header">
+                    <span class="question-number">Pytanie ${displayNum}</span>
+                    <div class="question-badges">
+                        <span class="question-type">Wielokrotny wybór</span>
+                        <button class="bookmark-btn" onclick="toggleBookmark(${q.id})">${isBookmarked ? '⭐' : '☆'}</button>
+                    </div>
+                </div>
+                <div class="question-text">${q.question}</div>
+                <div class="options" id="options-${q.id}">${q.options.map((opt, idx) => renderOption(q, opt, idx, isChecked, answers)).join('')}</div>
+                <div class="question-actions">
+                    <button class="btn-primary" id="checkbtn-${q.id}" onclick="checkQuestion(${q.id})" style="padding: 8px 16px; font-size: 0.85em;" ${isChecked ? 'disabled' : ''}>${isChecked ? '✓ Sprawdzono' : 'Sprawdź'}</button>
+                </div>
+            </div>`;
+        }
+        
+        function renderOption(q, opt, idx, isChecked, answers) {
+            const isSelected = answers.includes(idx);
+            let classes = 'option', icon = '';
+            if (isChecked) {
+                if (opt.correct && isSelected) { classes += ' correct'; icon = '<span class="option-icon">✓</span>'; }
+                else if (!opt.correct && isSelected) { classes += ' incorrect'; icon = '<span class="option-icon">✗</span>'; }
+                else if (opt.correct && !isSelected) { classes += ' missed'; icon = '<span class="option-icon">⚠</span>'; }
+            } else if (isSelected) { classes += ' selected'; }
+            return `<label class="${classes}" data-qid="${q.id}" data-idx="${idx}" onclick="selectOption(${q.id}, ${idx})">
+                <input type="checkbox" name="q${q.id}" ${isSelected ? 'checked' : ''} ${isChecked ? 'disabled' : ''}>
+                <span class="option-text">${opt.text}</span>${icon}
+            </label>`;
+        }
+        
+        function selectOption(qId, optIdx) {
+            if (checkedQuestions.has(qId)) return;
+            if (!userAnswers[qId]) userAnswers[qId] = [];
+            const idx = userAnswers[qId].indexOf(optIdx);
+            if (idx > -1) userAnswers[qId].splice(idx, 1);
+            else userAnswers[qId].push(optIdx);
+            saveProgress();
+            // Update UI in-place instead of full re-render (preserves KaTeX)
+            updateOptionStates(qId);
+        }
+        
+        function updateOptionStates(qId) {
+            const container = document.getElementById('options-' + qId);
+            if (!container) return;
+            const answers = userAnswers[qId] || [];
+            const labels = container.querySelectorAll('label[data-qid="' + qId + '"]');
+            labels.forEach(label => {
+                const optIdx = parseInt(label.getAttribute('data-idx'));
+                const isSelected = answers.includes(optIdx);
+                const checkbox = label.querySelector('input');
+                if (checkbox) checkbox.checked = isSelected;
+                label.classList.toggle('selected', isSelected);
+            });
+        }
+        
+        function toggleBookmark(qId) {
+            if (bookmarks.has(qId)) bookmarks.delete(qId);
+            else bookmarks.add(qId);
+            saveProgress();
+            // Update bookmark icon in-place
+            const card = document.getElementById('question-' + qId);
+            if (card) {
+                const btn = card.querySelector('.bookmark-btn');
+                if (btn) btn.textContent = bookmarks.has(qId) ? '⭐' : '☆';
+                card.classList.toggle('bookmarked', bookmarks.has(qId));
+            }
+        }
+        
+        // === CHECKING ===
+        function checkQuestion(qId) {
+            checkedQuestions.add(qId);
+            saveProgress();
+            updateStats();
+            // Update the question card in-place to show results (preserves KaTeX)
+            const q = questions.find(q => q.id === qId) || displayQuestions.find(q => q.id === qId);
+            if (!q) { renderQuestions(); return; }
+            const container = document.getElementById('options-' + qId);
+            if (!container) { renderQuestions(); return; }
+            const answers = userAnswers[qId] || [];
+            const labels = container.querySelectorAll('label[data-qid="' + qId + '"]');
+            labels.forEach(label => {
+                const optIdx = parseInt(label.getAttribute('data-idx'));
+                const opt = q.options[optIdx];
+                const isSelected = answers.includes(optIdx);
+                const checkbox = label.querySelector('input');
+                if (checkbox) checkbox.disabled = true;
+                label.classList.remove('selected');
+                // Remove old icons
+                const oldIcon = label.querySelector('.option-icon');
+                if (oldIcon) oldIcon.remove();
+                if (opt.correct && isSelected) {
+                    label.className = 'option correct';
+                    label.insertAdjacentHTML('beforeend', '<span class="option-icon">✓</span>');
+                } else if (!opt.correct && isSelected) {
+                    label.className = 'option incorrect';
+                    label.insertAdjacentHTML('beforeend', '<span class="option-icon">✗</span>');
+                } else if (opt.correct && !isSelected) {
+                    label.className = 'option missed';
+                    label.insertAdjacentHTML('beforeend', '<span class="option-icon">⚠</span>');
+                } else {
+                    label.className = 'option';
+                }
+            });
+            const btn = document.getElementById('checkbtn-' + qId);
+            if (btn) { btn.disabled = true; btn.innerHTML = '✓ Sprawdzono'; }
+        }
+        function checkAllAnswers() {
+            displayQuestions.forEach(q => { if (userAnswers[q.id]?.length > 0) checkedQuestions.add(q.id); });
+            saveProgress();
+            updateStats();
+            // Re-render fully for check-all since many cards changed
+            renderQuestions();
+        }
+        
+        function isQuestionCorrect(q) {
+            const answers = userAnswers[q.id] || [];
+            const correctIndices = q.options.map((opt, idx) => opt.correct ? idx : -1).filter(idx => idx !== -1);
+            return answers.length === correctIndices.length && answers.every(a => correctIndices.includes(a)) && correctIndices.every(c => answers.includes(c));
+        }
+        
+        // === STATS ===
+        function updateStats() {
+            const total = displayQuestions.length;
+            const relevantChecked = displayQuestions.filter(q => checkedQuestions.has(q.id));
+            const answered = relevantChecked.length;
+            const correct = relevantChecked.filter(q => isQuestionCorrect(q)).length;
+            const percent = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+            const progress = total > 0 ? Math.round((answered / total) * 100) : 0;
+            
+            document.getElementById('totalQuestions').textContent = total;
+            document.getElementById('answeredQuestions').textContent = answered;
+            document.getElementById('correctAnswers').textContent = correct;
+            document.getElementById('scorePercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `Postęp: ${progress}% (${answered}/${total})`;
+        }
+        
+        // === FILTERS & NAVIGATION ===
+        function setFilter(filter) {
+            currentFilter = filter;
+            currentPage = 1;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.filter === filter));
+            renderQuestions();
+        }
+        
+        function filterQuestions() { currentSearch = document.getElementById('searchBox').value; currentPage = 1; renderQuestions(); }
+        function shuffleQuestions() { displayQuestions.sort(() => Math.random() - 0.5); currentPage = 1; renderQuestions(); }
+        function toggleAutoShuffle() {
+            autoShuffle = !autoShuffle;
+            const btn = document.getElementById('autoShuffleBtn');
+            if (btn) btn.textContent = autoShuffle ? '🔀 Auto-losuj: WŁ' : '🔀 Auto-losuj: WYŁ';
+            if (autoShuffle) shuffleQuestions();
+            localStorage.setItem('dyskretna_autoshuffle', autoShuffle ? '1' : '0');
+        }
+        function prevPage() { if (currentPage > 1) { currentPage--; renderQuestions(); window.scrollTo(0, 0); } }
+        function nextPage() { const totalPages = Math.ceil(getFilteredQuestions().length / questionsPerPage); if (currentPage < totalPages) { currentPage++; renderQuestions(); window.scrollTo(0, 0); } }
+        
+        // === RESET ===
+        function resetProgress() {
+            if (confirm('Czy na pewno chcesz zresetować cały postęp?')) {
+                userAnswers = {}; checkedQuestions = new Set();
+                saveProgress();
+                displayQuestions = [...questions];
+                currentPage = 1;
+                updateStats();
+                renderQuestions();
+            }
+        }
+        
+        // === THEME ===
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            document.getElementById('themeIcon').textContent = isLight ? '☀️' : '🌙';
+            document.getElementById('themeText').textContent = isLight ? 'Jasny' : 'Ciemny';
+            localStorage.setItem('dyskretna_theme', isLight ? 'light' : 'dark');
+        }
+        
+        // === HISTORY ===
+        function showHistory() {
+            const list = document.getElementById('historyList');
+            if (history.length === 0) {
+                list.innerHTML = '<p style="text-align:center; color: var(--text-muted);">Brak historii quizów</p>';
+            } else {
+                list.innerHTML = history.map(h => `
+                    <div class="history-item">
+                        <span class="date">${h.date}</span>
+                        <span>${h.correct}/${h.total}</span>
+                        <span class="score ${h.score >= 60 ? 'good' : 'bad'}">${h.score}%</span>
+                    </div>
+                `).join('');
+            }
+            document.getElementById('historyModal').classList.remove('hidden');
+        }
+        
+        function closeHistory() { document.getElementById('historyModal').classList.add('hidden'); }
+        function closeModal(e) { if (e.target.classList.contains('modal-overlay')) closeHistory(); }
+        function clearHistory() { if (confirm('Wyczyścić historię?')) { history = []; saveProgress(); showHistory(); } }
+        
+        // === IMPORT/EXPORT ===
+        function exportProgress() {
+            const data = { answers: userAnswers, checked: [...checkedQuestions], bookmarks: [...bookmarks], history, exported: new Date().toISOString() };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `dyskretna_progress_${new Date().toISOString().slice(0,10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function importProgress() { document.getElementById('importFile').click(); }
+        function handleImport(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                try {
+                    const data = JSON.parse(ev.target.result);
+                    if (confirm('Zaimportować postęp? Zastąpi to obecne dane.')) {
+                        userAnswers = data.answers || {};
+                        checkedQuestions = new Set(data.checked || []);
+                        bookmarks = new Set(data.bookmarks || []);
+                        history = data.history || [];
+                        saveProgress();
+                        updateStats();
+                        renderQuestions();
+                        alert('Import zakończony!');
+                    }
+                } catch (err) { alert('Błąd importu: ' + err.message); }
+            };
+            reader.readAsText(file);
+            e.target.value = '';
+        }
+        
+        // === KEYBOARD ===
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', e => {
+                if (e.target.tagName === 'INPUT') return;
+                switch (e.key) {
+                    case 'ArrowLeft': prevPage(); break;
+                    case 'ArrowRight': nextPage(); break;
+                    case ' ': e.preventDefault(); checkAllAnswers(); break;
+                    case 'r': case 'R': shuffleQuestions(); break;
+                    case 's': case 'S': shuffleQuestions(); break;
+                }
+            });
+        }
+        
+        // === EMBED ===
+        function getEmbeddedQuestions() { return EMBEDDED_QUESTIONS_PLACEHOLDER; }
+        
+        // === INIT ===
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('dyskretna_theme') === 'light') {
+                document.body.classList.add('light-mode');
+                document.getElementById('themeIcon').textContent = '☀️';
+                document.getElementById('themeText').textContent = 'Jasny';
+            }
+            if (localStorage.getItem('dyskretna_autoshuffle') === '1') {
+                autoShuffle = true;
+            }
+            setTimeout(() => {
+                init();
+                if (autoShuffle) {
+                    const btn = document.getElementById('autoShuffleBtn');
+                    if (btn) btn.textContent = '🔀 Auto-losuj: WŁ';
+                    shuffleQuestions();
+                }
+            }, 300);
+        });
+    </script>
+</body>
+</html>
