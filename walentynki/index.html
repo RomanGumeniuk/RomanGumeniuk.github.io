@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --pink: #e8a0bf;
+            --deep-pink: #d4729c;
+            --cream: #fdf6f0;
+            --dark: #2d2d2d;
+            --accent: #c9607e;
+            --gold: #d4a574;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .screen {
+            display: none;
+            min-height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            animation: fadeIn 0.8s ease;
+        }
+        .screen.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== PASSWORD SCREEN ========== */
+        #password-screen {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .lock-emoji {
+            font-size: 4rem;
+
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-8deg); }
+            75% { transform: rotate(8deg); }
+        }
+
+        .password-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            color: #e0d0f0;
+        }
+
+        .password-input-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .password-input {
+            padding: 0.9rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.07);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+            outline: none;
+            width: 260px;
+            transition: border-color 0.3s;
+            letter-spacing: 2px;
+        }
+
+        .password-input::placeholder { color: rgba(255,255,255,0.3); }
+        .password-input:focus { border-color: var(--pink); }
+
+        .password-btn {
+            padding: 0.8rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            background: var(--accent);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .password-btn:hover { background: #b8506e; transform: translateY(-2px); }
+
+        .password-error {
+            color: #ff6b8a;
+            font-size: 0.85rem;
+            min-height: 1.2rem;
+            transition: opacity 0.3s;
+        }
+
+        .password-hint {
+            color: rgba(255,255,255,0.25);
+            font-size: 0.75rem;
+            font-style: italic;
+        }
+
+        /* ========== QUESTION SCREEN ========== */
+        #question-screen {
+            background: linear-gradient(135deg, var(--cream) 0%, #fce4ec 100%);
+            text-align: center;
+            gap: 2.5rem;
+            position: relative;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-hearts span {
+            position: absolute;
+            font-size: 1.4rem;
+            opacity: 0.15;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.15; }
+            90% { opacity: 0.15; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        .question-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .question-emoji {
+            font-size: 4rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .question-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 5vw, 2.8rem);
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.4;
+            max-width: 500px;
+        }
+        .question-text span { color: var(--accent); }
+
+        .buttons {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            min-height: 80px;
+        }
+
+        .btn {
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-yes {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 20px rgba(201, 96, 126, 0.35);
+        }
+        .btn-yes:hover {
+            background: #b8506e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(201, 96, 126, 0.45);
+        }
+
+        .btn-no {
+            background: transparent;
+            color: var(--dark);
+            border: 2px solid #ddd;
+            position: relative;
+            transition: all 0.08s ease;
+            user-select: none;
+        }
+        .btn-no:hover { border-color: #bbb; background: rgba(0,0,0,0.03); }
+
+        /* Dopamine Corners */
+        .dopamine-corner {
+            position: fixed;
+            z-index: 1;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        .dopamine-corner:hover { opacity: 1; }
+        .dopamine-corner iframe { display: block; border: none; width: 100%; height: 100%; }
+
+        .corner-label { display: none; }
+
+        .corner-tl { top: 12px; left: 12px; width: max(140px, 13vw); aspect-ratio: 9/16; }
+        .corner-bl { bottom: 12px; left: 12px; width: max(180px, 16vw); aspect-ratio: 16/9; }
+        .corner-tr { top: 12px; right: 12px; width: max(180px, 16vw); aspect-ratio: 16/9; }
+        .corner-br { bottom: 12px; right: 12px; width: max(180px, 16vw); aspect-ratio: 16/9; }
+
+        @media (max-width: 900px) {
+            .dopamine-corner { display: none; }
+        }
+
+        /* ========== YES SCREEN ========== */
+        #yes-screen {
+            background: linear-gradient(135deg, var(--cream) 0%, #fce4ec 50%, #f8e8d4 100%);
+            text-align: center;
+            gap: 1.5rem;
+            padding: 2rem 1.5rem;
+        }
+
+        .celebration-emoji {
+            font-size: 3rem;
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .yes-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .hau-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 600;
+            color: var(--dark);
+            animation: hauWobble 0.8s ease-in-out infinite alternate;
+        }
+
+        @keyframes hauWobble {
+            from { transform: rotate(-2deg) scale(1); }
+            to { transform: rotate(2deg) scale(1.05); }
+        }
+
+        .bark-btn {
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            background: white;
+            color: var(--accent);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .bark-btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.05);
+        }
+        .bark-btn:active { transform: scale(0.95); }
+
+        /* Bulldog GIF section */
+        .gifs-and-card-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2rem;
+            width: 100%;
+            max-width: 1100px;
+            flex-wrap: wrap;
+        }
+
+        .bulldog-section {
+            position: relative;
+            cursor: pointer;
+            max-width: 250px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .speech-bubble {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: white;
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 5;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0; height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 10px solid white;
+        }
+
+        .bulldog-section:hover .speech-bubble,
+        .bulldog-section.clicked .speech-bubble {
+            transform: translateX(-50%) scale(1);
+        }
+
+        .bulldog-gif-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        @media (max-width: 900px) {
+            .gifs-and-card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Countdown */
+        .countdown-wrapper { width: 100%; max-width: 460px; }
+
+        .countdown-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .countdown { display: flex; justify-content: center; gap: 1rem; }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            color: var(--accent);
+            background: white;
+            width: clamp(60px, 16vw, 80px);
+            height: clamp(60px, 16vw, 80px);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .countdown-unit {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #aaa;
+        }
+
+        /* Reservation Card */
+        .reservation-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+            text-align: left;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0e8e3;
+        }
+
+        .card-header-icon {
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, var(--pink), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .card-header-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .card-header-sub { font-size: 0.78rem; color: #999; font-weight: 400; }
+
+        .detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            padding: 0.7rem 0;
+        }
+        .detail-row + .detail-row { border-top: 1px solid #f5f0ed; }
+
+        .detail-icon {
+            width: 36px; height: 36px;
+            background: var(--cream);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .detail-content { display: flex; flex-direction: column; gap: 0.15rem; }
+
+        .detail-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aaa;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--cream);
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+        .map-link:hover { background: #f5e6df; transform: translateY(-1px); }
+
+        /* ========== NO SCREEN ========== */
+        #no-screen {
+            background: #1a1a2e;
+            text-align: center;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sad-emojis {
+            position: relative;
+            z-index: 1;
+            font-size: 3.5rem;
+            line-height: 1.3;
+        }
+
+        .okpa-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            color: #4a4a6a;
+            letter-spacing: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .crying-flood {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .crying-emoji-float {
+            position: absolute;
+            animation: cryFloat linear infinite;
+            font-size: 2rem;
+        }
+
+        @keyframes cryFloat {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        .rain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .raindrop {
+            position: absolute;
+            top: -20px;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(transparent, rgba(100, 100, 180, 0.3));
+            animation: rainFall linear infinite;
+        }
+
+        @keyframes rainFall {
+            to { transform: translateY(110vh); }
+        }
+
+        .sadness-text {
+            color: #3a3a5a;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        .back-btn {
+            margin-top: 1rem;
+            padding: 0.7rem 2rem;
+            background: transparent;
+            border: 1px solid #3a3a5a;
+            color: #6a6a8a;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1;
+            position: relative;
+        }
+        .back-btn:hover { border-color: #5a5a7a; color: #8a8aaa; }
+
+        /* Confetti */
+        .confetti-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px; height: 10px;
+            top: -10px;
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============= PASSWORD SCREEN ============= -->
+    <div id="password-screen" class="screen active">
+        <div class="lock-emoji">🔐</div>
+        <h2 class="password-title">Wpisz hasło</h2>
+        <div class="password-input-wrapper">
+            <input type="password" class="password-input" id="passwordInput" placeholder="• • • • •" autocomplete="off">
+            <button class="password-btn" onclick="checkPassword()">okok</button>
+            <div class="password-error" id="passwordError"></div>
+        </div>
+        <div class="password-hint">siemanemaneczko fajna sraka</div>
+    </div>
+
+    <!-- ============= QUESTION SCREEN ============= -->
+    <div id="question-screen" class="screen">
+        <div class="floating-hearts" id="hearts"></div>
+
+        <!-- Dopamine Corners (desktop only) -->
+        <div class="dopamine-corner corner-tl">
+            <iframe title="Subway Surfers" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/hJcv2nZ8x84?autoplay=1&mute=1&loop=1&controls=1&playlist=hJcv2nZ8x84" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="dopamine-corner corner-bl">
+            <iframe title="ASMR Slime" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/rD9BPF3j5wk?start=112&autoplay=1&mute=0&loop=1&controls=1&playlist=rD9BPF3j5wk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="dopamine-corner corner-tr">
+            <iframe title="Prasa Hydrauliczna" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/q9BtYEnrkg4?autoplay=1&mute=1&loop=1&controls=1&playlist=q9BtYEnrkg4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="dopamine-corner corner-br">
+            <iframe title="Swistak" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/wEX1_NYoPls?autoplay=1&mute=0&loop=1&controls=1&playlist=wEX1_NYoPls" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+        </div>
+
+        <div class="question-content">
+            <div class="question-emoji">💐</div>
+            <h1 class="question-text">Hej mami julka chica mamacita, pójdziesz ze mną na <span>Walentynki</span>?</h1>
+            <div class="buttons">
+                <button class="btn btn-yes" onclick="showYes()">OMG OMG TATUSIU OCZYWIŚCIE ŻE TAK! 💕</button>
+                <button class="btn btn-no" id="noBtn">Nie</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============= YES SCREEN ============= -->
+    <div id="yes-screen" class="screen">
+        <div class="confetti-container" id="confetti"></div>
+        <div class="celebration-emoji">🤫🧏</div>
+        <h2 class="yes-title">no i sigma</h2>
+        <div class="hau-text">omg omg mamusiu hau hau hau 🐶</div>
+
+        <button class="bark-btn" id="barkBtn" onclick="playBark()">🐕 Szczekam dla cb</button>
+
+        <div class="countdown-wrapper">
+            <div class="countdown-label">Do naszych Walentynek</div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">0</div>
+                    <div class="countdown-unit">dni</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">0</div>
+                    <div class="countdown-unit">godz</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">0</div>
+                    <div class="countdown-unit">min</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">0</div>
+                    <div class="countdown-unit">sek</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GIFs and Card Container -->
+        <div class="gifs-and-card-container">
+            <!-- Left GIF -->
+            <div class="bulldog-section" id="bulldogSection1" onclick="toggleBubble(1)">
+                <div class="speech-bubble" id="speechBubble1">to ja </div>
+                <div class="bulldog-gif-wrapper">
+                    <div class="tenor-gif-embed" data-postid="10809509902811656004" data-share-method="host" data-aspect-ratio="0.763052" data-width="100%">
+                        <a href="https://tenor.com/view/pibble-gmail-french-bulldog-gif-10809509902811656004">Pibble Gmail GIF</a>
+                        from <a href="https://tenor.com/search/pibble-gifs">Pibble GIFs</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservation Card -->
+            <div class="reservation-card">
+            <div class="card-header">
+                <div class="card-header-icon">🍜</div>
+                <div>
+                    <div class="card-header-text">Nasza rezerwacja</div>
+                    <div class="card-header-sub">Wszystko gotowe!</div>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon">🏠</div>
+                <div class="detail-content">
+                    <div class="detail-label">Restauracja</div>
+                    <div class="detail-value">Blaszak vegan ramen &amp; more</div>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon">📅</div>
+                <div class="detail-content">
+                    <div class="detail-label">Data</div>
+                    <div class="detail-value">Sobota, 14 lutego 2026</div>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon">🕓</div>
+                <div class="detail-content">
+                    <div class="detail-label">Godzina</div>
+                    <div class="detail-value">16:00 – 17:00</div>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon">👫</div>
+                <div class="detail-content">
+                    <div class="detail-label">Osoby</div>
+                    <div class="detail-value">Stolik dla 2</div>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon">📍</div>
+                <div class="detail-content">
+                    <div class="detail-label">Adres</div>
+                    <div class="detail-value">Droga Dębińska, 61-555 Poznań</div>
+                </div>
+            </div>
+            <a class="map-link" href="https://maps.google.com/?q=Blaszak+vegan+ramen+Droga+D%C4%99bi%C5%84ska+Pozna%C5%84" target="_blank" rel="noopener">
+                📍 Nawiguj do restauracji
+            </a>
+            </div>
+
+            <!-- Right GIF -->
+            <div class="bulldog-section" id="bulldogSection2" onclick="toggleBubble(2)">
+                <div class="speech-bubble" id="speechBubble2">to ty twin</div>
+                <div class="bulldog-gif-wrapper">
+                    <div class="tenor-gif-embed" data-postid="6929661518664159501" data-share-method="host" data-aspect-ratio="0.564257" data-width="100%">
+                        <a href="https://tenor.com/view/pibble-gmail-mulch-puppy-dog-gif-6929661518664159501">Pibble Gmail GIF</a>
+                        from <a href="https://tenor.com/search/pibble-gifs">Pibble GIFs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============= NO SCREEN ============= -->
+    <div id="no-screen" class="screen">
+        <div class="rain" id="rain"></div>
+        <div class="crying-flood" id="cryingFlood"></div>
+        <div class="sad-emojis">😢😭😿💔😢😭</div>
+        <div class="okpa-text">okpa</div>
+        <div class="sad-emojis">😭😢😭💧😿😭</div>
+        <div class="sadness-text">*zeszlajmuje cię*</div>
+        <button class="back-btn" onclick="showQuestion()">Wróć 🥺</button>
+    </div>
+
+    <!-- Tenor embed script -->
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    <script>
+        // ===== PASSWORD =====
+        const passwordInput = document.getElementById('passwordInput');
+        passwordInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
+
+        function checkPassword() {
+            const val = passwordInput.value.toLowerCase().trim();
+            if (val === 'masło' || val === 'maslo' || val === 'mas\u0142o') {
+                showScreen('question-screen');
+                initQuestionScreen();
+            } else {
+                const err = document.getElementById('passwordError');
+                err.textContent = 'Złe hasło! Spróbuj jeszcze raz 🙈';
+                passwordInput.value = '';
+                passwordInput.style.borderColor = '#ff6b8a';
+                setTimeout(() => { err.textContent = ''; passwordInput.style.borderColor = ''; }, 2000);
+            }
+        }
+
+        // ===== SCREEN NAV =====
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        let questionInited = false;
+        function initQuestionScreen() {
+            if (questionInited) return;
+            questionInited = true;
+            createHearts();
+            initNoBtnGame();
+            // Lazy-load dopamine corner iframes
+            document.querySelectorAll('.dopamine-corner iframe[data-src]').forEach(iframe => {
+                iframe.src = iframe.dataset.src;
+            });
+        }
+
+        function showYes() {
+            showScreen('yes-screen');
+            launchConfetti();
+            startCountdown();
+            muteAllVideos();
+        }
+
+        function muteAllVideos() {
+            document.querySelectorAll('.dopamine-corner iframe').forEach(iframe => {
+                if (iframe.src && iframe.src.includes('youtube')) {
+                    const newSrc = iframe.src.replace('mute=0', 'mute=1');
+                    if (newSrc !== iframe.src) {
+                        iframe.src = newSrc;
+                    }
+                }
+            });
+        }
+
+        function showNo() {
+            showScreen('no-screen');
+            createRain();
+            createCryingEmojis();
+        }
+
+        function showQuestion() {
+            showScreen('question-screen');
+        }
+
+        // ===== FLOATING HEARTS =====
+        function createHearts() {
+            const container = document.getElementById('hearts');
+            const hearts = ['♥', '♡', '❤', '💗', '💕', '💖'];
+            for (let i = 0; i < 18; i++) {
+                const span = document.createElement('span');
+                span.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                span.style.left = Math.random() * 100 + '%';
+                span.style.animationDuration = (8 + Math.random() * 12) + 's';
+                span.style.animationDelay = (Math.random() * 10) + 's';
+                span.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+                container.appendChild(span);
+            }
+        }
+
+        // ===== "NO" BUTTON MINI-GAME =====
+        function initNoBtnGame() {
+            const noBtn = document.getElementById('noBtn');
+            let escapeCount = 0;
+            const maxEscapes = 20;
+
+            function dodge(e) {
+                if (escapeCount >= maxEscapes) return;
+                if (e.type === 'touchstart') e.preventDefault();
+
+                const vw = window.innerWidth;
+                const vh = window.innerHeight;
+                const btnW = noBtn.offsetWidth;
+                const btnH = noBtn.offsetHeight;
+                const pad = 30;
+
+                // Random position
+                const newX = pad + Math.random() * (vw - btnW - pad * 2);
+                const newY = pad + Math.random() * (vh - btnH - pad * 2);
+
+                noBtn.style.position = 'fixed';
+                noBtn.style.left = newX + 'px';
+                noBtn.style.top = newY + 'px';
+                noBtn.style.zIndex = '999';
+                noBtn.style.transform = 'none';
+
+                escapeCount++;
+
+                // Shrink progressively
+                const scale = Math.max(0.55, 1 - escapeCount * 0.025);
+                noBtn.style.fontSize = (1.1 * scale) + 'rem';
+                noBtn.style.padding = `${1 * scale}rem ${3 * scale}rem`;
+
+                // Taunt messages
+                const taunts = ['aha', 'twin kliknij tak', 'TWIN', 'HALO TWIN', 'WIEM ŻE JEST POSIEKANYM WUJASZKIEM ALE POCZEKAJ', '😜', 'jak klikniesz to jesteś ohio', 'nie.', '...'];
+                noBtn.textContent = taunts[escapeCount % taunts.length];
+            }
+
+            noBtn.addEventListener('mouseenter', dodge);
+            noBtn.addEventListener('touchstart', dodge, { passive: false });
+
+            noBtn.addEventListener('click', function() {
+                if (escapeCount >= maxEscapes) {
+                    showNo();
+                }
+            });
+        }
+
+        // ===== BARK SOUND =====
+        function playBark() {
+            const audio = new Audio('freesound_community-pug-woof-2-103762.mp3');
+            audio.volume = 0.7;
+            audio.play().catch(err => console.log('Błąd odtwarzania:', err));
+
+            const btn = document.getElementById('barkBtn');
+            btn.textContent = '🐕 HAU HAU HAU!';
+            setTimeout(() => { btn.textContent = '🐕 Szczekaj! Hau!'; }, 1200);
+        }
+
+        // ===== BULLDOG SPEECH BUBBLE =====
+        function toggleBubble(id) {
+            const section = document.getElementById('bulldogSection' + id);
+            if (section) {
+                section.classList.toggle('clicked');
+            }
+        }
+
+        // ===== COUNTDOWN =====
+        let countdownInterval;
+        function startCountdown() {
+            clearInterval(countdownInterval);
+            const target = new Date('2026-02-14T16:00:00+01:00').getTime();
+
+            function update() {
+                let diff = target - Date.now();
+                if (diff < 0) diff = 0;
+                document.getElementById('days').textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+                document.getElementById('hours').textContent = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+            }
+
+            update();
+            countdownInterval = setInterval(update, 1000);
+        }
+
+        // ===== CONFETTI =====
+        function launchConfetti() {
+            const container = document.getElementById('confetti');
+            container.innerHTML = '';
+            const colors = ['#e8a0bf', '#c9607e', '#d4a574', '#f8e8d4', '#ffb3c6', '#ff6b8a'];
+            for (let i = 0; i < 80; i++) {
+                const div = document.createElement('div');
+                div.className = 'confetti';
+                div.style.left = Math.random() * 100 + '%';
+                div.style.background = colors[Math.floor(Math.random() * colors.length)];
+                div.style.width = (6 + Math.random() * 8) + 'px';
+                div.style.height = (6 + Math.random() * 8) + 'px';
+                div.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                div.style.animationDuration = (2 + Math.random() * 3) + 's';
+                div.style.animationDelay = (Math.random() * 1.5) + 's';
+                container.appendChild(div);
+            }
+            setTimeout(() => container.innerHTML = '', 6000);
+        }
+
+        // ===== RAIN + CRYING EMOJIS =====
+        function createRain() {
+            const container = document.getElementById('rain');
+            container.innerHTML = '';
+            for (let i = 0; i < 120; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'raindrop';
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.animationDuration = (0.4 + Math.random() * 0.8) + 's';
+                drop.style.animationDelay = (Math.random() * 2) + 's';
+                drop.style.opacity = 0.15 + Math.random() * 0.3;
+                container.appendChild(drop);
+            }
+        }
+
+        function createCryingEmojis() {
+            const container = document.getElementById('cryingFlood');
+            container.innerHTML = '';
+            const emojis = ['😢', '😭', '💧', '😿', '🥺', '💔', '😥', '😰', '😢', '😭'];
+            for (let i = 0; i < 50; i++) {
+                const span = document.createElement('span');
+                span.className = 'crying-emoji-float';
+                span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                span.style.left = Math.random() * 100 + '%';
+                span.style.fontSize = (1.2 + Math.random() * 2.5) + 'rem';
+                span.style.animationDuration = (3 + Math.random() * 8) + 's';
+                span.style.animationDelay = (Math.random() * 5) + 's';
+                container.appendChild(span);
+            }
+        }
+    </script>
+</body>
+</html>
