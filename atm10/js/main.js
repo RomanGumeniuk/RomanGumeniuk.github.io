@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initParticles();
     initTimelineProgress();
+    initSearch();
+    initFAQ();
+    initCopyButtons();
+    initBackToTop();
+    initOptBarAnimations();
+    initModCategoryTabs();
 });
 
 /* ---- NAVBAR ---- */
@@ -189,7 +195,10 @@ function initScrollAnimations() {
         '.role-card',
         '.tips-tabs-wrapper',
         '.timeline-stage',
-        '.section-header'
+        '.section-header',
+        '.dimension-card',
+        '.cheat-card',
+        '.faq-item'
     ];
 
     animatableElements.forEach(selector => {
@@ -277,3 +286,316 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+/* ---- SEARCH ---- */
+function initSearch() {
+    const searchToggle = document.getElementById('searchToggle');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchInput = document.getElementById('searchInput');
+    const searchClose = document.getElementById('searchClose');
+    const searchResults = document.getElementById('searchResults');
+
+    if (!searchToggle || !searchOverlay) return;
+
+    // Build search index from page content
+    const searchIndex = [];
+
+    // Index role cards
+    document.querySelectorAll('.role-card').forEach(card => {
+        const name = card.querySelector('.role-name')?.textContent || '';
+        const tagline = card.querySelector('.role-tagline')?.textContent || '';
+        const details = card.querySelector('.role-details-inner')?.textContent || '';
+        searchIndex.push({
+            section: 'Rola: ' + name,
+            text: name + ' ' + tagline + ' ' + details,
+            target: '#roles'
+        });
+    });
+
+    // Index tips
+    document.querySelectorAll('.tip-panel').forEach(panel => {
+        const title = panel.querySelector('h3')?.textContent || '';
+        const content = panel.textContent || '';
+        searchIndex.push({
+            section: 'Pro Tipy: ' + title,
+            text: content,
+            target: '#tips'
+        });
+    });
+
+    // Index dimensions
+    document.querySelectorAll('.dimension-card').forEach(card => {
+        const name = card.querySelector('h3')?.textContent || '';
+        const content = card.textContent || '';
+        searchIndex.push({
+            section: 'Wymiar: ' + name,
+            text: content,
+            target: '#dimensions'
+        });
+    });
+
+    // Index cheat sheet
+    document.querySelectorAll('.cheat-card').forEach(card => {
+        const name = card.querySelector('h3')?.textContent || '';
+        const content = card.textContent || '';
+        searchIndex.push({
+            section: 'Cheat Sheet: ' + name,
+            text: content,
+            target: '#cheatsheet'
+        });
+    });
+
+    // Index FAQ
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question span')?.textContent || '';
+        const answer = item.querySelector('.faq-answer')?.textContent || '';
+        searchIndex.push({
+            section: 'FAQ',
+            text: question + ' ' + answer,
+            target: '#faq'
+        });
+    });
+
+    // Index progression
+    document.querySelectorAll('.timeline-stage').forEach(stage => {
+        const label = stage.querySelector('.stage-label')?.textContent || '';
+        const content = stage.textContent || '';
+        searchIndex.push({
+            section: 'Progresja: ' + label,
+            text: content,
+            target: '#progression'
+        });
+    });
+
+    // Index mod encyclopedia
+    document.querySelectorAll('.mod-encyclopedia-card').forEach(card => {
+        const name = card.querySelector('h3')?.textContent || '';
+        const content = card.textContent || '';
+        searchIndex.push({
+            section: 'Mod: ' + name,
+            text: content,
+            target: '#modguide'
+        });
+    });
+
+    // Index boss guide
+    document.querySelectorAll('.boss-card').forEach(card => {
+        const name = card.querySelector('h3')?.textContent || '';
+        const content = card.textContent || '';
+        searchIndex.push({
+            section: 'Boss: ' + name,
+            text: content,
+            target: '#bosses'
+        });
+    });
+
+    const openSearch = () => {
+        searchOverlay.classList.add('active');
+        setTimeout(() => searchInput.focus(), 200);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeSearch = () => {
+        searchOverlay.classList.remove('active');
+        searchInput.value = '';
+        searchResults.innerHTML = '<p class="search-hint">Wpisz minimum 2 znaki aby wyszukać...</p>';
+        document.body.style.overflow = '';
+    };
+
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) closeSearch();
+    });
+
+    // Keyboard shortcut: Ctrl+K
+    document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            openSearch();
+        }
+        if (e.key === 'Escape') {
+            closeSearch();
+        }
+    });
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        if (query.length < 2) {
+            searchResults.innerHTML = '<p class="search-hint">Wpisz minimum 2 znaki aby wyszukać...</p>';
+            return;
+        }
+
+        const results = searchIndex.filter(item => 
+            item.text.toLowerCase().includes(query)
+        );
+
+        if (results.length === 0) {
+            searchResults.innerHTML = '<p class="search-hint">Brak wyników dla "' + query + '"</p>';
+            return;
+        }
+
+        searchResults.innerHTML = results.slice(0, 8).map(result => {
+            // Find context around match
+            const idx = result.text.toLowerCase().indexOf(query);
+            const start = Math.max(0, idx - 40);
+            const end = Math.min(result.text.length, idx + query.length + 60);
+            let snippet = result.text.substring(start, end).trim();
+            if (start > 0) snippet = '...' + snippet;
+            if (end < result.text.length) snippet += '...';
+
+            // Highlight match
+            const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const highlighted = snippet.replace(new RegExp(escapedQuery, 'gi'), '<mark>$&</mark>');
+
+            return `<div class="search-result-item" data-target="${result.target}">
+                <div class="result-section">${result.section}</div>
+                <div class="result-text">${highlighted}</div>
+            </div>`;
+        }).join('');
+
+        // Add click handlers
+        searchResults.querySelectorAll('.search-result-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const target = document.querySelector(item.dataset.target);
+                if (target) {
+                    closeSearch();
+                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
+                }
+            });
+        });
+    });
+}
+
+/* ---- FAQ ACCORDION ---- */
+function initFAQ() {
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = '0';
+            });
+
+            // Toggle clicked
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+}
+
+/* ---- COPY BUTTONS ---- */
+function initCopyButtons() {
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const commandItem = btn.closest('.command-item');
+            const code = commandItem.querySelector('.cmd-code');
+            const text = code.getAttribute('data-copy') || code.textContent;
+
+            try {
+                await navigator.clipboard.writeText(text);
+                btn.classList.add('copied');
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            } catch (err) {
+                // Fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+
+                btn.classList.add('copied');
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            }
+        });
+    });
+}
+
+/* ---- BACK TO TOP ---- */
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    const toggleBtn = () => {
+        if (window.scrollY > 500) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', toggleBtn, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+/* ---- OPTIMIZATION BAR ANIMATIONS ---- */
+function initOptBarAnimations() {
+    const optBars = document.querySelectorAll('.opt-fill');
+    if (!optBars.length) return;
+
+    // Store original widths and reset
+    optBars.forEach(bar => {
+        bar.dataset.targetWidth = bar.style.width;
+        bar.style.width = '0%';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                setTimeout(() => {
+                    bar.style.width = bar.dataset.targetWidth;
+                }, 200);
+                observer.unobserve(bar);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    optBars.forEach(bar => observer.observe(bar));
+}
+
+/* ---- MOD CATEGORY TABS ---- */
+function initModCategoryTabs() {
+    const tabs = document.querySelectorAll('.mod-cat-tab');
+    const panels = document.querySelectorAll('.mod-cat-panel');
+
+    if (!tabs.length || !panels.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const cat = tab.getAttribute('data-modcat');
+
+            // Update tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Update panels
+            panels.forEach(p => {
+                p.classList.remove('active');
+                if (p.getAttribute('data-modcat-panel') === cat) {
+                    p.classList.add('active');
+                }
+            });
+        });
+    });
+}

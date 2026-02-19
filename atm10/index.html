@@ -6,7 +6,7 @@
     <title>⛏ All The Mods 10 — Przewodnik Ekipy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700;800&family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,8 +25,16 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#roles" data-section="roles">Wybierz Rolę</a></li>
                 <li><a href="#tips" data-section="tips">Pro Tipy</a></li>
+                <li><a href="#modguide" data-section="modguide">Encyklopedia</a></li>
+                <li><a href="#bosses" data-section="bosses">Bossowie</a></li>
+                <li><a href="#dimensions" data-section="dimensions">Wymiary</a></li>
+                <li><a href="#cheatsheet" data-section="cheatsheet">Cheat Sheet</a></li>
                 <li><a href="#progression" data-section="progression">Progresja</a></li>
+                <li><a href="#faq" data-section="faq">FAQ</a></li>
             </ul>
+            <button class="nav-search-btn" id="searchToggle" aria-label="Szukaj">
+                <i class="fas fa-search"></i>
+            </button>
         </div>
     </nav>
 
@@ -1038,6 +1046,1325 @@
         </div>
     </section>
 
+    <!-- ==================== SEARCH OVERLAY ==================== -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Szukaj mod, item, tip..." autocomplete="off">
+                <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <p class="search-hint">Wpisz minimum 2 znaki aby wyszukać...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== ENCYKLOPEDIA MODÓW ==================== -->
+    <section class="section modguide-section" id="modguide">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ENCYKLOPEDIA</span>
+                <h2 class="section-title">Dokładny Przewodnik <span class="accent">po Modach</span></h2>
+                <p class="section-desc">Każdy ważny mod rozpisany szczegółowo — maszyny, itemy, receptury, tipy i progresja krok po kroku.</p>
+            </div>
+
+            <!-- MOD CATEGORY TABS -->
+            <div class="mod-category-tabs">
+                <button class="mod-cat-tab active" data-modcat="tech"><i class="fas fa-bolt"></i> Technologia</button>
+                <button class="mod-cat-tab" data-modcat="magic"><i class="fas fa-hat-wizard"></i> Magia</button>
+                <button class="mod-cat-tab" data-modcat="combat"><i class="fas fa-skull-crossbones"></i> Walka</button>
+                <button class="mod-cat-tab" data-modcat="farming"><i class="fas fa-seedling"></i> Farming</button>
+                <button class="mod-cat-tab" data-modcat="utility"><i class="fas fa-wrench"></i> Utility / QoL</button>
+            </div>
+
+            <!-- ===== TECHNOLOGIA ===== -->
+            <div class="mod-cat-panel active" data-modcat-panel="tech">
+
+                <!-- MEKANISM -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">⚡</div>
+                        <div>
+                            <h3>Mekanism</h3>
+                            <span class="mod-enc-role">Rola: Technik / Energetyk</span>
+                        </div>
+                        <span class="mod-enc-tier">KLUCZOWY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Najważniejszy mod technologiczny w ATM10. Zapewnia przetwarzanie rud (nawet x5 output), generację energii, zaawansowane narzędzia i endgame zbroję MekaSuit. Bez Mekanism nie ma infrastruktury bazy.</p>
+                        
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-industry"></i> Kluczowe Maszyny</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Enrichment Chamber</strong>
+                                    <span>Ruda → 2x Ingot (podwaja output). Pierwszy priorytet! Zamienia też Coal → Compressed Carbon, Redstone → Enriched Redstone.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Crusher</strong>
+                                    <span>Ingot → Dust. Kluczowe do wytwarzania Bio Fuel (żywność → Bio Fuel) i tworzenia alloy'ów.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Purification Chamber</strong>
+                                    <span>Ruda → 3x Clump. Wymaga Oxygen (Electrolytic Separator z wodą). Razem z Crusher i Enrichment = x3 processing.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Injection Chamber</strong>
+                                    <span>Ruda → 4x Shard. Wymaga Hydrogen Chloride. Dodaje kolejny tier przetwarzania.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Dissolution Chamber</strong>
+                                    <span>Ruda → 5x Slurry (płynna forma). Wymaga Sulfuric Acid. Finałowy etap x5 processing.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Metallurgic Infuser</strong>
+                                    <span>Tworzy alloy'e (Infused Alloy, Reinforced Alloy, Atomic Alloy). Każdy tier otwiera nowe craftingi. Używa Carbon, Redstone, Diamond, Refined Obsidian jako infuse materiał.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Digital Miner</strong>
+                                    <span>Automatycznie kopie rudy z ogromnego obszaru konfigurowalnym filtrem. Idealne w Mining Dimension. Ustaw filtr na konkretne rudy i zbieraj AFK.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Electrolytic Separator</strong>
+                                    <span>Woda → Hydrogen + Oxygen. Hydrogen do Ethylene Generator lub Fusion Reactor. Oxygen do Purification Chamber.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-bolt"></i> Generacja Energii (od najwcześniejszej)</h4>
+                            <div class="mod-progression-chain">
+                                <div class="chain-step"><span class="chain-num">1</span><strong>Heat Generator</strong> — Lava bucket = instant prąd. Najprostszy generator na start.</div>
+                                <div class="chain-step"><span class="chain-num">2</span><strong>Wind Generator</strong> — Postaw Y=200+. Im wyżej tym więcej FE/t. 4-6 na wieży = darmowy prąd na long-term.</div>
+                                <div class="chain-step"><span class="chain-num">3</span><strong>Solar Generator</strong> — Działa w dzień. Ulepszalny do Advanced Solar → Hybrid Solar → Ultimate Hybrid Solar.</div>
+                                <div class="chain-step"><span class="chain-num">4</span><strong>Gas-Burning Generator</strong> — Ethylene Gas z Bio Fuel (rośliny) przez Pressurized Reaction Chamber. Jeden z najlepszych mid-game generatorów.</div>
+                                <div class="chain-step"><span class="chain-num">5</span><strong>Fusion Reactor</strong> — D-T Fuel z Tritium + Deuterium. Praktycznie nieskończona energia. Wymaga Laser Amplifier do odpalenia.</div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-user-shield"></i> MekaSuit (Endgame Armor)</h4>
+                            <p>Najlepsza zbroja w modpacku. Każdy element wymaga Atomic Alloy + HDPE (z plastiku Mekanism). Moduły:</p>
+                            <div class="mod-tags-inline">
+                                <span class="mod-tag primary">Gravitational Modulating Unit (latanie)</span>
+                                <span class="mod-tag primary">Nutritional Injection Unit (auto-feed)</span>
+                                <span class="mod-tag primary">Vision Enhancement (night vision)</span>
+                                <span class="mod-tag primary">Hydrostatic Repulsor (chodzenie po wodzie)</span>
+                                <span class="mod-tag primary">Locomotive Boosting (sprint boost)</span>
+                                <span class="mod-tag primary">Charge Distribution (auto-recharge z Flux Networks)</span>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-link"></i> Łańcuch Craftingu: Ore Processing x5</h4>
+                            <div class="crafting-chain">
+                                <code>Ruda → Dissolution Chamber (Sulfuric Acid) → Slurry</code>
+                                <code>Slurry → Chemical Washer (Water) → Clean Slurry</code>
+                                <code>Clean Slurry → Chemical Crystallizer → Crystal</code>
+                                <code>Crystal → Injection Chamber (HCl) → Shard</code>
+                                <code>Shard → Purification Chamber (O₂) → Clump</code>
+                                <code>Clump → Crusher → Dirty Dust</code>
+                                <code>Dirty Dust → Enrichment Chamber → Dust</code>
+                                <code>Dust → Smelting → 5x Ingot!</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APPLIED ENERGISTICS 2 -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">💾</div>
+                        <div>
+                            <h3>Applied Energistics 2 (AE2)</h3>
+                            <span class="mod-enc-role">Rola: Technik / Energetyk</span>
+                        </div>
+                        <span class="mod-enc-tier">KLUCZOWY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">System przechowywania i automatycznego craftingu. Wszystkie itemy drużyny w jednym centralnym systemie. Absolutny priorytet #1 dla Technika — bez AE2 drużyna tonie w chaosie itemów.</p>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-industry"></i> Kluczowe Bloki i Itemy</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>ME Controller</strong>
+                                    <span>Mózg sieci ME. Wymaga Fluix Crystal, Calculation Processor, Engineering Processor. Jeden wystarczy na ogromny system.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>ME Drive</strong>
+                                    <span>Kaseta na Storage Cells. Mieści 10 cells. Postaw kilka Drive'ów w rzędzie obok Controller.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>ME Access Terminal</strong>
+                                    <span>Interfejs do przeglądania i szukania itemów. Postaw kilka we wspólnych miejscach bazy dla każdego gracza.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Storage Cells (1k → 4k → 16k → 64k → 256k)</strong>
+                                    <span>Im wyższy tier, tym więcej itemów. 64k = najlepszy stosunek kosztu do pojemności. 256k na endgame.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Crafting Terminal</strong>
+                                    <span>Terminal + crafting grid w jednym. Lepszy niż zwykły Terminal — pozwala craftować bezpośrednio z magazynu.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Pattern Provider + Molecular Assembler</strong>
+                                    <span>Auto-crafting setup! Wstaw Pattern (Blank Pattern → Encoding Terminal → Pattern). Assembler automatycznie craftuje na żądanie.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Import / Export Bus</strong>
+                                    <span>Import Bus — wciąga itemy z maszyn/chest do sieci. Export Bus — wypluwa z sieci do docelowej maszyny. Klucz do automatyzacji.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>ME Wireless Access Point + Terminal</strong>
+                                    <span>Bezprzewodowy dostęp do magazynu w pewnym zasięgu. Ulepszany Wireless Boosters.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-project-diagram"></i> Progresja AE2 — krok po kroku</h4>
+                            <div class="mod-progression-chain">
+                                <div class="chain-step"><span class="chain-num">1</span><strong>Fluix Crystals</strong> — Wrzuć Charged Certus Quartz + Nether Quartz + Redstone do wody. Czekaj na crystal.</div>
+                                <div class="chain-step"><span class="chain-num">2</span><strong>Certus Quartz</strong> — Kop certus quartz ore lub hoduj Certus Quartz Budding blocks (budding crystal → flawless → pure).</div>
+                                <div class="chain-step"><span class="chain-num">3</span><strong>Inscriber</strong> — Znajdź Press Plates w meteorytach (Explorer's Compass → "Meteorite"). Cztery typy: Calculation, Engineering, Logic, Silicon.</div>
+                                <div class="chain-step"><span class="chain-num">4</span><strong>Processors</strong> — Silicon → Logic Processor. Gold + Certus = Calculation Processor. Diamond + Certus = Engineering Processor.</div>
+                                <div class="chain-step"><span class="chain-num">5</span><strong>ME Controller + Drive + Cells</strong> — Priorytet! Natychmiast po zdobyciu procesorów zbuduj podstawowy system.</div>
+                                <div class="chain-step"><span class="chain-num">6</span><strong>Crafting CPU + Pattern Providers</strong> — Automatyczne craftowanie. Każdy Pattern = jedna receptura. Crafting Storage łączy w wielki CPU.</div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Częste Błędy</h4>
+                            <ul class="mod-mistakes-list">
+                                <li><strong>Brak Channels</strong> — ME Controller 32 channels per side. Jeden ME Cable = 8 channels. Użyj Dense Cable (32) lub P2P Tunnel.</li>
+                                <li><strong>Brak energii</strong> — AE2 zużywa dużo prądu z dużą siecią. Energy Acceptor + Mekanism kabel do sieci.</li>
+                                <li><strong>Press Plates</strong> — MUSISZ znaleźć meteoryt! 4 pressy to one-time loot — nie wyrzucaj ich!</li>
+                                <li><strong>Storage overflow</strong> — Zawsze miej zapasowe Storage Cells. Pełna cell = itemy przepadają!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LASERIO -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🔗</div>
+                        <div>
+                            <h3>LaserIO</h3>
+                            <span class="mod-enc-role">Rola: Technik</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Najlepszy mod na transport itemów, płynów i energii w ATM10. Jeden kabel obsługuje WSZYSTKO naraz. Znacznie prostszy niż Pipez i bardziej wszechstronny.</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-cogs"></i> Jak używać</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Laser Node</strong>
+                                    <span>Główny blok — postaw na maszynie/skrzyni. Podłączany Laser Connector do innego Node. Może mieć wiele połączeń jednocześnie.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Laser Connector</strong>
+                                    <span>Łączy dwa Laser Node'y. Kliknij PPM z connectorem na jeden node, potem na drugi. Działa na dowolną odległość!</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Card System</strong>
+                                    <span>Wstaw karty do Node'a: Item Card (transport itemów), Fluid Card (płyny), Energy Card (FE), Redstone Card. Ustaw INPUT/OUTPUT na karcie.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Filtry</strong>
+                                    <span>Każda karta ma slot na filtr — określ KTÓRE itemy mają być transportowane. Bez filtra — wszystko. Można negować filtr (blacklist).</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POWAH / FLUX NETWORKS -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">☀️</div>
+                        <div>
+                            <h3>Powah + Flux Networks</h3>
+                            <span class="mod-enc-role">Rola: Technik</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Powah to łatwe generatory energii (solar, reactor). Flux Networks to bezprzewodowa sieć energetyczna — koniec z kablami przez całą bazę!</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-solar-panel"></i> Powah — generatory (od najtańszego)</h4>
+                            <div class="mod-progression-chain">
+                                <div class="chain-step"><span class="chain-num">1</span><strong>Solar Panel (Starter → Basic → Hardened → Blazing → Niotic → Spirited → Nitro)</strong> — Każdy tier daje więcej FE/t. Nitro Solar = 40 960 FE/t!</div>
+                                <div class="chain-step"><span class="chain-num">2</span><strong>Thermo Generator</strong> — Wstaw blok gorąca (lava, magma). Prosty setup na early game.</div>
+                                <div class="chain-step"><span class="chain-num">3</span><strong>Reactor</strong> — Urnite fuel. Masywna ilość energii. Mid-late game.</div>
+                                <div class="chain-step"><span class="chain-num">4</span><strong>Player Transmitter</strong> — Bezprzewodowo ładuje gear gracza (jetpack, narzędzia). Priorytet dla drużyny!</div>
+                            </div>
+                        </div>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-wifi"></i> Flux Networks</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Flux Controller</strong>
+                                    <span>Centrum sieci bezprzewodowej. Jeden na cały system. Sieć ma priorytet — ustaw generatory na INPUT, maszyny na OUTPUT.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Flux Plug (INPUT)</strong>
+                                    <span>Wciąga energię z generatorów DO sieci Flux. Postaw obok generatora.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Flux Point (OUTPUT)</strong>
+                                    <span>Wypuszcza energię Z sieci Flux do maszyn. Postaw obok maszyny/AE2.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Flux Storage</strong>
+                                    <span>Bufor energii w sieci. Przechowuje FE na czas gdy produkcja nie nadąża za konsumpcją.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CREATE -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">⚙️</div>
+                        <div>
+                            <h3>Create</h3>
+                            <span class="mod-enc-role">Rola: Technik / Budowniczy</span>
+                        </div>
+                        <span class="mod-enc-tier">OPCJONALNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Kinetic energy mod — automatyzacja z kołami zębatymi, wałami i pasami transmisyjnymi. Nie wymaga FE/RF — ma własny system SU (Stress Units). Świetny do wizualnych fabryk i estetycznych instalacji.</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-cogs"></i> Najważniejsze elementy</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Water Wheel / Windmill</strong>
+                                    <span>Podstawowe źródła SU. Water Wheel pod wodą, Windmill na wietrze. Proste i darmowe.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Mechanical Press / Mixer / Crusher</strong>
+                                    <span>Przetwarzanie materiałów. Press robi platy i ingoty. Mixer łączy składniki. Crusher mieli.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Deployer + Mechanical Crafter</strong>
+                                    <span>Automatyczny crafting! Deployer symuluje gracza (kliknięcia). Mechanical Crafter składa receptury automatycznie.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Conveyor Belt / Chute / Funnel</strong>
+                                    <span>Transport itemów fizycznie po taśmach. Estetyczny i intuicyjny. Funnel sortuje itemy do skrzyń.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== MAGIA ===== -->
+            <div class="mod-cat-panel" data-modcat-panel="magic">
+
+                <!-- ARS NOUVEAU -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">📕</div>
+                        <div>
+                            <h3>Ars Nouveau</h3>
+                            <span class="mod-enc-role">Rola: Mag / Enchanter</span>
+                        </div>
+                        <span class="mod-enc-tier">KLUCZOWY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Programowalny system magii — tworzysz własne czary łącząc glyphy (Projectile + Harm = Magic Missile). Potężne narzędzia offensywne, defensywne i utility. Wymaga Source (mana) do działania.</p>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-magic"></i> Najlepsze Czary (kombinacje glyphów)</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Projectile + Harm</strong>
+                                    <span>Magic Missile — podstawowy atak dystansowy. Dodaj Amplify żeby zwiększyć obrażenia.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Projectile + Ignite</strong>
+                                    <span>Fireball — podpala mob. Dodaj AOE żeby trafić grupę wrogów.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Self + Launch + Glide</strong>
+                                    <span>Pseudo-lot — wyrzuca w górę i leci poziomo. Darmowy travel mid-game.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Projectile + Break</strong>
+                                    <span>Dystansowe kopanie — strzelaj w bloki żeby je zniszczyć. Add AOE = kopie 3x3.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Touch + Heal</strong>
+                                    <span>Leczy gracza lub moba. Dodaj Amplify + Extended Time. Przydatne w walce z bossem.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Self + Shield + Duration</strong>
+                                    <span>Magiczna tarcza — absorpcja obrażeń na X sekund. Lifesaver vs. bossów.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-battery-full"></i> Source Generation</h4>
+                            <div class="mod-progression-chain">
+                                <div class="chain-step"><span class="chain-num">1</span><strong>Source Jar</strong> — Przechowuje source. Zbiera source z Source Berry Bushes lub manualnie.</div>
+                                <div class="chain-step"><span class="chain-num">2</span><strong>Volcanic Accumulator</strong> — Postaw obok lavy. Pasywna generacja source. Prosty start.</div>
+                                <div class="chain-step"><span class="chain-num">3</span><strong>Agronomic Sourcelinks</strong> — Używa wzrostu roślin jako source. Postaw obok farm Mystical Agriculture!</div>
+                                <div class="chain-step"><span class="chain-num">4</span><strong>Alchemical Sourcelinks</strong> — Zamienia potions w source. Dobry mid-game.</div>
+                                <div class="chain-step"><span class="chain-num">5</span><strong>Mycelial Sourcelinks</strong> — Endgame generator. Wymaga unique setup ale produkuje ogromne ilości.</div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-paw"></i> Summons i Familiars</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Summoning Focus: Wolves / Horses</strong>
+                                    <span>Przywołaj sojusznika który walczy za Ciebie. Wolves atakują, Horses dają transport.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Drygmy</strong>
+                                    <span>Małe stworzenia farmujące itemy z mobów w zasięgu. Pasywna farma mob dropów!</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Whirlisprig</strong>
+                                    <span>Przyspiesza wzrost roślin w zasięgu. Synergy z Farmer — połóż obok Mystical Agriculture farm.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Starbuncle</strong>
+                                    <span>Przenosi itemy między skrzyniami/maszynami. Tani transport itemów bez kabli.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APOTHEOSIS -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">✨</div>
+                        <div>
+                            <h3>Apotheosis / Apothic Enchanting</h3>
+                            <span class="mod-enc-role">Rola: Mag / Enchanter</span>
+                        </div>
+                        <span class="mod-enc-tier">KLUCZOWY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Rewolucjonizuje enchanting — wyższe tiery enchantów (Sharpness X, Protection X), Affix system (Mythic quality gear), modyfikowalne spawnery, i Flight Potions.</p>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-book-open"></i> Enchanting Setup</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Library of Alexandria</strong>
+                                    <span>Max bookshelf bonus. Otocz Enchanting Table tymi bookshelvami. Więcej = wyższe enchanty possible.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Hellshelves</strong>
+                                    <span>Specjalne bookshelfy — otwierają dostęp do Tier 5+ enchantów. Fortune V, Sharpness X wymagają tych shelfów.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Infusion Pylon + Filtering Pylon</strong>
+                                    <span>Automatyczne enchantowanie! Pylon nadaje enchanty na itemy w Enchanting Table automatycznie.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-gem"></i> Affix System</h4>
+                            <p>Moby w grze mają szansę na drop Affix Items — itemy z losowymi statami jak w Diablo. Quality tiers: <strong>Common → Uncommon → Rare → Epic → Mythic</strong>. Mythic gear jest potężniejszy niż Netherite! Szukaj elite mobów z aura effect — to oni droppują najlepszy loot.</p>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-feather-alt"></i> Flight Potions 🔥</h4>
+                            <p>Jeden z najważniejszych single itemów w mid-game. Pozwala latać na czas potiona. Receptura: <strong>Slow Falling Potion → Infusion na Levitation → Final brewing na Flight</strong>. Automatyzuj z Infusion Pylon — daj potion stałego lotu CAŁEJ drużynie.</p>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-skull"></i> Spawner Modification</h4>
+                            <p>Modyfikuj spawners znalezione w dungeonach. Wstaw Rune żeby zmienić spawned mob type. Dodaj Sugar żeby przyspieszyć spawn rate. Postaw Redstone Torch żeby wyłączyć spawner. Idealne do budowy mob farms z specific drops.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OCCULTISM -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">👁️</div>
+                        <div>
+                            <h3>Occultism</h3>
+                            <span class="mod-enc-role">Rola: Mag</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Demonologia i duchowe stworzenia. Summony demonic spirit workers — automatyczny mining, crushing, chopping bez prądu! Plus Dimensional Storage alternatywa dla AE2.</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-users-cog"></i> Spirit Workers</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Crusher Spirit</strong>
+                                    <span>Automatyczny ore doubling BEZ prądu. Świetna alternatywa/uzupełnienie Mekanism na start.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Miner Spirit (Djinni)</strong>
+                                    <span>Kopie rudy w wymiarze duchów i przynosi do Ciebie. Pasywny mining bez żadnych maszyn!</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Lumberjack Spirit</strong>
+                                    <span>Automatyczne ścinanie drzew. Nie wymaga prądu ani paliwa.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Transporter Spirit</strong>
+                                    <span>Przenosi itemy między inventories. Jak LaserIO ale magiczny i nie wymaga energii.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-warehouse"></i> Dimensional Storage</h4>
+                            <p>Satchel + Storage Accessor — alternatywa dla AE2 na magiczne itemy. Przechowywanie w wymiarze duchów. Nieograniczona pojemność! Przydatne zanim Technik postawi AE2 lub na osobiste itemy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IRON'S SPELLS -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🔥</div>
+                        <div>
+                            <h3>Iron's Spells 'n Spellbooks</h3>
+                            <span class="mod-enc-role">Rola: Mag / Kombatant</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">RPG-style spellcasting — znajdź spell scrolle, ucz się czarów, wstaw do spellbooka. Szkoły magii: Fire, Ice, Lightning, Holy, Blood, Ender, Evocation, Nature. Bossowie droppują unikalne spellbooki!</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-fire"></i> Najlepsze Czary</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Fire: Firebolt / Wall of Fire</strong>
+                                    <span>Solidne obrażenia AOE. Wall of Fire blokuje mob path.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Ice: Cone of Cold / Ice Block</strong>
+                                    <span>Spowalnia/zamraża grupy mobów. Ice Block = invulnerability na chwilę.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Lightning: Chain Lightning</strong>
+                                    <span>Skacze między mobami. Najlepszy AOE damage w grze.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Holy: Heal / Greater Heal</strong>
+                                    <span>Leczy gracza. Heal Circle leczy drużynę w AOE.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== WALKA ===== -->
+            <div class="mod-cat-panel" data-modcat-panel="combat">
+
+                <!-- SILENT GEAR -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🗡️</div>
+                        <div>
+                            <h3>Silent Gear</h3>
+                            <span class="mod-enc-role">Rola: Kombatant / Wszyscy</span>
+                        </div>
+                        <span class="mod-enc-tier">KLUCZOWY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Modularny system narzędzi i broni. Zamiast craftować nową broń od nowa — wymieniaj części na lepsze! Head (głowica) determinator stats, Rod (trzon) daje trwałość i dodatkowe efekty, Tip daje ekstra enchanty.</p>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-layer-group"></i> Materiały — od najsłabszego do najlepszego</h4>
+                            <div class="mod-progression-chain">
+                                <div class="chain-step"><span class="chain-num">1</span><strong>Iron / Copper</strong> — Starter. Słabe ale łatwe.</div>
+                                <div class="chain-step"><span class="chain-num">2</span><strong>Diamond</strong> — Solidny mid. Enchantability bonus.</div>
+                                <div class="chain-step"><span class="chain-num">3</span><strong>Netherite</strong> — Flame resistant, dużo durability.</div>
+                                <div class="chain-step"><span class="chain-num">4</span><strong>Enderium</strong> — Teleports, high damage. Z modded ingots.</div>
+                                <div class="chain-step"><span class="chain-num">5</span><strong>Allthemodium</strong> — ATM10 exclusive. Bardzo wysoki damage i durability.</div>
+                                <div class="chain-step"><span class="chain-num">6</span><strong>Vibranium</strong> — Lepszy niż Allthemodium. Nether only.</div>
+                                <div class="chain-step"><span class="chain-num">7</span><strong>Unobtainium</strong> — Najlepszy w grze. Absurdalne staty. The Other only.</div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-tools"></i> Crafting Silent Gear Tool</h4>
+                            <div class="crafting-chain">
+                                <code>1. Template Board + Stick → Rod Template</code>
+                                <code>2. Template Board + Diamond → Sword Blade Template (lub pickaxe/axe)</code>
+                                <code>3. Materiał (np. Diamond) → Crafting Grid z Template → Silent Gear Head Part</code>
+                                <code>4. Rod (np. Blaze Rod dla fire aspect) → Rod Part</code>
+                                <code>5. Head + Rod → w Crafting Grid → Gotowe narzędzie!</code>
+                                <code>6. Upgrade: Nowy materiał → Head Part → Swap GUI na dotychczasowym narzędziu</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATACLYSM -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">💀</div>
+                        <div>
+                            <h3>L'Ender's Cataclysm</h3>
+                            <span class="mod-enc-role">Rola: Kombatant</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Najtrudniejsi bossowie w modpacku. Każdy dungeon ma unikalne mechaniki i exclusive loot. NIE wchodź bez pełnego Netherite i Totemów!</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-dungeon"></i> Dungeons i Bossowie</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Burnt Ocean Monument → Leviathan</strong>
+                                    <span>Boss wodny. Przynieś Potion of Water Breathing i Depth Strider III. Droppuje The Abyss (trident) i Infernal Forge.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Soul Black Smith → Netherite Monstrosity</strong>
+                                    <span>Nether boss. Trudne fire attacks. Wymagany Fire Resistance! Droppuje Burning Ashes i Monstrous Horn.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Cursed Pyramid → Ancient Remnant</strong>
+                                    <span>Desert boss. Ogromne AOE ataki. Droppuje Desert Eagle i Ancient City Relic.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>End → Ender Guardian</strong>
+                                    <span>End boss. Wymaga Void Core (z End City Chest). Droppuje Gauntlet of Guard i Void Forge.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RELICS & ARTIFACTS -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">💍</div>
+                        <div>
+                            <h3>Relics + Artifacts + Enigmatic Legacy</h3>
+                            <span class="mod-enc-role">Rola: Kombatant / Odkrywca</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Trzy mody dodające unikalne pasywne itemy noszone w Curio slotach. Ogromne boosty combat i survival!</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-ring"></i> Najlepsze Relics (Curio slot)</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Ice Skates (Relics)</strong>
+                                    <span>Szybszy ruch na lodzie + zamrażasz wodę pod sobą. Świetne travel.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Magic Mirror (Relics)</strong>
+                                    <span>Teleport do spawn point. Emergency escape button!</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Cross Necklace (Artifacts)</strong>
+                                    <span>Dłuższa invincibility po hit. Przetrwanie bossów łatwiejsze.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Superstitious Hat (Enigmatic Legacy)</strong>
+                                    <span>Zwiększa drop chance z mobów. Przydatne do farmienia.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Angel Ring (Enigmatic Legacy)</strong>
+                                    <span>Pełne creative-style latanie! Bardzo drogi crafting ale wart każdego itemu.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FARMING ===== -->
+            <div class="mod-cat-panel" data-modcat-panel="farming">
+
+                <!-- MYSTICAL AGRICULTURE -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🌾</div>
+                        <div>
+                            <h3>Mystical Agriculture</h3>
+                            <span class="mod-enc-role">Rola: Farmer</span>
+                        </div>
+                        <span class="mod-enc-tier">KLUCZOWY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Uprawiaj DOSŁOWNIE WSZYSTKO. Od żelaza, przez diamenty, po Allthemodium i Unobtainium. Największy game changer dla zasobów w mid-late game. Posadź seed → zbieraj surowiec pasywnie.</p>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-layer-group"></i> Tier System — Essence Progression</h4>
+                            <div class="mod-progression-chain">
+                                <div class="chain-step"><span class="chain-num">T1</span><strong>Inferium</strong> — Bazowy essence. Farmuj Inferium Seeds (naturalny drop z mobów lub craft). 4x Inferium = 1 Prudentium.</div>
+                                <div class="chain-step"><span class="chain-num">T2</span><strong>Prudentium</strong> — 4x Prudentium = 1 Tertium. Otwiera Tier 2 seedsy (Iron, Coal, etc.).</div>
+                                <div class="chain-step"><span class="chain-num">T3</span><strong>Tertium</strong> — 4x Tertium = 1 Imperium. Tier 3 seedsy (Gold, Lapis, Redstone).</div>
+                                <div class="chain-step"><span class="chain-num">T4</span><strong>Imperium</strong> — 4x Imperium = 1 Supremium. Tier 4 seedsy (Diamond, Emerald).</div>
+                                <div class="chain-step"><span class="chain-num">T5</span><strong>Supremium</strong> — Najwyższy tier. Seedsy na Netherite, Allthemodium, Vibranium, Unobtainium!</div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-tachometer-alt"></i> Przyspieszanie wzrostu</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Growth Accelerator</strong>
+                                    <span>Postaw POD glebą (pod Farmland). Stackuje się! 8 pod jednym blokiem = turbo growth. Najważniejszy item Farmera.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Watering Can</strong>
+                                    <span>Ręczne przyspieszanie. Wersje: Iron → Diamond → Supremium (auto-watering w zasięgu).</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Ars Nouveau Whirlisprig</strong>
+                                    <span>Synergy z Magiem — przywołany Whirlisprig przyspiesza wzrost roślin w zasięgu.</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Harvester Pylon (Apotheosis)</strong>
+                                    <span>Auto-harvest bez redstone i kabli. Postaw nad farmą — zbiera dojrzale rośliny samodzielnie.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-list-ol"></i> Najważniejsze Seedsy (w kolejności priorytetów)</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine"><strong>1. Iron Seeds</strong><span>Żelazo to najbardziej używany surowiec. Postaw 20+ Botany Pots.</span></div>
+                                <div class="mod-machine"><strong>2. Gold Seeds</strong><span>Golden Apples, Powered Rails, Netherite. Duże zapotrzebowanie.</span></div>
+                                <div class="mod-machine"><strong>3. Diamond Seeds</strong><span>Enchanting, narzędzia, AE2 processors. Zawsze za mało.</span></div>
+                                <div class="mod-machine"><strong>4. Redstone Seeds</strong><span>Milion receptur wymaga redstone. Nie zostawaj bez.</span></div>
+                                <div class="mod-machine"><strong>5. Allthemodium Seeds</strong><span>Supremium tier. Pasywne ATM ore bez kopania w Deep Dark!</span></div>
+                                <div class="mod-machine"><strong>6. Unobtainium Seeds</strong><span>Supremium tier. Pasywny endgame surowiec. ATM Star ready.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTIVE BEES -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🐝</div>
+                        <div>
+                            <h3>Productive Bees</h3>
+                            <span class="mod-enc-role">Rola: Farmer</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Hoduj pszczoły produkujące dosłownie KAŻDY surowiec. Diamond Bee = pasywne diamenty. Iron Bee = pasywne żelazo. 100% AFK, 100% pasywne.</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-home"></i> Setup Pszczół</h4>
+                            <div class="mod-progression-chain">
+                                <div class="chain-step"><span class="chain-num">1</span><strong>Znajdź pszczoły</strong> — W naturze lub catch z Bug Net. Różne biomy = różne pszczoły.</div>
+                                <div class="chain-step"><span class="chain-num">2</span><strong>Advanced Beehive / Expansion Box</strong> — 3 pszczoły na hive. Expansion Box zwiększa output.</div>
+                                <div class="chain-step"><span class="chain-num">3</span><strong>Breeding</strong> — Łącz dwie pszczoły w Breeding Chamber → nowe typy pszczół. Iron + Gold = Electrum Bee!</div>
+                                <div class="chain-step"><span class="chain-num">4</span><strong>Centrifuge</strong> — Honeycomb z hive → Centrifuge → surowce (iron ingot, diamond, etc.).</div>
+                                <div class="chain-step"><span class="chain-num">5</span><strong>Gene System</strong> — Zmień produktywność pszczół Gene Indexer. Boost output rate.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FARMER'S DELIGHT + BOTANY POTS -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🍖</div>
+                        <div>
+                            <h3>Farmer's Delight + Botany Pots</h3>
+                            <span class="mod-enc-role">Rola: Farmer</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Farmer's Delight dodaje gotowanie i lepsze jedzenie. Botany Pots to pasywne sadzonki bez wody/farmlandu — postaw, zapomnij, zbieraj.</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-utensils"></i> Najlepsze Jedzenie (od najłatwiejszego)</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine"><strong>Roasted Mutton Chops</strong><span>Mutton + Knife = Chops → Cooking Pot. Dużo hunger + saturation.</span></div>
+                                <div class="mod-machine"><strong>Steak & Potatoes</strong><span>Beef + Potato + Knife → Cooking Pot. Excellent food.</span></div>
+                                <div class="mod-machine"><strong>Stuffed Pumpkin</strong><span>Pumpkin + mixed ingredients. Karmienie na masową skalę — jedzenie dla drużyny.</span></div>
+                                <div class="mod-machine"><strong>Honey Glazed Ham</strong><span>Pork + Honey. Top-tier food z mega saturation.</span></div>
+                            </div>
+                        </div>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-seedling"></i> Botany Pots — setup</h4>
+                            <p>Craftuj Botany Pot (terracotta + slab). Wstaw <strong>gleba</strong> (soil type — np. Dirt, Soul Sand, Farmland) a potem <strong>seed/sapling</strong>. Rośnie pasywnie! Postaw 50+ na Inferium Seeds i zapomnij. Hopper pod pot = auto-collect. Łatwe, tanie, skalowalne.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== UTILITY / QoL ===== -->
+            <div class="mod-cat-panel" data-modcat-panel="utility">
+
+                <!-- FTB MODS -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🛡️</div>
+                        <div>
+                            <h3>FTB Chunks + FTB Teams + FTB Quests</h3>
+                            <span class="mod-enc-role">Rola: Wszyscy (Budowniczy setup)</span>
+                        </div>
+                        <span class="mod-enc-tier">KLUCZOWY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Trzy mody FTB które tworzą fundamenty drużynowej gry. Claim, Team i Quest system.</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-map-marked-alt"></i> FTB Chunks — Ochrona terenu</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine">
+                                    <strong>Claim Chunk</strong>
+                                    <span>Otwórz mapę FTB Chunks (default: M lub przez inventory). Kliknij na chunki żeby je zclaim'ować. ZAWSZE jako Team, nie Personal!</span>
+                                </div>
+                                <div class="mod-machine">
+                                    <strong>Forceload Chunk</strong>
+                                    <span>Claimed chunk + Shift-click = Forceloaded. Chunk jest aktywny nawet gdy nikt nie jest w pobliżu. Idealne na farmy.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-users"></i> FTB Teams</h4>
+                            <p>Komenda: <code>/ftbteams party create NazwaDruzyny</code>. Potem <code>/ftbteams party invite [gracz]</code>. Drużyna dzieli Chunk Claims, Quest Progress i Team Chat. SETUP NA STARCIE!</p>
+                        </div>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-tasks"></i> FTB Quests — Quest Book</h4>
+                            <p>Questbook z setkami zadań posegregowanych po modach. Każdy quest daje nagrody (itemy, XP). Rozdziały: Getting Started, Mekanism, AE2, Ars Nouveau, Magic, Farming, Bosses, ATM Star. <strong>Rób questy po kolei</strong> — prowadzą przez progresję modpacku naturalnie.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WAYSTONES + JOURNEYMAP -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🗺️</div>
+                        <div>
+                            <h3>Waystones + JourneyMap + Compasses</h3>
+                            <span class="mod-enc-role">Rola: Budowniczy / Odkrywca</span>
+                        </div>
+                        <span class="mod-enc-tier">KLUCZOWY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Teleportacja, mapa i nawigacja. Bez tych modów gubisz się w świecie z 500 modami.</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-map-signs"></i> Waystones</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine"><strong>Waystone (block)</strong><span>Craftuj lub znajdź w wioskach. Kliknij żeby aktywować — teraz możesz teleportować się tu z dowolnego innego Waystone.</span></div>
+                                <div class="mod-machine"><strong>Warp Scroll</strong><span>Jednorazowy teleport do aktywowanego Waystone. Noś w hotbarze na emergency escape!</span></div>
+                                <div class="mod-machine"><strong>Sharestone</strong><span>Jak Waystone ale dzielony tylko w sieci twojego teamu. Bezpieczniejsze.</span></div>
+                                <div class="mod-machine"><strong>Portstone</strong><span>Waystone ale wygląda jak portal. Estetyczny dla bazy.</span></div>
+                            </div>
+                        </div>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-compass"></i> Compasses</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine"><strong>Nature's Compass</strong><span>Szukaj dowolny biom po nazwie. Wskazuje kierunek i odległość. Kluczowe do Deep Dark.</span></div>
+                                <div class="mod-machine"><strong>Explorer's Compass</strong><span>Szukaj struktury (dungeons, Cataclysm lairs, villages). Ratuje godziny bezcelowego biegania.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IRON JETPACKS + CURIOS -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🚀</div>
+                        <div>
+                            <h3>Iron Jetpacks + Curios</h3>
+                            <span class="mod-enc-role">Rola: Wszyscy</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Jetpacki dają loty od pierwszego dnia. Curios dodaje dodatkowe equipy sloty na akcesoria (pierścionki, naszyjniki, talizmany).</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-rocket"></i> Jetpacki — tier list</h4>
+                            <div class="mod-progression-chain">
+                                <div class="chain-step"><span class="chain-num">T1</span><strong>Wooden Jetpack</strong> — 25 FE/t. Powolny ale DARMOWY praktycznie. Crafting z desek!</div>
+                                <div class="chain-step"><span class="chain-num">T2</span><strong>Stone Jetpack</strong> — 50 FE/t. Trochę szybszy.</div>
+                                <div class="chain-step"><span class="chain-num">T3</span><strong>Copper / Iron Jetpack</strong> — 100-200 FE/t. Solidne mid-game latanie.</div>
+                                <div class="chain-step"><span class="chain-num">T4</span><strong>Gold / Diamond Jetpack</strong> — 500-1000 FE/t. Szybki lot z dobrą kontrolą.</div>
+                                <div class="chain-step"><span class="chain-num">T5</span><strong>Netherite Jetpack</strong> — 2000 FE/t. Najszybszy jetpack. Fire resistant.</div>
+                            </div>
+                        </div>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-ring"></i> Curios Slots — co nosić</h4>
+                            <p>Otwórz inventory → zakładka Curios (po lewej). Dostępne sloty: <strong>Ring (2x)</strong>, <strong>Necklace</strong>, <strong>Belt</strong>, <strong>Head</strong>, <strong>Back</strong>, <strong>Charm</strong>. Najlepsze itemy do Curios: Totem of Undying (charm), Crafting Table on a Stick (belt), Ring of Magnetization, Cross Necklace (artifacts). Sprawdzaj Curios sloty każdego nowego itemu!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BUILDING GADGETS + CHISEL -->
+                <div class="mod-encyclopedia-card">
+                    <div class="mod-enc-header">
+                        <div class="mod-enc-icon">🏠</div>
+                        <div>
+                            <h3>Building Gadgets + Chisel & Chipped</h3>
+                            <span class="mod-enc-role">Rola: Budowniczy</span>
+                        </div>
+                        <span class="mod-enc-tier">WAŻNY</span>
+                    </div>
+                    <div class="mod-enc-body">
+                        <p class="mod-enc-desc">Building Gadgets pozwala masowo stawiać/kopiować bloki. Chisel & Chipped daje setki wariantów dekoracyjnych każdego bloku.</p>
+                        <div class="mod-enc-section">
+                            <h4><i class="fas fa-copy"></i> Building Gadgets</h4>
+                            <div class="mod-machine-grid">
+                                <div class="mod-machine"><strong>Building Gadget</strong><span>Stawiaj bloki w liniach, płaszczyznach i prostopadłościanach. Tryby: Build to Me, Wall, Grid.</span></div>
+                                <div class="mod-machine"><strong>Exchanging Gadget</strong><span>Zamień jeden typ bloku na inny masowo. Renovacja bazy w sekundach.</span></div>
+                                <div class="mod-machine"><strong>Copy-Paste Gadget</strong><span>Zaznacz strukturę → Copy → Paste w innym miejscu. Kopiuj powtarzalne elementy bazy!</span></div>
+                                <div class="mod-machine"><strong>Destruction Gadget</strong><span>Masowe niszczenie bloków w zaznaczonym obszarze. Czyszczenie terenu pod bazę.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BOSS GUIDE ==================== -->
+    <section class="section bosses-section" id="bosses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">WALKA</span>
+                <h2 class="section-title">Przewodnik po <span class="accent">Bossach</span></h2>
+                <p class="section-desc">Każdy boss z wymaganym przygotowaniem, strategią i nagrodami.</p>
+            </div>
+
+            <div class="boss-guide-grid">
+                <div class="boss-card" style="--boss-color: #2D7A2D">
+                    <div class="boss-header">
+                        <span class="boss-icon">🐍</span>
+                        <div>
+                            <h3>Naga</h3>
+                            <span class="boss-location">Twilight Forest</span>
+                        </div>
+                        <span class="boss-diff easy">Łatwy</span>
+                    </div>
+                    <div class="boss-body">
+                        <div class="boss-info-row"><strong>Wymagania:</strong> Iron+ armor, miecz, Totem of Undying</div>
+                        <div class="boss-info-row"><strong>Strategia:</strong> Unikaj ogona, atakuj głowę. Kręci się w kółko — stań za filarem.</div>
+                        <div class="boss-info-row"><strong>Drop:</strong> Naga Scale (tworzy Naga Armor + otwiera Lich), Naga Trophy</div>
+                    </div>
+                </div>
+
+                <div class="boss-card" style="--boss-color: #5C1A8B">
+                    <div class="boss-header">
+                        <span class="boss-icon">👻</span>
+                        <div>
+                            <h3>Twilight Lich</h3>
+                            <span class="boss-location">Twilight Forest</span>
+                        </div>
+                        <span class="boss-diff medium">Średni</span>
+                    </div>
+                    <div class="boss-body">
+                        <div class="boss-info-row"><strong>Wymagania:</strong> Naga ukończona, Diamond+ armor, bow</div>
+                        <div class="boss-info-row"><strong>Strategia:</strong> Faza 1: zniszcz shields (odbijaj pociski z powrotem). Faza 2: atak melee. Faza 3: zombie summon — ignoruj summons, bij Licha.</div>
+                        <div class="boss-info-row"><strong>Drop:</strong> Lich Scepters (3 typy magic weapons), Twilight progression unlock</div>
+                    </div>
+                </div>
+
+                <div class="boss-card" style="--boss-color: #8B1A1A">
+                    <div class="boss-header">
+                        <span class="boss-icon">🐉</span>
+                        <div>
+                            <h3>Hydra</h3>
+                            <span class="boss-location">Twilight Forest</span>
+                        </div>
+                        <span class="boss-diff hard">Trudny</span>
+                    </div>
+                    <div class="boss-body">
+                        <div class="boss-info-row"><strong>Wymagania:</strong> Diamond+ armor, Fire Resistance, Totem, dużo jedzenia</div>
+                        <div class="boss-info-row"><strong>Strategia:</strong> Ma 3 głowy — odcinaj jedna po jednej. Nowe odrastają! Unikaj fire charge bombardment — chowaj się za filarami. Uśmiercaj explosive heads najszybciej.</div>
+                        <div class="boss-info-row"><strong>Drop:</strong> Fiery Blood, Fiery Tears (potężne materiały na broń ogniową), Hydra Trophy</div>
+                    </div>
+                </div>
+
+                <div class="boss-card" style="--boss-color: #006B6B">
+                    <div class="boss-header">
+                        <span class="boss-icon">❄️</span>
+                        <div>
+                            <h3>Snow Queen</h3>
+                            <span class="boss-location">Twilight Forest — Aurora Palace</span>
+                        </div>
+                        <span class="boss-diff hard">Trudny</span>
+                    </div>
+                    <div class="boss-body">
+                        <div class="boss-info-row"><strong>Wymagania:</strong> Diamond+ armor z Thorns, dobry bow, Totem, bloki do budowania</div>
+                        <div class="boss-info-row"><strong>Strategia:</strong> Lata na platformach lodowych. Musisz budować bloki żeby się wspiąć. Odpala ice beam — skacz w bok. Używaj łuku kiedy lata wysoko.</div>
+                        <div class="boss-info-row"><strong>Drop:</strong> Progression do finału TF, unikalne dekoracyjne bloki, Snow Queen Trophy</div>
+                    </div>
+                </div>
+
+                <div class="boss-card" style="--boss-color: #C8960C">
+                    <div class="boss-header">
+                        <span class="boss-icon">⚫</span>
+                        <div>
+                            <h3>Wither</h3>
+                            <span class="boss-location">Overworld / Nether</span>
+                        </div>
+                        <span class="boss-diff hard">Trudny</span>
+                    </div>
+                    <div class="boss-body">
+                        <div class="boss-info-row"><strong>Wymagania:</strong> Netherite armor, Smite V miecz, Strength Potion, Totem, zamknięta arena</div>
+                        <div class="boss-info-row"><strong>Strategia:</strong> Zbuduj zamkniętą arenę z obsydianem pod ziemią (2x2 korytarz). Wither nie może uciec. Atakuj melee z Smite V. Faza 2 (50% HP): jedź z łukiem i Power V.</div>
+                        <div class="boss-info-row"><strong>Drop:</strong> Nether Star (wymagany do ATM Star i wielu modded receptur!)</div>
+                    </div>
+                </div>
+
+                <div class="boss-card" style="--boss-color: #AA44FF">
+                    <div class="boss-header">
+                        <span class="boss-icon">🐲</span>
+                        <div>
+                            <h3>Ender Dragon</h3>
+                            <span class="boss-location">The End</span>
+                        </div>
+                        <span class="boss-diff medium">Średni</span>
+                    </div>
+                    <div class="boss-body">
+                        <div class="boss-info-row"><strong>Wymagania:</strong> Diamond+ armor, dobry bow, Slow Falling/Jetpack, Ender Pearls, bloki</div>
+                        <div class="boss-info-row"><strong>Strategia:</strong> Zniszcz kryształy End (bow/climbing). Unikaj dragon breath. Atakuj łukiem gdy lata, melee gdy spoczywa na fontannie.</div>
+                        <div class="boss-info-row"><strong>Drop:</strong> Dragon Egg (ATM Star ingredient!), dużo XP, dostęp do End Cities (Elytra!)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DIMENSIONS GUIDE ==================== -->
+    <section class="section dimensions-section" id="dimensions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">WYMIARY</span>
+                <h2 class="section-title">Przewodnik po <span class="accent">Wymiarach</span></h2>
+                <p class="section-desc">Każdy wymiar oferuje unikalne surowce i wyzwania. Przygotuj się zanim wejdziesz!</p>
+            </div>
+
+            <div class="dimensions-grid">
+                <!-- OVERWORLD -->
+                <div class="dimension-card" data-dim="overworld">
+                    <div class="dim-header">
+                        <div class="dim-icon">🌍</div>
+                        <div class="dim-title-wrap">
+                            <h3>Overworld</h3>
+                            <span class="dim-difficulty easy">Łatwy</span>
+                        </div>
+                    </div>
+                    <div class="dim-body">
+                        <div class="dim-resources">
+                            <h4>Kluczowe zasoby</h4>
+                            <div class="dim-tags">
+                                <span class="dim-tag">Allthemodium (Deep Dark, Y=-40)</span>
+                                <span class="dim-tag">Wszystkie vanilla rudy</span>
+                                <span class="dim-tag">Terralith biomy</span>
+                                <span class="dim-tag">Village Waystones</span>
+                            </div>
+                        </div>
+                        <div class="dim-tips">
+                            <p><i class="fas fa-lightbulb"></i> Używaj Nature's Compass do znajdowania biomów i Explorer's Compass do struktur.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NETHER -->
+                <div class="dimension-card" data-dim="nether">
+                    <div class="dim-header">
+                        <div class="dim-icon">🔥</div>
+                        <div class="dim-title-wrap">
+                            <h3>Nether</h3>
+                            <span class="dim-difficulty medium">Średni</span>
+                        </div>
+                    </div>
+                    <div class="dim-body">
+                        <div class="dim-resources">
+                            <h4>Kluczowe zasoby</h4>
+                            <div class="dim-tags">
+                                <span class="dim-tag">Ancient Debris → Netherite</span>
+                                <span class="dim-tag">Vibranium Ore</span>
+                                <span class="dim-tag">Blaze Rods</span>
+                                <span class="dim-tag">Nether Fortress loot</span>
+                                <span class="dim-tag">Wither Skeleton Skulls</span>
+                            </div>
+                        </div>
+                        <div class="dim-tips">
+                            <p><i class="fas fa-lightbulb"></i> Vibranium spawni się w Netherze! Potrzebujesz Allthemodium pickaxe żeby go wydobyć.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TWILIGHT FOREST -->
+                <div class="dimension-card" data-dim="twilight">
+                    <div class="dim-header">
+                        <div class="dim-icon">🌲</div>
+                        <div class="dim-title-wrap">
+                            <h3>Twilight Forest</h3>
+                            <span class="dim-difficulty medium">Średni</span>
+                        </div>
+                    </div>
+                    <div class="dim-body">
+                        <div class="dim-resources">
+                            <h4>Kluczowe zasoby</h4>
+                            <div class="dim-tags">
+                                <span class="dim-tag">Ironwood / Steeleaf / Knightmetal</span>
+                                <span class="dim-tag">Naga Scale</span>
+                                <span class="dim-tag">Fiery Tears/Blood</span>
+                                <span class="dim-tag">Maze Map Focus</span>
+                                <span class="dim-tag">Twilight Gems</span>
+                            </div>
+                        </div>
+                        <div class="dim-tips">
+                            <p><i class="fas fa-exclamation-triangle"></i> Portal: Diamond + woda 2x2 + kwiaty dookoła. Bossów rób w kolejności: Naga → Lich → Minoshroom → Hydra → Snow Queen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MINING DIMENSION -->
+                <div class="dimension-card" data-dim="mining">
+                    <div class="dim-header">
+                        <div class="dim-icon">⛏️</div>
+                        <div class="dim-title-wrap">
+                            <h3>Mining Dimension</h3>
+                            <span class="dim-difficulty easy">Łatwy</span>
+                        </div>
+                    </div>
+                    <div class="dim-body">
+                        <div class="dim-resources">
+                            <h4>Kluczowe zasoby</h4>
+                            <div class="dim-tags">
+                                <span class="dim-tag">Kopanie bez zniszczeń overworld</span>
+                                <span class="dim-tag">Wszystkie rudy vanilla</span>
+                                <span class="dim-tag">Bezpieczne AFK mining</span>
+                            </div>
+                        </div>
+                        <div class="dim-tips">
+                            <p><i class="fas fa-lightbulb"></i> Idealny do Digital Miner (Mekanism) — ustaw go tu i kopie rudy bez lag'owania overworld.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THE OTHER -->
+                <div class="dimension-card" data-dim="other">
+                    <div class="dim-header">
+                        <div class="dim-icon">🌌</div>
+                        <div class="dim-title-wrap">
+                            <h3>The Other</h3>
+                            <span class="dim-difficulty hard">Trudny</span>
+                        </div>
+                    </div>
+                    <div class="dim-body">
+                        <div class="dim-resources">
+                            <h4>Kluczowe zasoby</h4>
+                            <div class="dim-tags">
+                                <span class="dim-tag">Unobtainium Ore</span>
+                                <span class="dim-tag">ATM endgame materiały</span>
+                                <span class="dim-tag">Unique structures</span>
+                            </div>
+                        </div>
+                        <div class="dim-tips">
+                            <p><i class="fas fa-exclamation-triangle"></i> Portal wymaga Vibranium blocks! Bardzo niebezpieczny wymiar — przygotuj najlepszy gear i dużo Totemów.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETERNAL STARLIGHT -->
+                <div class="dimension-card" data-dim="starlight">
+                    <div class="dim-header">
+                        <div class="dim-icon">✨</div>
+                        <div class="dim-title-wrap">
+                            <h3>Eternal Starlight</h3>
+                            <span class="dim-difficulty hard">Trudny</span>
+                        </div>
+                    </div>
+                    <div class="dim-body">
+                        <div class="dim-resources">
+                            <h4>Kluczowe zasoby</h4>
+                            <div class="dim-tags">
+                                <span class="dim-tag">Starlight materiały</span>
+                                <span class="dim-tag">Unique boss drops</span>
+                                <span class="dim-tag">Endgame quest items</span>
+                            </div>
+                        </div>
+                        <div class="dim-tips">
+                            <p><i class="fas fa-lightbulb"></i> Lepszy late-game loot niż Twilight Forest. Wejdź po ukończeniu The Other.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CHEAT SHEET ==================== -->
+    <section class="section cheatsheet-section" id="cheatsheet">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ŚCIĄGA</span>
+                <h2 class="section-title">Cheat <span class="accent">Sheet</span></h2>
+                <p class="section-desc">Najważniejsze komendy, receptury i informacje w jednym miejscu.</p>
+            </div>
+
+            <div class="cheatsheet-grid">
+                <!-- KOMENDY -->
+                <div class="cheat-card">
+                    <div class="cheat-card-header">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Przydatne Komendy</h3>
+                    </div>
+                    <div class="cheat-card-body">
+                        <div class="command-item">
+                            <code class="cmd-code" data-copy="/sethome [nazwa]">/sethome [nazwa]</code>
+                            <span class="cmd-desc">Zapisz aktualną pozycję jako dom</span>
+                            <button class="copy-btn" title="Kopiuj"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="command-item">
+                            <code class="cmd-code" data-copy="/home [nazwa]">/home [nazwa]</code>
+                            <span class="cmd-desc">Teleportuj się do zapisanego domu</span>
+                            <button class="copy-btn" title="Kopiuj"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="command-item">
+                            <code class="cmd-code" data-copy="/back">/back</code>
+                            <span class="cmd-desc">Wróć do miejsca śmierci</span>
+                            <button class="copy-btn" title="Kopiuj"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="command-item">
+                            <code class="cmd-code" data-copy="/tpa [gracz]">/tpa [gracz]</code>
+                            <span class="cmd-desc">Teleport do innego gracza</span>
+                            <button class="copy-btn" title="Kopiuj"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="command-item">
+                            <code class="cmd-code" data-copy="/ftbchunks claim">/ftbchunks claim</code>
+                            <span class="cmd-desc">Claimuj chunk (ochrona terenu)</span>
+                            <button class="copy-btn" title="Kopiuj"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="command-item">
+                            <code class="cmd-code" data-copy="/ftbteams party create [nazwa]">/ftbteams party create [nazwa]</code>
+                            <span class="cmd-desc">Utwórz drużynę FTB</span>
+                            <button class="copy-btn" title="Kopiuj"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="command-item">
+                            <code class="cmd-code" data-copy="/minimap">/minimap</code>
+                            <span class="cmd-desc">Ustawienia JourneyMap</span>
+                            <button class="copy-btn" title="Kopiuj"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ATM STAR RECIPE -->
+                <div class="cheat-card atm-star-card">
+                    <div class="cheat-card-header">
+                        <i class="fas fa-star"></i>
+                        <h3>ATM Star — Finałowy Cel</h3>
+                    </div>
+                    <div class="cheat-card-body">
+                        <p class="atm-star-desc">ATM Star to finałowy item w modpacku. Jego crafting wymaga materiałów z KAŻDEJ gałęzi modów:</p>
+                        <div class="atm-star-ingredients">
+                            <div class="ingredient">
+                                <span class="ingredient-icon" style="color: #AA44FF;">◆</span>
+                                <span><strong>Allthemodium Ingot</strong> — Overworld Deep Dark (Y=-40)</span>
+                            </div>
+                            <div class="ingredient">
+                                <span class="ingredient-icon" style="color: #00E5FF;">◆</span>
+                                <span><strong>Vibranium Ingot</strong> — Nether</span>
+                            </div>
+                            <div class="ingredient">
+                                <span class="ingredient-icon" style="color: #FF4081;">◆</span>
+                                <span><strong>Unobtainium Ingot</strong> — The Other / The Beyond</span>
+                            </div>
+                            <div class="ingredient">
+                                <span class="ingredient-icon" style="color: #5cb85c;">◆</span>
+                                <span><strong>Nether Star</strong> — Wither Boss</span>
+                            </div>
+                            <div class="ingredient">
+                                <span class="ingredient-icon" style="color: #4FC3F7;">◆</span>
+                                <span><strong>Dragon Egg</strong> — Ender Dragon</span>
+                            </div>
+                            <div class="ingredient">
+                                <span class="ingredient-icon" style="color: #f0b429;">◆</span>
+                                <span><strong>Various mod-specific items</strong> — sprawdź EMI (R) na ATM Star</span>
+                            </div>
+                        </div>
+                        <div class="atm-star-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Użyj klawisza <kbd>R</kbd> na ATM Star w EMI żeby zobaczyć pełną recepturę. Wymaga Runic Star Altar!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OPTYMALIZACJA -->
+                <div class="cheat-card">
+                    <div class="cheat-card-header">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Optymalizacja Gry</h3>
+                    </div>
+                    <div class="cheat-card-body">
+                        <div class="opt-item">
+                            <div class="opt-label"><i class="fas fa-memory"></i> RAM</div>
+                            <div class="opt-value">8-10 GB (nie więcej niż 12!)</div>
+                            <div class="opt-bar"><div class="opt-fill" style="width: 75%"></div></div>
+                        </div>
+                        <div class="opt-item">
+                            <div class="opt-label"><i class="fas fa-eye"></i> Render Distance</div>
+                            <div class="opt-value">8-10 chunków (MP)</div>
+                            <div class="opt-bar"><div class="opt-fill" style="width: 50%"></div></div>
+                        </div>
+                        <div class="opt-item">
+                            <div class="opt-label"><i class="fas fa-desktop"></i> Simulation Distance</div>
+                            <div class="opt-value">6-8 chunków</div>
+                            <div class="opt-bar"><div class="opt-fill" style="width: 45%"></div></div>
+                        </div>
+                        <div class="opt-item">
+                            <div class="opt-label"><i class="fas fa-trash-alt"></i> Entity Distance</div>
+                            <div class="opt-value">75-100%</div>
+                            <div class="opt-bar"><div class="opt-fill" style="width: 60%"></div></div>
+                        </div>
+                        <div class="opt-tip">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>JVM Args: <code>-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200</code></span>
+                        </div>
+                        <div class="opt-tip">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Wyłącz shaders na starcie! Włączaj dopiero po ustabilizowaniu FPS.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ORE LEVELS -->
+                <div class="cheat-card">
+                    <div class="cheat-card-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Gdzie szukać rud</h3>
+                    </div>
+                    <div class="cheat-card-body">
+                        <div class="ore-table">
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#444"></span>Coal</span><span class="ore-level">Y: 0 — 256</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#c87533"></span>Copper</span><span class="ore-level">Y: -16 — 112</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#d4af37"></span>Iron</span><span class="ore-level">Y: -64 — 72</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#d4af37"></span>Gold</span><span class="ore-level">Y: -64 — 32</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#5cb8ff"></span>Diamond</span><span class="ore-level">Y: -64 — 16 (best -59)</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#4ade80"></span>Emerald</span><span class="ore-level">Y: -16 — 320 (Mountains)</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#8B8B8B"></span>Osmium</span><span class="ore-level">Y: -64 — 60</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#AA44FF"></span>Allthemodium</span><span class="ore-level">Y: -64 — -40 (Deep Dark)</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#00E5FF"></span>Vibranium</span><span class="ore-level">Nether (wymagany ATM pickaxe)</span></div>
+                            <div class="ore-row"><span class="ore-name"><span class="ore-dot" style="background:#FF4081"></span>Unobtainium</span><span class="ore-level">The Other / The Beyond</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== PROGRESSION ==================== -->
     <section class="section progression-section" id="progression">
         <div class="container">
@@ -1136,6 +2463,169 @@
             </div>
         </div>
     </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">POMOC</span>
+                <h2 class="section-title">Najczęstsze <span class="accent">Pytania</span></h2>
+                <p class="section-desc">Odpowiedzi na pytania które pojawiają się najczęściej w ekipie.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Gra się crashuje / nie uruchamia — co robić?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>1. Upewnij się że masz przydzielone 8-10 GB RAM (nie więcej niż 12!).<br>
+                        2. Użyj Java 17 (powinno być domyślnie z instalatorem).<br>
+                        3. Wyłącz Optifine — ATM10 używa Embeddium/Rubidium.<br>
+                        4. Sprawdź logi: <code>.minecraft/logs/latest.log</code> — szukaj "Error" lub "Exception".<br>
+                        5. Usuń <code>config/</code> folder i zrób reinstall modpacku.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak zrobić drużynę w FTB?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>1. <code>/ftbteams party create NaszaEkipa</code> — tworzy drużynę.<br>
+                        2. <code>/ftbteams party invite [gracz]</code> — zaprasza gracza.<br>
+                        3. Drugi gracz akceptuje: <code>/ftbteams party accept</code>.<br>
+                        4. W FTB Chunks claimujcie chunki jako Team — nie Personal!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak dostać się do Deep Dark?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Deep Dark to biom generowany pod Y=-40 w Overworld. Szukaj sculk bloków kopiejąc w dół. Używaj Nature's Compass żeby znaleźć biom "<strong>Deep Dark</strong>". Uważaj na Wardena — poruszaj się cicho (Shift) i nie aktywuj Sculk Shriekerów 3x!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jakie jetpacki są dostępne i w jakiej kolejności?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Iron Jetpacks (od najtańszego):</strong><br>
+                        🟤 Wooden → ⚪ Stone → 🟠 Copper → ⚫ Iron → 🟡 Gold → 💎 Diamond → 💜 Netherite<br><br>
+                        <strong>Alternatywy:</strong><br>
+                        • Mekanism Free Runners (step-assist + no fall damage)<br>
+                        • MekaSuit (endgame — latanie + więcej)<br>
+                        • Ars Nouveau Flight spell<br>
+                        • Apotheosis Flight Potion (cała drużyna lata!)</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak szybko zdobyć Allthemodium?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>1. Zrób <strong>Nature's Compass</strong> → szukaj biom "Deep Dark".<br>
+                        2. Kop do Y=-40 w Deep Dark.<br>
+                        3. Wymagasz minimum <strong>Netherite Pickaxe</strong> żeby wydobyć Allthemodium!<br>
+                        4. Użyj <strong>Fortune enchant</strong> — zwiększa drop.<br>
+                        5. Alternatywnie: <strong>Mystical Agriculture</strong> Allthemodium Seeds (wymaga Supremium tier).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Gdzie jest najlepsza energia na start?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Top 3 na start:</strong><br>
+                        1. ⚡ <strong>Mekanism Wind Generators</strong> — postaw na wieży Y=200+, darmowy prąd.<br>
+                        2. ☀️ <strong>Powah Solar Panels</strong> — pasywna energia, duże ilości.<br>
+                        3. 🔥 <strong>Mekanism Heat Generators</strong> — lava buckets = prąd natychmiast.<br><br>
+                        Mid-game: Mekanism Ethylene Generator (rośliny → gaz → prąd).<br>
+                        Endgame: Mekanism Fusion Reactor (prawie nieskończona energia).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak zrobić x5 ore processing w Mekanism?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Musisz zbudować pełny łańcuch maszyn:<br>
+                        <strong>Dissolution Chamber</strong> (+ Sulfuric Acid) → <strong>Chemical Washer</strong> (+ woda) → <strong>Chemical Crystallizer</strong> → <strong>Injection Chamber</strong> (+ HCl gas) → <strong>Purification Chamber</strong> (+ O₂) → <strong>Crusher</strong> → <strong>Enrichment Chamber</strong> → Smelting.<br><br>
+                        Każda maszyna to kolejny etap przetwarzania. W x5 processing 1 ruda = 5 ingotów! Zacznij od x2 (Enrichment Chamber) i rozbudowuj stopniowo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak skonfigurować AE2 auto-crafting?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>1. Zbuduj <strong>ME Crafting Terminal</strong> (z Encoding Terminal) i <strong>Blank Patterns</strong>.<br>
+                        2. W Encoding Terminal wstaw Blank Pattern i ustaw recepturę → kliknij "Encode".<br>
+                        3. Postaw <strong>Pattern Provider</strong> obok <strong>Molecular Assembler</strong> (lub połącz kablem ME).<br>
+                        4. Wstaw zakodowany Pattern do Pattern Provider.<br>
+                        5. Zbuduj <strong>Crafting Storage</strong> (1k/4k/16k/64k) — te bloki łączą się w multi-block Crafting CPU.<br>
+                        6. Teraz w Crafting Terminal możesz kliknąć na item i "Auto Craft"!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak zdobyć Allthemodium / Vibranium / Unobtainium?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>🟡 <strong>Allthemodium</strong> — kopalne w Deep Dark biome (Y=-40 to -60). Znajdź biom kompasem Nature's Compass. Wymaga Netherite+ pickaxe!<br><br>
+                        🟢 <strong>Vibranium</strong> — kopalne TYLKO w Netherze (Y=10-30). Wymaga Allthemodium pickaxe do wykopania!<br><br>
+                        🔴 <strong>Unobtainium</strong> — kopalne TYLKO w The Other (wymiar ATM). Portal z Allthemodium + Vibranium + Unobtainium (first piece from village loot). Wymaga Vibranium pickaxe!<br><br>
+                        <strong>Łatwiejsza metoda:</strong> Mystical Agriculture seedsy (Supremium tier) na każdy z tych materiałów = pasywna farma!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jaki jest najlepszy setup latania?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>od najtańszego do najlepszego:</strong><br>
+                        1. 🪶 <strong>Elytra + Fireworks</strong> — darmowe z End City, ograniczone kontrolą<br>
+                        2. 🚀 <strong>Iron Jetpack (dowolny tier)</strong> — FE-powered, craftuj z metali. Drewniany na start!<br>
+                        3. ✨ <strong>Flight Potion (Apotheosis)</strong> — Creative flight na czas potiona, automatyzuj z Infusion Pylon<br>
+                        4. 😇 <strong>Angel Ring (Enigmatic Legacy)</strong> — pełny creative flight, drogi craft ale permanentny<br>
+                        5. ⚡ <strong>MekaSuit Helmet + Gravitational Module</strong> — najszybsze latanie + nie zużywa slotu zbroi (jest zbroją!)</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak automatycznie farmić Mystical Agriculture?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>🌱 <strong>Opcja 1 — Botany Pots:</strong> Wstaw Farmland + seed. Hopper pod spodem. AFK farm.<br>
+                        🤖 <strong>Opcja 2 — Mechanical Harvester:</strong> Buduj farmę 9x9 z Growth Accelerators pod Farmland (stackują się!). Harvester Pylon (Apotheosis) lub Farmer block auto-zbiera. LaserIO/AE2 Import Bus przenosi do systemu.<br>
+                        🐝 <strong>Opcja 3 — Productive Bees:</strong> Inferium Bee produkuje Inferium pasywnie. Breeding z innymi pszczołami = pszczoły na dowolny materiał.<br><br>
+                        <strong>Pro tip:</strong> Ars Nouveau Whirlisprig obok farmy przyspiesza wzrost za darmo!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="backToTop" aria-label="Wróć na górę">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
