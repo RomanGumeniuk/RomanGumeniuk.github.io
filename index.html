@@ -4,20 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1a;        
+      color: #e0e0e0;               
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #f7eaea;
+      margin-bottom: 32px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid rgba(230, 220, 220, 0.76); 
+    }
+
+    .card {
+      background: #1a1a2e;             
+      border-radius: 12px;              
+      padding: 20px 24px;
+      margin-bottom: 20px;
+
+      transition: transform 0.2s;       
+    }
+    .card:hover {
+      transform: translateY(-2px);      
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      color: #6c63ff;               
+      margin-bottom: 4px;
+    }
+
+      .card p {
+      font-size: 0.85rem;
+      color: #888888d0;                    
+      margin-bottom: 12px;
+    }
+
+    .card ul {
+      list-style: none;
+    }
+    .card li {
+      margin: 6px 0;
+    }
+
+    .card a {
+      color: #a29bfe;                  
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .card a:hover {
+      color: #fff;                      
+    }
+  </style>
 </head>
 <body>
-  <h1>Strony</h1>
-  <ul>
-    <li><a href="walentynki/">Walentynki</a></li>
-    <li><a href="atm10/">ATM10</a></li>
-    <li><a href="minecraft ATM10/">Minecraft ATM10</a></li>
-    <li><a href="dyskretna/">Dyskretna</a></li>
-    <li><a href="analiza/">Analiza</a></li>
-    <li><a href="haslo.html">Hasło</a></li>
-    <li><a href="zagadka.html">Zagadka</a></li>
-    <li><a href="znalezionanotatka.html">Znaleziona notatka</a></li>
-    <li><a href="znalezionanotatka2.html">Znaleziona notatka 2</a></li>
-  </ul>
+  <div class="container">
+    <h1>Hub</h1>
+
+    <div class="card">
+      <h2>Projekty</h2>
+      <p>losowe rzeczy które robiłem</p>
+      <ul>
+        <li><a href="atm10/">Minecraft ATM10 tutorial</a></li>
+        <li><a href="https://roadmap-frontend-409212402112.europe-central2.run.app/">Roadmapa do nauki frontendu z quizami i materiałami do nauki (jeszcze robię czasami)</a></li>
+        <li><a href="https://azgard-sklep.pl/">Sklep z kartkami Azgard</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Nauka</h2>
+      <p>Zvibecodowane strony do nauki na studia bo nie dostałem gemini pro a github copilot jest za darmo i liczy lepiej pzdr</p>
+      <ul>
+        <li><a href="dyskretna/">Dyskretna</a></li>
+        <li><a href="analiza/">Analiza</a></li>
+      </ul>
+    </div>
+  </div>
+
   <script>
     document.addEventListener('keydown', function(e) {
       if (e.ctrlKey && e.key === 'u') {
